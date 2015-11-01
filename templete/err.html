@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>系统提示 - E租时代</title>
+<?php
+include '\templete\header.html';
+?>
+
+<div class="fl wfs bceb">
+    <div class="shop-cart-wrapper">
+        
+        <div class="cart-message fl wfs">
+            <h4 class="title">系统信息</h4>
+            <p class="content"><?php echo $errinfo; ?></p>
+                                                <p class="operate">
+                          <a href="<?php echo $errurl; ?>">请点这里继续</a>
+                    </p>
+                                    </div>
+        
+    </div>
+</div>
+
+
+
+     <div class="cover-page-index fl wfs bcf2" style="padding-top:20px;">
+        <div class="cover-page-wrapper">
+<?php
+include '\templete\footer.html';
+?>
+
+ 
+</body>
+</html>
+<?php exit; ?>

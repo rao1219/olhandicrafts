@@ -1,0 +1,122 @@
+﻿/* 管理员信息表 */
+CREATE TABLE IF NOT EXISTS `admin` (
+	id int primary key auto_increment,
+	user varchar(32),
+	password varchar(32)
+)DEFAULT CHARSET=utf8;
+
+/* 城市表 layer:城市等级*/
+CREATE TABLE IF NOT EXISTS `city` (
+`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`city` VARCHAR(30) NOT NULL ,
+`parentid` INT NOT NULL DEFAULT '0',
+`layer` tinyint NOT NULL DEFAULT '1',
+`sort` tinyint NOT NULL DEFAULT '1'
+)DEFAULT CHARSET=utf8;
+
+/* 会员表 */
+CREATE TABLE IF NOT EXISTS `member` 
+(
+	id int primary key auto_increment,
+	username varchar(100) not NULL unique,
+	password varchar(100) not NULL,
+	Email varchar(50) not NULL default 0,
+	type tinyint not null default 0,#会员类型
+	money int not null default 0,#可用金额，以角为单位
+	bgood int not null default 0,#买家收到交易评价
+	baverage int not null default 0,
+	bbad int not null default 0,
+	sgood int not null default 0,#卖家收到交易评价
+	saverage int not null default 0,
+	sbad int not null default 0,
+	name varchar(20),
+	phone varchar(20),
+	qq varchar(15) 
+)DEFAULT CHARSET=utf8;
+
+/* 文章表,官方动态 */
+CREATE TABLE IF NOT EXISTS `news` 
+(
+	id int primary key auto_increment,
+	title varchar(100) not NULL default 0,
+	time varchar(20) not null default 0,#存时间戳
+	author varchar(20) not null default 0,
+	content text
+)DEFAULT CHARSET=utf8;
+
+/* 订单表  */
+CREATE TABLE IF NOT EXISTS `order` 
+(
+	id int primary key auto_increment,
+	ordernumber varchar(20) not NULL unique,#商品编号
+	money varchar(50) not NULL,#租借单周期价
+	number int not NULL, #租借周期
+	state tinyint not null default 0,#订单状态 0创建未支付 1已支付等待租借 2货物到手(支付租金) 3租借完成(归还押金) >3异常EG:未按时归还
+	deposit int not null,#押金
+	buyer int not null default 0,#买家ID
+	buyername varchar(20),
+	buyerphone varchar(20),
+	buyeraddress varchar(30),
+	seller int not null default 0,#卖家ID
+	sellername varchar(20),
+	sellerphone varchar(20),
+	selleraddress varchar(30),
+	message text,#买家留言
+	time1 varchar(20) not null default 0,#订单时间
+	time2 varchar(20) not null default 0,#支付时间
+	time3 varchar(20) not null default 0,#货物到手时间
+	time4 varchar(20) not null default 0,#租借完成时间
+	bcomment text,#买家评论
+	somment text #卖家评论
+)DEFAULT CHARSET=utf8;
+
+/* 商品分类表 ID 1其他/未分类 */
+CREATE TABLE IF NOT EXISTS `sort`
+(
+    id int primary key auto_increment,
+    name varchar(20) not NULL default 0
+)DEFAULT CHARSET=utf8;
+
+/* 商品表 */
+CREATE TABLE IF NOT EXISTS `item` 
+(
+	id int primary key auto_increment,
+	title varchar(100) not NULL,
+	pic varchar(100) not NULL,
+	class int not null default 0,#商品分类,0其他/未分类
+	intro text,#商品介绍
+	money int not NULL,#周期单价
+	time int not NULL default 0,#周期/天,暂时无用
+	deposit int not NULL,#押金
+	seller int not NULL,#出售者
+	state tinyint not NULL default 2 ,#商品状态 0闲置 1已经租出 2出租中
+	new tinyint not NULL default 11, #新旧程度(几层新)
+	content text,
+	city int not null,
+	address varchar(100)
+)DEFAULT CHARSET=utf8;
+
+
+/* 商品收藏表 */
+CREATE TABLE IF NOT EXISTS `store` 
+(
+	id int primary key auto_increment,
+	itemid int not NULL,
+	userid int not NULL
+)DEFAULT CHARSET=utf8;
+
+/* 客户交流表 */
+CREATE TABLE IF NOT EXISTS `communicate` 
+(
+	id int primary key auto_increment,
+	userid int not NULL,
+	time varchar(20) not null default 0,
+	content text
+)DEFAULT CHARSET=utf8;
+
+insert into admin values(1,'admin','123123');
+insert into sort values(1,'摄影设备');
+insert into sort values(2,'礼服');
+insert into sort values(3,'户外装备');
+insert into sort values(4,'大型箱包');
+insert into sort values(5,'企业大型机');

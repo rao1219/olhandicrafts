@@ -1,0 +1,187 @@
+/*!
+ * Css Document
+ * 
+ * @author	zongxian.chen at 2012/04/16 build.
+ * @version $Id$
+ */
+
+
+/************************* Just Reset Browser Default CSS : BEGIN ***************************/
+html{
+	background-color:#fff;
+}
+body,div,h1,h2,h3,h4,ul,li,form,input,dl,dt,dd,p{
+	margin:0;
+	padding:0;
+	font-family:微软雅黑;
+}
+h3{
+	+font-size:14px;
+	_font-size:14px;
+}
+img{
+	border:none;
+}
+.c{
+	clear:both;
+}
+ul,ol,li{
+	list-style:none;
+}
+
+ /*清除浮动*/
+.clearfix:after {
+    content: ".";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    overflow: hidden;
+    clear: both;
+}
+
+/* no ie mac \*/
+* html .clearfix {
+    height: 1%;
+}
+/* end */
+* + html .clearfix {
+    height: 1%;
+}
+
+body{
+	font: 12px/1.5em 微软雅黑,Arial,Verdana,Helvetica,sans-serif;
+	color:#333;
+}
+button,input,select,textarea{
+	color:#999;
+}
+input[type="button"]{
+	padding:0 5px;
+	color:#333;
+}
+.demo_box{
+	width:1184px;
+}
+/* map style */
+#iCenter{
+	width:100%;
+	height:500px;
+	border:1px solid #F6F6F6;
+}
+#r_title{
+	line-height:28px;
+	padding-left:5px;
+	background-color:#D1EEEE;
+	font-weight:bold;
+}
+#result{
+	overflow:auto;
+	margin-bottom:5px;
+/*	width:661px;*/
+	height:255px;
+}
+/*  结果项 */
+#result .sub_result{
+	font-size:12px;
+	cursor:pointer;
+	line-height:20px;
+	/*padding:0px 0 4px 2px;*/
+	border-bottom:1px solid #C1FFC1;
+}
+#result .sub_result .detail{
+}
+#result .sub_result .detail h3{
+	color:#00A6AC;
+}
+
+a{
+	color:#067EC0;
+	text-decoration:none;
+}
+a:hover{
+	text-decoration:underline;
+}
+.note{
+	color:#999;
+}
+
+/*** layerout stylesheet ***/
+/* 修改背景URL */
+div.change{
+	background-image:url(http://pages.haozu.ajkcdn.com/20110909/img/map/marker-h.png);
+}
+div.change div{
+	background-image:url(http://pages.haozu.ajkcdn.com/20110909/img/map/marker-h-l.gif);
+}
+
+/*** copied from demo #39 添加自定义点覆盖物 ***/
+/* 定义自定义点样式 */
+.markerContentStyle{position:relative;}
+.markerContentStyle span{
+	background-color: #FFFFFF;
+	color:#FF1493;
+	width:120px;
+	heigth:80px;
+	border:2px solid #D8BFD8;
+	FONT-FAMILY:华文行楷;
+	position:absolute;
+	top:-10px;left:25px;
+	white-space:nowrap
+	-webkit-border-radius:5px;
+	border-radius:5px;
+}
+
+/*** copied from demo #43 添加自定义信息窗体 ***/
+/* 定义自定义信息窗体样式 */
+div.info {
+	position: relative;
+	z-index: 100;
+	border: 1px solid #BCBCBC;
+	box-shadow: 0 0 10px #B7B6B6;
+	border-radius: 8px;
+	background-color: rgba(255,255,255,0.9);
+	transition-duration: 0.25s;
+}
+div.info:hover {
+	box-shadow: 0px 0px 15px #0CF;
+}
+
+div.info-top {
+	position: relative;
+	background: none repeat scroll 0 0 #F9F9F9;
+	border-bottom: 1px solid #CCC;
+	border-radius:5px 5px 0 0;
+}
+div.info-top div {
+	display: inline-block;
+	color: #333333;
+	font-size:14px;
+	font-weight:bold;
+	line-height:31px;
+	padding:0 10px;
+}
+div.info-top img {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	transition-duration: 0.25s;
+}
+div.info-top img:hover{
+	box-shadow: 0px 0px 5px #000;
+}
+div.info-middle {
+	font-size:12px;
+	padding:10px;
+	line-height:21px;
+}
+div.info-bottom {
+	height:0px;
+	width:100%;
+	clear:both;
+	text-align:center;
+}
+div.info-bottom img{
+	position: relative;
+	z-index:104;
+}
+/*** -------------------------***/

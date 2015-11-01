@@ -1,0 +1,131 @@
+/*当前位置 css*/
+.place {
+    margin-top: 10px;
+    padding-top: 15px;
+    color: #888;
+    background-color: #fff;
+}
+.place p {
+    margin-right: 40px;
+}
+.place a {
+    color: #888;
+}
+.fl { float: left; }
+.fr { float: right; }
+.about-news {
+    background-color: #fff;
+}
+.about-news .news-list {
+    width: 900px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px dotted #D1D1D1;
+}
+.about-news .news-list span {
+    float: left;
+    width: 65px;
+    margin-top: -3px;
+    padding-bottom: 50px;
+    font-size: 20px;
+    text-align: center;
+}
+.about-news .news-list span.circle-yellow {
+    background-position: 10px -256px;
+}
+.about-news .news-list span.circle-blue {
+    background-position: 10px -176px;
+}
+.about-news .news-list div {
+    float: right;
+    width: 805px;
+}
+.about-news .news-list div h5 {
+    margin-bottom: 10px;
+}
+.about-news .news-list div h5 a {
+    font-size: 18px;
+    color: #FC8383;
+}
+.about-news .news-list div p {
+    font-size: 12px;
+    line-height: 25px;
+    color: #666;
+}
+.w900 {
+    *width: 900px;
+    padding-top: 20px;
+    padding-right: 40px;
+    padding-bottom: 25px;
+    padding-left: 40px;
+    background-color: #fff;
+}
+span.circle-yellow {
+    background-position: 10px -256px;
+}
+.about-article .title {
+    font-size: 18px;
+    line-height: 30px;
+    color: #FC7878;
+    text-align: center;
+}
+.about-article .date {
+    margin-top: 10px;
+    color: #ABABAB;
+    text-align: center;
+}
+.about-article .content {
+    margin-top: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-top: 1px dotted #ddd;
+    border-bottom: 1px dotted #ddd;
+}
+.about-article .content .p1,
+.about-article .content p {
+    margin-bottom: 15px;
+    line-height: 25px;
+    color: #666;
+}
+.about-article .content img,
+.about-article .content p img {
+    max-width: 1060px;
+}
+.about-article .content .p2 {
+    text-align: center;
+}
+.about-article .article-nav {
+    position: relative;
+    margin-top: 20px;
+}
+.about-article .article-nav .prev,
+.about-article .article-nav .next {
+    line-height: 25px;
+}
+.about-article .article-nav .prev,
+.about-article .article-nav .next,
+.about-article .article-nav .prev a,
+.about-article .article-nav .next a {
+    color: #FC7878;
+}
+.about-article .article-nav .share {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.about-article .article-nav .share span {
+    float: left;
+    color: #FC7878;
+}
+.about-article .article-nav .share a {
+    float: left;
+    width: 26px;
+    height: 25px;
+    margin-left: 10px;
+}
+.about-article .article-nav .share .a1 {
+    background-position: -74px -44px;
+}
+.about-article .article-nav .share .a2 {
+    background-position: -74px -76px;
+}

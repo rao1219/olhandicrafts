@@ -1,0 +1,221 @@
+<?php
+if(isset($_GET['act'])&&($_GET['act']=='profile'||$_GET['act']=='order_list'||$_GET['act']=='account_detail'||$_GET['act']=='account_recharge'||$_GET['act']=='myrenting'||$_GET['act']=='rent')){
+    switch($_GET['act']){
+    case 'profile':
+    $info = operate::getoneline("member","username='".$_SESSION['username']."'");
+    ?>
+
+<div class="member-infos fr w955">
+                    <h3 class="operate-title mt20">用户信息/信息修改</h3>
+                    <div class="infos">
+                        <div class="infos-item j-infos-item" style="display:block;">
+                            <form id="infosForm" name="formEdit" action="member.php?act=profile" method="post">
+                                <p class="p-item top-line">
+                                    <span class="tit">用户名</span> <i><?=$info['username']?></i>
+                                </p>
+                                <p class="p-item top-line">
+                                    <span class="tit">密码</span>
+                                    <input class="form-control" id="password"  name="password" type="password" value="" />(不修改请留空)
+                                </p>
+                                 <p class="p-item top-line">
+                                	<span class="tit">邮箱</span>
+                                    <input name="Email" type="text" class="form-control" value="<?=$info['Email']?>"/>
+                                </p>
+                                <p class="p-item top-line">
+                                	<span class="tit">姓名</span>
+                                    <input name="name" type="text" class="form-control" value="<?=$info['name']?>"/>
+                                </p>
+                                <p class="p-item top-line">
+                                	<span class="tit">手机</span>
+                                    <input name="phone" type="text" class="form-control" value="<?=$info['phone']?>"/>
+                                </p>
+                                <p class="p-item top-line">
+                                	<span class="tit">QQ</span>
+                                    <input name="qq" type="text" class="form-control" value="<?=$info['qq']?>"/>
+                                </p>
+                                <p class="p-item top-line" style="padding-bottom:50px;">
+                                    <input name="act" type="hidden" value="edit_profile" />
+                                    <input class="btn btn-danger confirm-modify"  name="submit" type="submit" value="确认修改"  style="border:none;" />
+                                </p>
+                            </form>
+                        </div>
+                        </div>
+                        
+                    </div>
+
+    <?php
+    break;
+    case 'order_list':break;
+    case 'rent':
+                $cat = operate::getmuchline("sort");
+    ?>
+    <script language="javascript" >  
+var http_request=false;  
+  function send_request(url){//初始化，指定处理函数，发送请求的函数  
+    http_request=false;  
+ //开始初始化XMLHttpRequest对象  
+ if(window.XMLHttpRequest){//Mozilla浏览器  
+  http_request=new XMLHttpRequest();  
+  if(http_request.overrideMimeType){//设置MIME类别  
+    http_request.overrideMimeType("text/xml");  
+  }  
+ }  
+ else if(window.ActiveXObject){//IE浏览器  
+  try{  
+   http_request=new ActiveXObject("Msxml2.XMLHttp");  
+  }catch(e){  
+   try{  
+   http_request=new ActiveXobject("Microsoft.XMLHttp");  
+   }catch(e){}  
+  }  
+    }  
+ if(!http_request){//异常，创建对象实例失败  
+  window.alert("创建XMLHttp对象失败！");  
+  return false;  
+ }  
+ http_request.onreadystatechange=processrequest;  
+ //确定发送请求方式，URL，及是否同步执行下段代码  
+    http_request.open("GET",url,true);  
+ http_request.send(null);  
+  }  
+  //处理返回信息的函数  
+  function processrequest(){  
+   if(http_request.readyState==4){//判断对象状态  
+     if(http_request.status==200){//信息已成功返回，开始处理信息  
+   document.getElementById('class3').innerHTML=http_request.responseText;  
+  }  
+  else{//页面不正常  
+   alert("您所请求的页面不正常！");  
+  }  
+   }  
+  }  
+  function getclass(obj){  
+   var pid=document.formEdit.select1.value;
+   document.getElementById(obj).innerHTML="<select id='class3' name='select2' style='width:150;'><option>loading...</option></select>";  
+   send_request('other/ajax.php?pid='+pid);  
+  }  
+</script>  
+    <script type="text/javascript" src="keditor/kindeditor-min.js"></script>
+                        <script type="text/javascript" src="keditor/lang/zh_CN.js"></script>
+                        <script>
+                        var editor;
+                        KindEditor.ready(function(K) {
+                            editor = K.create('textarea[name="content"]', {
+                                cssPath : 'keditor/plugins/code/prettify.css',
+                                uploadJson : 'keditor/php/upload_json.php',
+                                fileManagerJson : 'keditor/php/file_manager_json.php',
+                                allowFileManager : true
+                            });
+                        });
+                    </script>
+                    <div class="member-infos fr w955">
+                    <h3 class="operate-title mt20">发布新租用</h3>
+                    <div class="infos">
+                        <div class="infos-item j-infos-item" style="display:block;">
+                            <form id="infosForm" name="formEdit" action="member.php" method="post" enctype="multipart/form-data" >
+                                 <p class="p-item top-line">
+                                	<span class="tit">物品名称</span>
+                                    <input name="title" type="text" class="form-control" value=""/>
+                                </p>
+                                <p class="p-item top-line">
+                                	<span class="tit">物品分类</span>
+                                    <select class="form-control" name="class" style="width:200px;">
+                                    <?php
+                                    foreach($cat as $key=>$value){
+                                        echo "<option value='$value[0]'>$value[1]</option>";
+                                    }
+                                    ?>
+                                    </select>
+                                </p>
+                                
+                                <p class="p-item top-line">
+                                	<span class="tit">物品主图</span><input type="file" class="form-control" name="pic" />
+
+                                </p>
+
+                                 <p class="p-item top-line">
+                                	<span class="tit">地区</span>
+
+                                    <select name="select1" id="class1" style="width:150;" onChange="getclass('class2');">  
+                            <option selected value="">选择省</option>  
+                                      
+                             <?  
+                               $sql = "select id,city from city where parentid=0";  
+                               $result = mysql_query( $sql );  
+                               while($res = mysql_fetch_row($result)){  
+                             ?>  
+                                <option value="<? echo $res[0]; ?>"><? echo $res[1]; ?></option>  
+                              <? } ?>  
+                            </select>  
+                            <span id="class2"></span>
+                                    
+                                </p>
+                                <p class="p-item top-line">
+                                	<span class="tit">具体地址</span>
+                                    <input name="address" style="width:350px;" type="text" class="form-control" value=""/>(不用包括省市,具体到街道或小区)
+                                </p>
+
+                                <p class="p-item top-line">
+                                    <span class="tit">租金/天</span><input name="money" type="text" class="form-control" style="width:100px" value=""/>
+                                	<span class="tit">押金(元)</span>
+                                    <input name="deposit" type="text" class="form-control" style="width:100px"  value=""/>
+                                </p>
+                                <p class="p-item top-line">
+                                	<span class="tit">物品描述</span>
+                                
+                            <textarea id="textarea" name="content" style="width:700px;height:300px;visibility:hidden;"></textarea>
+                    
+
+                                </p>
+                                <p class="p-item top-line" style="padding-bottom:50px;">
+                                    <input name="act" type="hidden" value="rent" />
+                                    <input class="btn btn-danger confirm-modify"  name="submit" type="submit" value="发布出租"  style="border:none;" />
+                                </p>
+                            </form>
+                        </div>
+                        </div>
+                        
+                    </div>
+
+    <?php
+    break;
+    case 'account_detail':break;
+    case 'account_recharge':break;
+    }
+}else{
+?>
+
+<div class="member-index fr w955">
+				<div class="left fl">
+					<h3>亲爱的 <?=$_SESSION['username']?>， 欢迎您回到 E租时代！</h3>
+											</p>
+					<dl class="orders-items fl wfs">
+						<dt class="fl wfs">
+							<h4 class="fl">最新订单</h4>
+							<a class="btn btn-danger btn-xs fr" href="member.php?act=order_list">更多订单</a>
+						</dt>
+							<dd class="fl wfs" style="height: 450px;">
+                            <div class="orders-no fl wfs">
+                                <img src="http://member.ecmoban.com/content/themes/ecmoban2014/images/orders-no.png" alt="">
+                                <p>您最近还没有在E租时代租过东西哦，快去逛逛吧~</p>
+                            </div>
+                        </dd>
+											</dl>
+				</div>
+				
+				
+				<div class="right fr">
+					<div class="data">
+						<p><a href="member.php?act=profile">修改</a>您的资料</p>
+						<div>
+							<span class="qq">Q Q：<?php if($_SESSION['qq']==NULL){ echo '未填写'; }else{ echo $_SESSION['qq']; } ?></span>
+							<span class="phone">手机：<?php if($_SESSION['phone']==NULL){ echo '未填写'; }else{ echo $_SESSION['phone']; } ?></span>
+							<span class="email">邮箱：<?php if($_SESSION['Email']==NULL){ echo '未填写'; }else{ echo $_SESSION['Email']; } ?></span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+<?php
+}
+?>

@@ -1,0 +1,217 @@
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="style/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/css/index.css">
+    <script src="style/js/jquery.min.js"></script>
+    <script src="style/bootstrap/js/bootstrap.min.js"></script>
+    
+    <script type='text/javascript' src='style/js/jquery.lazyload.js'></script>
+    <script type="text/javascript">
+        $(function(){
+            $('img[data-original]').lazyload({effect:"fadeIn"});
+        })
+    </script>
+</head>
+<body>
+    <script type="text/javascript">
+var process_request = "正在处理您的请求...";
+</script>
+<div class="head fl wfs">
+    <div class="cover-page-wrapper">
+        <a class="fl" href="/"><img src="style/images/logo.png" alt="E租时代"></a>
+		<div class='listing fl' style="position: relative; width: 185px;height: 45px;text-align:center;" target="_blank" >
+			北京<br>
+                <a href="#"> [ 更换城市 ]</a></div>
+            <form id="searchForm" name="searchForm" method="get" action="category.php" onSubmit="return checkSearchForm()"  class="search-product fl">
+            <input name="k_template" type="hidden" class="k_value" value="0">
+            <input class="form-control search-box" name="keywords" autocomplete="off" type="text" id="keyword" value=""/>
+            <input class="submit" type="submit"   style="border:none; cursor:pointer;"> 
+            <div class="search-history j-search-history fz12">
+                <div class="left fl">
+                    <p class="txt fl">历史记录</p>
+                    <a href="javascript:;" onClick="clear_search()"><i class="delete fr">清除</i></a>
+                    <ul class="history-items fl wfs"></ul>                </div>
+                <div class="right fl">
+                    <p class="txt fl">热门搜索</p>
+                    <ul class="style-items fl wfs">
+                        <li><a target="_blank" href="#">相机</a></li>
+                        <li><a target="_blank" href="#">BOX</a></li>
+                        <li><a target="_blank" href="#">礼服</a></li>
+                </div>
+            </div>
+        </form>
+        <font id="ECS_MEMBERZONE">
+            <div class="head-operates-logined fr">
+            <?php if(isset($_SESSION['username'])){
+            ?>
+        	<div class="j-user-img"  style="width: 54px;height: 45px;float: right;">
+                <a href="/member.php"><img class="user-img" style="margin-top: -3px;" src="style/images/noavatar_middle.gif" width="45" height="45" alt=""></a>
+                <div class="logined j-logined" style="height: 194px;">
+                	<div style="border: 1px solid #ddd;background-color: #fff;position: absolute;">
+                    <em class="trangle"></em>
+                    <p class="logined-user">
+                        <b class="fl"><?=$_SESSION['username']?></b>
+                        <img class="user-img" style="margin-top: -3px; float:right;" src="style/images/noavatar_middle.gif" width="45" height="45" />
+                    </p>
+                    <ul class="logined-item">
+                        <li class="order"><i></i><a href="/member.php?act=order_list">订单中心</a></li>
+                        <li class="member"><i></i><a href="/member.php">会员中心</a></li>
+                    </ul>
+                    <p class="logined-operate fl wfs">
+                        <a class="quit" href="/logout.php">退出</a>
+                    </p>
+                    </div>
+                 </div>
+                 
+             </div>
+            <?php
+            }else{
+            ?>
+             <a href="/register.php" class="register">注册</a>
+             <a href="/login.php" class="login">登录</a>
+             </p>
+             <?php } ?>
+        </div>
+     </font>
+    </div>
+</div>
+<script type="text/javascript" src="style/js/utils.js"></script>
+<script type="text/javascript">
+    
+        <!--
+        function checkSearchForm()
+        {
+            if(document.getElementById('keyword').value)
+            {
+                return true;
+            }
+            else
+            {
+                alert("请输入搜索关键词！");
+                return false;
+            }
+        }
+        -->
+    
+</script>
+<script src="style/js/nav.js"></script>
+<div style="height: 48px;background-color: #323231;" class="fl wfs">
+    <div class="nav fl wfs j-nav">
+        <div class="cover-page-wrapper cover-page-wrapper2 clearfix">
+            <div class="nav-menus j-nav-menus fl">
+                <a class="handle" href="category.php"><i></i>所有出租</a>
+                <div class="categorys j-categorys">
+                    <i class="category-trangle-bg"></i>
+                    <div class="categorys-box fl wfs" style="border-left:0;">
+                        <h4 class="title fl wfs">所有物品</h4>
+                        <dl class="dl-categorys-item fl wfs">
+                            <dt class="dt-categorys-item"><a>按地区</a></dt>
+                            <dd class="dd-categorys-item">
+                                <a target="_blank" href="category.php">全国</a> | 
+                                <a target="_blank" href="category.php">本地</a> 
+                            </dd>
+                            <dt class="dt-categorys-item"><a>按分类</a></dt>
+                            <dd class="dd-categorys-item">
+                                <a target="_blank" href="category.php">礼服</a> <br>
+                                <a target="_blank" href="category.php">户外装备</a><br>
+                                <a target="_blank" href="category.php">大型箱包</a> <br>
+                                <a target="_blank" href="category.php">摄影设备</a>&nbsp;<br>
+                                <a target="_blank" href="category.php">企业大型机</a> <br>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="categorys-box fl wfs">
+                        <h4 class="title fl wfs">礼服</h4>
+                        <dl class="dl-categorys-item fl wfs">
+                            <dt class="dt-categorys-item"><a>列别一</a></dt>
+                            <dd class="dd-categorys-item">
+                                <a target="_blank" href="category.php">旗袍</a><br>
+                                <a target="_blank" href="category.php">晚装</a> 
+                            </dd>
+                            <dt class="dt-categorys-item"><a>列别二</a></dt>
+                            <dd class="dd-categorys-item">
+                                <a target="_blank" href="category.php">连衣裙</a><br>
+                                <a target="_blank" href="category.php">婚纱</a> <br>
+                                <a target="_blank" href="category.php">民族服装/舞台装</a> <br>
+                                <a target="_blank" href="category.php">其他</a> 
+                            </dd>
+                        </dl>
+                    </div>
+                     <div class="categorys-box fl wfs">
+                        <h4 class="title fl wfs">户外装备</h4>
+                        <dl class="dl-categorys-item fl wfs">
+                            <dt class="dt-categorys-item"><a>户外装备</a></dt>
+                            <dd class="dd-categorys-item">
+                                <a target="_blank" href="category.php">帐篷/垫子</a><br>
+                                <a target="_blank" href="category.php">睡袋/吊床</a> <br>
+                                <a target="_blank" href="category.php">户外照明</a> <br>
+                                <a target="_blank" href="category.php">野餐烧烤</a> <br>
+                                <a target="_blank" href="category.php">睡袋/吊床</a> <br>
+                                <a target="_blank" href="category.php">滑雪装备</a> 
+                            </dd>
+                            <dt class="dt-categorys-item"><a>户外鞋服</a></dt>
+                            <dd class="dd-categorys-item">
+                                <a target="_blank" href="category.php">滑雪服</a><br>
+                                <a target="_blank" href="category.php">沙滩/凉拖</a> <br>
+                                <a target="_blank" href="category.php">其他</a>
+                            </dd>
+                        </dl>
+                    </div> <div class="categorys-box fl wfs">
+                        <h4 class="title fl wfs">大型箱包 </h4>
+                        <dl class="dl-categorys-item fl wfs">
+                            <dt class="dt-categorys-item"><a>大型箱包</a></dt>
+                            <dd class="dd-categorys-item">
+                                <a target="_blank" href="category.php">拉杆箱/拉杆包</a><br>
+                                <a target="_blank" href="category.php">旅行配件</a> <br>
+                                <a target="_blank" href="category.php">登山包</a> <br>
+                                <a target="_blank" href="category.php">其他大型包</a> 
+                            </dd>
+                        </dl>
+                    </div> <div class="categorys-box fl wfs">
+                        <h4 class="title fl wfs">摄影设备 </h4>
+                        <dl class="dl-categorys-item fl wfs">
+                            <dt class="dt-categorys-item"><a>摄影设备</a></dt>
+                            <dd class="dd-categorys-item">
+                                <a target="_blank" href="category.php">摄像机</a> <br>
+                                <a target="_blank" href="category.php">运动相机</a> <br>
+                                <a target="_blank" href="category.php">拍立得</a> <br>
+                                <a target="_blank" href="category.php">户外器材</a> <br>
+                                <a target="_blank" href="category.php">镜头</a><br>
+                                <a target="_blank" href="category.php">单反相机</a><br>
+                                <a target="_blank" href="category.php">摄影灯</a><br>
+                                <a target="_blank" href="category.php">单电/微单相机</a><br>
+                                <a target="_blank" href="category.php">摄影棚</a> <br>
+                        </dl>
+                    </div> <div class="categorys-box fl wfs">
+                        <h4 class="title fl wfs">企业大型机</h4>
+                        <dl class="dl-categorys-item fl wfs">
+                            <dt class="dt-categorys-item"><a>大型机</a></dt>
+                            <dd class="dd-categorys-item">
+                                <a target="_blank" href="category.php">打捆机</a><br>
+                                <a target="_blank" href="category.php">喷杆式喷雾机</a><br>
+                                <a target="_blank" href="category.php">巨型机</a><br>
+                                <a target="_blank" href="category.php">超级计算机</a><br>
+                                <a target="_blank" href="category.php">发电机</a><br>
+                                <a target="_blank" href="category.php">其他大型机</a>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="categorys-concact">
+                        <strong>欢迎来到E租时代</strong>
+                    </div>
+                </div>
+            </div>
+            <a class="channel" href="/">首页<span></span></a>
+                        <a class="channel <?php if(@$wherenow==1) echo 'channel-now'; ?>" href="nearby.php" >周边出租<span></span></a>
+                        <a class="channel <?php if(@$wherenow==2) echo 'channel-now'; ?>" href="category.php"  >随意浏览<span></span></a>
+                        <a class="channel <?php if(@$wherenow==3) echo 'channel-now'; ?>" href="communicate.php"  >租友交流<span></span></a>
+                        <div class="cart" id="ECS_CARTINFO" style="position:relative;z-index: 15;">
+             <a href="flow.php" title="查看购物车"><i></i><span>待租物</span><strong>0</strong></a>
+<ul class="car_ul" style="padding:35px; background:#fff;position: absolute;top: 47px;text-align: center;width:405px;*height: 30px;*width:325px;right:-1px;border: 1px solid #ddd;display:none;">
+	<img src="style/images/cart_car.png"/>
+	<a href="#" style="color:#ccc;">您还没有加入任何待租商品哦~</a>
+</ul>
+
+            </div>
+        </div>
+    </div>
+</div>

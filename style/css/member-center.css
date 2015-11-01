@@ -1,0 +1,2378 @@
+@charset "UTF-8";
+/**
+ * 会员中心 css
+ * @authors Your Name (you@example.org)
+ * @date    2014-08-13 13:17:53
+ * @version $Id$
+ */
+/*
+ * 基层
+ * jiao
+ * 2014-08-29
+ */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img {
+    margin:0;
+    padding:0;
+}
+a:active,
+a:focus,
+a {
+    outline: none;
+}
+body {
+    font-family: "Microsoft YaHei", "微软雅黑", "SimSun", "宋体";
+    width: auto;
+    min-width: 1210px;
+    background-color: transparent;
+}
+li {
+    list-style-type: none;
+}
+a{cursor: pointer;}
+.clear { clear: both; }
+.fl { float: left; }
+.fr { float: right; }
+.fz12 { font-size: 12px; }
+.wfs { width: 100%; }
+.t_c{text-align: center;}
+.t_c th{text-align: center;}
+.t_r{text-align: right;}
+/*
+ * 公用
+ * jiao
+ * 2014-08-29
+ */
+.module {
+    padding-bottom: 20px;
+    background-color: #F5F5F5;
+}
+.wrapper {
+    width: 1200px;
+    margin: 0 auto;
+}
+.w955 {
+    width: 955px;
+    background-color: #fff;
+}
+.mt20 {
+    margin-top: 20px;
+}
+.pd120 {
+    padding-bottom: 120px;
+}
+
+.upload_sub input{
+    border: medium solid transparent;
+    cursor: pointer;
+    margin: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.upload .thumb_img .img-thumbnail{
+    margin: 10px 0px 5px 5px;
+}
+
+/*顶部 css*/
+.top {
+    line-height: 40px;
+    color: #fff;
+    background-color: #192229;
+}
+.top .right a {
+    padding-left: 5px;
+    color: #fff;
+}
+/*头部 css*/
+.head {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    background-color: #fff;
+}
+.head .logo {
+    float: left;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+.head .nav a{
+    float: left;
+    width: 70px;
+    margin-left: 60px;
+    padding-top: 35px;
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    background-image: url(../images/member-center-sprites.png);
+    background-repeat: no-repeat;
+}
+.head .nav a:hover {
+    color: #EF353D;
+    text-decoration: none;
+}
+.head .nav a.index {
+    background-position: 22px 0;
+}
+.head .nav a.order {
+    background-position: 22px -74px;
+}
+.head .nav a.member {
+    background-position: 22px -160px;
+}
+.head .nav a.account {
+    background-position: 22px -247px;
+}
+.head .nav a.service {
+    background-position: 22px -315px;
+}
+.head .nav a.member-now {
+    background-position: 22px -1645px;
+}
+.head .nav a.order-now {
+    background-position: 22px -1568px;
+}
+.head .nav a.account-now {
+    background-position: 22px -1733px;
+}
+.head .nav a.service-now {
+    background-position: 22px -1814px;
+}
+/*左侧菜单 css*/
+.menu {
+    width:245px;
+    background-color: #F5F5F5;
+}
+.menu-body {
+    width: 230px;
+    background-color: #2D353C;
+}
+.menu-body .infos {
+    padding-top: 22px;
+    padding-bottom: 22px;
+    background-color: #192229;
+}
+.menu-body .infos img {
+    width: 60px;
+    height: 60px;
+    margin-left: 22px;
+    margin-right: 22px;
+    border-radius: 30px;
+}
+.menu-body .infos span {
+    width: 120px;
+    color: #fff;
+    margin-top: 10px;
+}
+.menu-body .infos i {
+    margin-top: 5px;
+    font-size: 12px;
+    font-style: normal;
+    color: #819097;
+}
+.menu-body .index {
+    margin-bottom: 0;
+    line-height: 42px;
+    color: #fff;
+    text-indent: 22px;
+    background-color: #00ACAC;
+}
+.menu-b2 {
+    padding-bottom: 0;
+}
+.menu-dl dt {
+    position: relative;
+    height: 45px;
+    font-weight: normal;
+    line-height: 45px;
+    color: #A8ACB1;
+    text-indent: 44px;
+    background-image: url(../images/member-center-sprites.png);
+    background-repeat: no-repeat;
+    background-position: 200px -368px;
+    cursor: default;
+}
+.menu-dl dt i {
+    position: absolute;
+    left: 18px;
+    top: 15px;
+    float: left;
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/member-center-sprites.png);
+    background-repeat: no-repeat;
+}
+.menu-dl dt.order i {
+    background-position: -145px 1px;
+}
+.menu-dl dt.member i {
+    background-position: -146px -72px;
+
+}
+.menu-dl dt.account i {
+    background-position: -145px -144px;
+
+}
+.menu-dl dt.service i {
+    background-position: -145px -232px;
+}
+.menu-dl dd {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #192229;
+}
+.menu-dl dd p{
+    line-height: 25px;
+    text-indent: 44px;
+    height: 25px;
+}
+.menu-dl dd a{
+    font-size: 12px;
+    color: #A8ACB1;
+}
+.menu-dl dd a.demo-dd-a-now {
+    color: #fff;
+}
+/*操作*/
+.operate-title {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 1px solid #F5F5F5;
+}
+.operate-items {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    overflow: hidden;
+}
+.operate-items a {
+    float: left;
+    margin-right: 5px;
+    padding: 3px 15px;
+    font-size: 12px;
+    color: #333;
+    background-color: #F5F5F5;
+}
+.operate-items a:hover {
+    color: #fff;
+    text-decoration: none;
+    background-color: #00ACAC;
+}
+.operate-items .now {
+    color: #fff;
+    background-color: #00ACAC;
+}
+.operate-items .now:hover,
+.operate-items .now:focus {
+    color: #fff;
+    text-decoration: none;
+}
+/*订单列表*/
+.order-msg {
+    height: 40px;
+    font-size: 12px;
+    line-height: 40px;
+    background-color: #F0F3F4;
+}
+.order-msg span {
+    float: left;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+.order-msg span i {
+    font-style: normal;
+    font-size: 12px;
+    color: #00ACAC;
+}
+.order-content {
+   padding-top: 20px;
+   padding-bottom: 20px;
+}
+.order-content img {
+   float: left;
+   width: 70px;
+   height: 70px;
+   overflow: hidden;
+   margin-left: 20px;
+}
+.order-content .title {
+    float: left;
+    /*margin-top: 15px;*/
+    margin-left: 15px;
+    display:table;
+    height:70px;
+}
+.order-content .title div{
+	display:table-cell;
+	vertical-align: middle;
+}
+.order-content a  {
+    font-size: 12px;
+    color: #494949;
+}
+/*问题下拉选项*/
+.problem-drop-down .products,
+.problem-drop-down .titles {
+    position: relative;
+    width: 280px;
+}
+.problem-drop-down .select-products,
+.problem-drop-down .select-titles {
+    width: 280px;
+    *width: 248px;
+    height: 36px;
+    *height: 34px;
+    padding-left: 10px;
+    padding-right: 20px;
+    line-height: 36px;
+    *line-height: 34px;
+    background-image: url(../images/member-center-sprites.png);
+    background-repeat: no-repeat;
+    background-position: 262px -670px;
+    border-left: 1px solid #CFCFCF;
+    border-top: 1px solid #CFCFCF;
+    border-right: 1px solid #CFCFCF;
+    border-bottom: 1px solid #F0F0F0;
+    cursor: pointer;
+}
+.problem-drop-down .select-products span,
+.problem-drop-down .select-titles span {
+    white-space: nowrap;
+    overflow: hidden;
+}
+.problem-drop-down div.products-items,
+.problem-drop-down div.titles-items {
+    position: absolute;
+    left: 0;
+    top: 35px;
+    display: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #fff;
+    border-top: 1px solid #F0F0F0;
+    border-left: 1px solid #CFCFCF;
+    border-right: 1px solid #CFCFCF;
+    border-bottom: 1px solid #CFCFCF;
+}
+.problem-drop-down .products,
+.problem-drop-down .products-items {
+    z-index: 10;
+}
+.problem-drop-down .titles,
+.problem-drop-down .titles-items {
+    z-index: 5;
+}
+.problem-drop-down .products-items {
+    width: 360px;
+    *width: 358px;
+}
+.problem-drop-down .titles-items {
+    width: 280px;
+    *width: 278px;
+}
+.problem-drop-down .products-items span,
+.problem-drop-down .titles-items span {
+    float: left;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-indent: 10px;
+    cursor: pointer;
+}
+.problem-drop-down .products-items span:hover,
+.problem-drop-down .titles-items span:hover {
+    background-color: #eee;
+}
+/*分页*/
+/*.pages {
+    float: right;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+.pages li a {
+    float: left;
+    margin-left: 5px;
+    color: #333;
+    border-radius: 3px;
+}
+.pages li a:hover {
+    color: #EF353D;
+}
+.pages li.active a {
+    background-color: #EF353D;
+    border: 0;
+}
+.pages li.active a:hover {
+    background-color: #F05A50;
+}*/
+.pages {
+    float: right;
+    margin-top: 20px;
+    margin-right: 50px;
+}
+.pages li a {
+    float: left;
+    margin-left: 5px;
+    color: #333;
+    border-radius: 3px;
+}
+.pages li a i.page-bg{
+    display: inline-block;
+    line-height: 1;
+    position: relative;
+    top: 1px;
+    width: 10px;
+    height: 15px;
+    overflow: hidden;
+    background: url('../images/page_bg.png');
+}
+.pages li a:hover i.page-bg{
+    background-position:9px 0px;
+}
+.pages li a i.page-right{
+    background-position:0px 15px;
+}
+.pages li a:hover i.page-right{
+    background-position:10px 15px;
+}
+.pages li a:hover {
+    color: #EF353D;
+}
+.pages li.active a {
+    background-color: #EF353D;
+    border: 1px solid #EF353D;
+}
+.pages li.active a:hover {
+    background-color: #F05A50;
+}
+/*底部*/
+.foot {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 12px;
+    text-align: center;
+    background-color: #192229;
+}
+.foot p {
+    line-height: 25px;
+    color: #9A9EA3;
+}
+/* 以下就是--会员中心--频道不同页面的专属css */
+
+/*
+ * 会员中心--首页
+ * jiao
+ * 2014-09-04
+ */
+/*left css*/
+.member-index .left {
+    width: 550px;
+    *width: 500px;
+    padding: 25px;
+}
+.member-index .left .msg {
+    margin-top: 10px;
+    color: #676767;
+}
+.member-index .left .msg span {
+    color: #EF353D;
+}
+.member-index .left .orders-items dt {
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.member-index .left .orders-items dt a {
+    padding: 3px 10px;
+    background-color: #FF5B57;
+    border: 0;
+}
+.member-index .left .orders-items dt a:hover {
+    background-color: #EA5050;
+}
+.member-index .left .orders-items dd.item {
+    margin-top: 10px;
+    /*padding-bottom: 20px;*/
+    border: 1px solid #F0F3F4;
+}
+.member-index .left .orders-items dd.item .title {
+    width: 120px;
+}
+.member-index .left .orders-items dd.item .order-content span,
+.member-index .left .orders-items dd.item .order-content b {
+    float: left;
+    margin-top: 20px;
+    font-size: 12px;
+}
+.member-index .left .orders-items dd.item .order-content span {
+    margin-left: 30px;
+    color: #EF353D;
+}
+.member-index .left .orders-items dd.item .order-content b {
+    width: 70px;
+    margin-left: 50px;
+    font-weight: normal;
+    text-align: center;
+}
+/*right css*/
+.member-index .right {
+    width: 400px;
+    *width: 380px;
+    padding-right: 25px;
+}
+.member-index .right .data {
+    margin-top: 20px;
+    background-color: #348FE2;
+}
+.member-index .right .data p {
+    padding-left: 17px;
+    padding-right: 17px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    background-color: #1F5688;
+}
+.member-index .right .data p a{
+    float: right;
+    color: #fff;
+}
+.member-index .right .data div {
+    padding: 5px 17px 15px;
+    background-image: url(../images/member-center-sprites.png);
+    background-repeat: no-repeat;
+    background-position: 275px -416px;
+}
+.member-index .right .data div span {
+    display: block;
+    line-height: 30px;
+    color: #fff;
+    padding-left: 30px;
+    background-image: url(../images/member-center-sprites.png);
+    background-repeat: no-repeat;
+}
+.member-index .right .data div .qq {
+    background-position: -146px -290px;
+}
+.member-index .right .data div .phone {
+    background-position: -148px -355px;
+}
+.member-index .right .data div .email {
+    background-position: -146px -410px;
+}
+/* 营销顾问 */
+.member-index .right .data2 {
+    margin-top: 20px;
+    background-color: #00acac;
+}
+.member-index .right .data2 p {
+    padding-left: 17px;
+    padding-right: 17px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    background-color: #006767;
+}
+.member-index .right .data2 p a{
+    float: right;
+    color: #fff;
+}
+.member-index .right .data2 div {
+    padding: 5px 17px 0px;
+    background-position: 275px -416px;
+}
+
+.member-index .right .data2 div span {
+    display: block;
+    line-height: 30px;
+    color: #fff;
+    padding-left: 30px;
+	margin-left:-28px;
+}
+
+
+/*
+ * 会员中心--订单列表
+ * jiao
+ * 2014-09-04
+ */
+.orders {
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.orders-items .item {
+    position: relative;
+    /*padding-bottom: 20px;*/
+    margin-bottom: 20px;
+    border: 1px solid #F0F3F4;
+}
+.orders-items .item .order-msg .date {
+    float: left;
+    margin-left: 230px;
+    font-size: 12px;
+}
+.orders-items .item .order-msg .receipt {
+    float: right;
+    margin-right: 60px;
+    font-size: 12px;
+}
+.orders-items .item .order-content .title {
+    width: 240px;
+}
+.orders-items .item .order-content .title a:hover {
+    color: #EF353D;
+}
+/*.orders-items .item .order-content .price {
+    float: left;
+    margin-left: 200px;
+    font-size: 12px;
+    line-height: 70px;
+    color: #EF353D;
+}
+.orders-items .item .order-content b {
+    float: right;
+    margin-right: 60px;
+    margin-top: 20px;
+    font-size: 12px;
+    font-weight: normal;
+    text-align: center;
+}*/
+.orders-items .item .order-price-details {
+    position: absolute;
+    right: 20px;
+    /*top: 60px;*/
+    top:50%;
+    padding-top:12px;
+}
+.orders-items .item .order-price-details .price {
+    float: left;
+    margin-right: 50px;
+    font-size: 12px;
+    /*line-height: 70px;*/
+    color: #EF353D;
+}
+.orders-items .item .order-price-details b {
+    float: right;
+    /*margin-top: 30px;*/
+    margin-right: 40px;
+    font-size: 12px;
+    font-weight: normal;
+    text-align: center;
+    /*line-height: 70px;*/
+}
+/*
+ * 会员中心--我的工单提醒
+ * jiao
+ * 2014-09-04
+ */
+.member-ticket-reminder .ticket-top {
+    height: 60px;
+    line-height: 60px;
+    border-bottom: 1px solid #F5F5F5;
+}
+.member-ticket-reminder .ticket-top .my-remind {
+    margin-left: 25px;
+    font-size: 20px;
+    line-height: 60px;
+}
+
+.member-ticket-reminder .ticket-top .forward,
+.member-ticket-reminder .ticket-top .back-to-list {
+    color: #00ACAC;
+}
+.member-ticket-reminder .ticket-top .forward {
+    margin-left: 20px;
+}
+.member-ticket-reminder .ticket-top .back-to-list {
+    margin-right: 20px;
+}
+.member-ticket-reminder .quests {
+    width: 914px;
+    padding-left: 20px;
+}
+.member-ticket-reminder .quests-title {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+.member-ticket-reminder .quests-infos {
+    border: 1px solid #DFDFDF;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+}
+.member-ticket-reminder .quests-infos p {
+    line-height: 30px;
+}
+.member-ticket-reminder .quests-infos p span {
+    float: left;
+    width: 75px;
+    text-align: right;
+}
+/*状态*/
+.member-ticket-reminder .status {
+    position: relative;
+    width: 914px;
+    height: 5px;
+    margin-top: 66px;
+    margin-left: 20px;
+    background-color: #EDEDED;
+}
+.member-ticket-reminder .status b.red {
+    display: block;
+    width: 1px;
+    height: 5px;
+    background-color: #FF9C9C;
+}
+.member-ticket-reminder .status p.accept,
+.member-ticket-reminder .status p.deal-width,
+.member-ticket-reminder .status p.confirm,
+.member-ticket-reminder .status p.evaluate {
+    position: absolute;
+    top: -41px;
+    width: 50px;
+    text-align: center;
+}
+.member-ticket-reminder .status p.accept {
+    left: 100px;
+}
+.member-ticket-reminder .status p.deal-width {
+    left: 329px;
+}
+.member-ticket-reminder .status p.confirm {
+    left: 552px;
+}
+.member-ticket-reminder .status p.evaluate {
+    left: 786px;
+}
+.member-ticket-reminder .status p span {
+    display: block;
+}
+.member-ticket-reminder .status p i {
+    display: block;
+    width: 25px;
+    height: 25px;
+    margin-left: 12px;
+    margin-top: 10px;
+    font-style: normal;
+    line-height: 25px;
+    color: #fff;
+    text-align: center;
+    background-image: url(../images/circle-member.png);
+    background-repeat: no-repeat;
+    background-position: 0 -27px;
+    cursor: default;
+}
+.member-ticket-reminder .status p.evaluate i {
+    color: #333;
+    background-position: 0 0;
+}
+.member-ticket-reminder .confirm-degree {
+    margin-top: 45px;
+    margin-left: 20px;
+}
+.member-ticket-reminder .confirm-degree a {
+    /*padding: 10px 20px;
+    border: 0;*/
+}
+.member-ticket-reminder .confirm-degree a.yes {
+    background-color: #EF353D;
+}
+.member-ticket-reminder .confirm-degree a.yes:hover {
+    background-color: #E0554D;
+}
+.member-ticket-reminder .confirm-degree a.no {
+    margin-left: 15px;
+    color: #363636;
+    background-color: #E1E1E1;
+}
+.member-ticket-reminder .confirm-degree a.no:hover {
+    background-color: #C6C6C6;
+}
+/*提交其它问题*/
+.member-ticket-reminder .other-quest {
+    width: 915px;
+    height: 40px;
+    /*margin-top: 34px;
+    margin-left: 20px;*/
+    line-height: 36px;
+    text-indent: 34px;
+    background: #FFF7D1 url(../images/sigh.gif) no-repeat 12px center;
+    border: 1px solid #E5DDBB;
+}
+.member-ticket-reminder .satisfy-radio{
+    color: #888;
+    padding-left:5px;
+    font-weight:normal;
+}
+
+/*沟通记录 */
+.member-ticket-reminder .communicate-record {
+    width: 915px;
+    margin-top: 51px;
+    margin-left: 20px;
+}
+.member-ticket-reminder .communicate-record .title {
+    display: block;
+    font-size: 14px;
+    padding-bottom: 15px;
+}
+.member-ticket-reminder .communicate-record .area {
+    width: 915px;
+    padding-bottom: 30px;
+    border: 1px solid #ddd;
+}
+.member-ticket-reminder .communicate-record .customer .avatar,
+.member-ticket-reminder .communicate-record .admin .avatar {
+    width: 40px;
+    height: 40px;
+    /*margin-top: 30px;*/
+    border-radius: 20px;
+}
+.member-ticket-reminder .communicate-record .customer .name-date,
+.member-ticket-reminder .communicate-record .admin .name-date {
+    display: block;
+    font-size: 12px;
+    line-height: 30px;
+    color: #888;
+    width: auto;
+}
+.member-ticket-reminder .communicate-record .customer .content,
+.member-ticket-reminder .communicate-record .admin .content {
+    max-width: 800px;
+    padding: 5px 20px;
+    font-size: 12px;
+    line-height: 25px;
+    color: #232323;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.member-ticket-reminder .communicate-record .customer {
+    margin-top: 15px;
+    margin-left: 15px;
+}
+.member-ticket-reminder .communicate-record .customer .right {
+    /*width: 350px;*/
+    margin-left: 5px;
+}
+.member-ticket-reminder .communicate-record .customer .content {
+    background-color: #F0F3F4;
+    border: 1px solid #E1E3E5;
+}
+.member-ticket-reminder .communicate-record .admin {
+    margin-top: 15px;
+    margin-right: 15px;
+}
+.member-ticket-reminder .communicate-record .admin .left {
+    float: right;
+    /*width: 350px;*/
+    margin-right: 16px;
+}
+.member-ticket-reminder .communicate-record .admin .avatar {
+    /*margin-right: 20px;*/
+}
+.member-ticket-reminder .communicate-record .admin .content {
+    background-color: #CCDFF2;
+    border: 1px solid #E5F5FF;
+}
+.member-ticket-reminder .communicate-record .admin .content img {
+    max-width: 760px;
+}
+/*留言反馈*/
+.member-ticket-reminder .feedback {
+    width: 915px;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+.member-ticket-reminder .feedback .title {
+    display: block;
+    font-size: 14px;
+    padding-bottom: 15px;
+}
+.member-ticket-reminder .feedback-content {
+    border: 1px solid #ddd;
+    width: 915px;
+    padding: 15px;
+    outline: none;
+}
+.member-ticket-reminder .feedback .txt {
+    margin-top: 10px;
+    color: #555;
+}
+.member-ticket-reminder .feedback .txt span {
+    padding-left:2px;
+    padding-right: 2px;
+    color: #EF353D;
+}
+.member-ticket-reminder .feedback .upload {
+    margin-top: 20px;
+}
+.member-ticket-reminder .feedback .upload-file {
+    margin-right: 20px;
+    padding: 3px 20px;
+    border: 0;
+    border-radius: 0;
+    background-color: #00ACAC;
+}
+.member-ticket-reminder .feedback .upload-file:hover {
+    background-color: #009090;
+}
+.member-ticket-reminder .feedback .submit {
+    margin-top: 30px;
+    padding: 8px 50px;
+    background-color: #EF353D;
+    border: 0;
+}
+.member-ticket-reminder .feedback .submit:hover {
+    background-color: #E8554D;
+}
+/*弹出框*/
+.member-ticket-reminder .complaint {
+    position: absolute;
+    left: 0;
+    top: 40px;
+    width: 450px;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+}
+/*
+ * 会员中心--用户信息
+ * jiao
+ * 2014-09-04
+ */
+.member-infos .infos {
+    position: relative;
+   /*padding-left: 80px;*/
+}
+.member-infos .infos .avatar-modify {
+    position: absolute;
+    left: 750px;
+    top: 50px;
+    z-index: 3000;
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    overflow: hidden;
+}
+.member-infos .infos .avatar-modify img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 120px;
+    height: 120px;
+}
+.member-infos .infos .avatar-modify b {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 31px;
+    width: 150px;
+    background-color: #000;
+    opacity: 0.3;
+    filter:alpha(opacity=30);
+}
+.member-infos .infos .avatar-modify a {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+    height: 31px;
+    width: 120px;
+    font-size: 12px;
+    line-height: 31px;
+    color: #fff;
+    text-align: center;
+}
+.member-infos .infos-item {
+    float: left;
+    width: 100%;
+    /*margin-top: 15px;*/
+    padding: 20px;
+    padding-top: 0px;
+}
+.member-infos .infos-item .p-item {
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+}
+.member-infos .member_safe{
+	padding: 50px 0;
+	margin-left: 80px;
+	clear: both;
+	width: 530px;
+	border-top: 1px solid #ddd;
+}
+.member-infos .member_safe div{
+	margin-top:25px;
+	padding-left:20px;
+}
+.member-infos .member_safe .submit_div{
+	/*border-radius: 5px;*/
+	border: 1px solid #ddd;
+	padding: 15px;
+}
+
+.member-infos .infos-item .top-line{
+	margin-top:0px;
+	padding-left:80px;
+	padding-bottom:15px;
+}
+.member-infos .infos-item .p-item .tit {
+    float: left;
+    width: 65px;
+    margin-right: 15px;
+    font-size: 12px;
+    line-height: 34px;
+    text-align: right;
+}
+.member-infos input[type="text"]{
+    float: left;
+    width: 282px;
+    height: 34px;
+    margin-right: 10px;
+    *padding: 0;
+    *line-height: 34px;
+    *padding-left: 15px;
+    border-radius: 0;
+}
+.member-infos .infos-item .p-item input {
+    float: left;
+    width: 282px;
+    height: 34px;
+    margin-right: 10px;
+    *padding: 0;
+    *line-height: 34px;
+    *padding-left: 15px;
+    border-radius: 0;
+}
+.member-infos .infos-item .p-item select {
+    margin-top: 5px;
+}
+.member-infos .infos-item .p-item b,
+.member-infos .infos-item .p-item i {
+    float: left;
+    line-height: 34px;
+}
+.member-infos .infos-item .p-item b {
+    margin-right: 10px;
+    font-weight: normal;
+    font-size: 12px;
+}
+.member-infos .infos-item .p-item i {
+    font-style: normal;
+    color: #00ACAC;
+}
+.member-infos .infos-item .p-item .email-modify {
+    font-size: 12px;
+    line-height: 34px;
+    color: #FE7B74;
+}
+.member-infos .infos-item .p-item .email-modify:hover {
+    color: #FE7B74;
+}
+.member-infos .infos-item .p-item #vericode {
+    width: 80px;
+}
+.member-infos .infos-item .p-item .vericode2 {
+    margin-top: 5px;
+    *margin-top: 8px;
+}
+.member-infos .infos-item .p-item .confirm-modify {
+    width: 118px;
+    height: 42px;
+    margin-left: 80px;
+    background-color: #EF353D;
+    border-radius: 5px;
+}
+/*
+ * 会员中心--我的收藏
+ * jiao
+ * 2014-09-04
+ */
+.member-favorite .favorite {
+    padding-right: 20px;
+}
+.member-favorite .favorite-items {
+    float: left;
+    margin-top: 20px;
+    *margin-bottom: 20px;
+}
+.member-favorite .favorite-items li.item {
+    float: left;
+    width: 914px;
+    height: 110px;
+    *width: 874px;
+    *height: 70px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #F0F3F4;
+}
+.member-favorite .favorite-items li.item p {
+    float: left;
+    width: 300px;
+}
+.member-favorite .favorite-items li.item p img {
+    margin-right: 10px;
+}
+.member-favorite .favorite-items li.item p a {
+    font-size: 12px;
+    color: #333;
+}
+.member-favorite .favorite-items li.item span {
+   float: left;
+   margin-left: 100px;
+   font-size: 12px;
+   line-height: 70px;
+}
+.member-favorite .favorite-items li.item b {
+    float: right;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 70px;
+}
+.member-favorite .favorite-items li.item b a {
+    float: left;
+    color: #06B0B9;
+}
+.member-favorite .favorite-items li.item b i {
+    float: left;
+    width: 1px;
+    height: 8px;
+    margin-top: 31px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-image: url(../images/member-center-sprites.png);
+    background-repeat: no-repeat;
+    background-position: -152px -459px;
+}
+
+/*
+ * 会员中心--我的评论
+ * jiao
+ * 2014-09-04
+ */
+.comment-items {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.comment-items li.item {
+    float: left;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #EBEBEB;
+}
+.comment-items li.item img {
+    float: left;
+    margin-right: 20px;
+}
+.comment-items li.item .content {
+    float: left;
+    width: 630px;
+}
+.comment-items li.item .content .title,
+.comment-items li.item .content .ask,
+.comment-items li.item .content .answer {
+    float: left;
+    width: 100%;
+    margin-bottom: 8px;
+}
+.comment-items li.item .content .title span {
+    float: left;
+}
+.comment-items li.item .content .title span b {
+    padding-right: 5px;
+    padding-left: 5px;
+    font-weight: normal;
+    color: #24B2B2;
+}
+.comment-items li.item .content .title i {
+    float: right;
+    font-size: 12px;
+    font-style: normal;
+}
+.comment-items li.item .content .ask {
+    font-size: 12px;
+    line-height: 20px;
+    color: #888;
+}
+.comment-items li.item .content .answer {
+    font-size: 12px;
+    color: #EF353D;
+}
+.comment-items li.item .add-comment {
+    float: right;
+    padding: 10px 20px;
+    font-size: 12px;
+    background-color: #EF353D;
+    border: 0;
+}
+.comment-items li.item .add-comment:hover {
+    background-color: #E8554D;
+}
+.comment-items li.item .comment-box {
+    position: relative;
+    float: left;
+    display: none;
+    width: 914px;
+    *width: 872px;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #F5F5F5;
+    border: 1px solid #DDDDDD;
+}
+.comment-items li.item .comment-box i {
+    position: absolute;
+    left: 830px;
+    top: -14px;
+    width: 16px;
+    height: 14px;
+    background-image: url(../images/member-center-sprites.png);
+    background-repeat: no-repeat;
+    background-position: -144px -492px;
+}
+.comment-items li.item .comment-box #textarea-add {
+    *width: 845px;
+    height: 90px;
+    border-radius: 0;
+}
+.comment-items li.item .comment-box .submit-comment {
+    margin-top: 15px;
+    padding: 8px 20px;
+    background-color: #00ACAC;
+    border: 0;
+}
+.comment-items li.item .comment-box .submit-comment:hover {
+    background-color: #038E8E;
+}
+.comment-pages {
+    margin-top: 40px;
+    margin-right: 20px;
+}
+/*没有评论*/
+.comment-no,
+.favorite-no,
+.orders-no,
+.orders-list-no {
+    font-size: 16px;
+    text-align: center;
+}
+.comment-no {
+    height: 580px;
+    *height: 400px;
+    padding-top: 200px;
+}
+.favorite-no {
+    height: 520px;
+    *height: 400px;
+    padding-top: 150px;
+}
+.comment-no img,
+.favorite-no img {
+    padding-right: 20px;
+}
+.orders-no {
+    height: 250px;
+    *height: 250px;
+    margin-top: 10px;
+    padding-top: 50px;
+    font-size: 14px;
+    color: #666767;
+    background-color: #F0F3F4;
+}
+.orders-no p,
+.orders-list-no p {
+    padding-top: 20px;
+}
+.orders-list-no {
+    height: 550px;
+    *height: 250px;
+    padding-top: 50px;
+}
+/*
+ * 会员中心--我的红包
+ * jiao
+ * 2014-09-04
+ */
+.member-redpack .redpack {
+    *margin-top: -10px;
+    padding: 20px;
+    font-size: 12px;
+}
+.member-redpack .redpack-items {
+    width: 100%;
+    margin-bottom: 15px;
+    border: 1px solid #F0F3F4;
+}
+.member-redpack .redpack-items td,
+.member-redpack .redpack-items th {
+    padding-left: 15px;
+}
+.member-redpack .redpack-items thead tr {
+    height: 41px;
+    line-height: 41px;
+    background-color: #F0F3F4;
+}
+.member-redpack .redpack-items thead tr th {
+    font-weight: normal;
+}
+.member-redpack .redpack-items tbody tr {
+    height: 58px;
+}
+.member-redpack .redpack-items tbody tr td {
+    border-bottom: 1px solid #F0F3F4;
+}
+.member-redpack .redpack-items td.price {
+    color: #EF353D;
+}
+.member-redpack .redpack-items td .delete {
+    float: left;
+    color: #333;
+}
+.member-redpack .redpack-items td .line {
+    float: left;
+    width: 1px;
+    height: 8px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 5px;
+    background-image: url(../images/member-center-sprites.png);
+    background-repeat: no-repeat;
+    background-position: -152px -459px;
+}
+.member-redpack .redpack-items td .use {
+    float: left;
+    color: #00ACAC;
+}
+.member-redpack .redpack .special-note {
+    line-height: 20px;
+    color: #888888;
+}
+/*
+ * 会员中心--我的余额
+ * jiao
+ * 2014-09-04
+ */
+.member-balance .account_log_href,
+.member-recharge .account_log_href{
+    font-size: 14px;
+    font-weight: normal;
+    margin-left: 5px;
+    color: #00acac;
+ } 
+.member-balance .mybalance {
+    width: 540px;
+    margin-left: 250px;
+    margin-top: 180px;
+    padding: 20px;
+    padding-bottom: 340px;
+    text-align: center;
+}
+.member-balance .mybalance span {
+    padding-left: 5px;
+    padding-right: 10px;
+    font-size: 24px;
+    color: #EF353D;
+}
+.member-balance .mybalance p {
+    margin-bottom: 20px;
+}
+.member-balance .account-recharge {
+    padding: 10px 30px;
+    background-color: #EF353D;
+    border: 0;
+}
+.member-balance .account-recharge:hover {
+    background-color: #E55850;
+}
+.member-balance .balance {
+    /*width: 540px;
+    margin-left: 250px;
+    margin-top: 180px;*/
+    padding: 20px;
+    /*padding-bottom: 340px;*/
+    /*text-align: center;*/
+}
+.member-balance .balance .balance-title {
+    line-height: 40px;
+    margin-bottom: 20px;
+}
+.member-balance .balance .balance-list {
+    width: 100%;
+    border: 1px solid #f0f3f4;
+    margin-bottom: 20px;
+    /*position: relative;*/
+}
+.member-balance .balance .balance-list .balance-list-hd th {
+    background-color: #f0f3f4;
+    font-size: 12px;
+    font-weight: normal;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+.member-balance .balance .balance-list .balance-list-bd td {
+    text-align: center;
+    font-size: 12px;
+    line-height: 50px;
+    border-bottom: 1px solid #f0f3f4;
+}
+/*
+ * 会员中心--充值
+ * jiao
+ * 2014-09-04
+ */
+.member-recharge .recharge {
+    margin-top: 20px;
+    padding-left: 55px;
+    padding-right: 55px;
+    padding-bottom: 127px;
+}
+.member-recharge .recharge-amount,
+.member-recharge .recharge-user {
+    margin-bottom: 5px;
+}
+.member-recharge .recharge-amount span,
+.member-recharge .recharge-user span {
+    width: 60px;
+    margin-right: 15px;
+    font-size: 12px;
+    line-height: 34px;
+    text-align: right;
+}
+.member-recharge .recharge-user b {
+    font-weight: normal;
+    line-height: 30px;
+    color: #00ACAC;
+}
+.member-recharge .recharge-amount #amount {
+    width: 282px;
+    height: 34px;
+    *padding: 0;
+    *line-height: 34px;
+    *padding-left: 15px;
+    border-radius: 0;
+}
+.member-recharge .recharge-mode {
+    height: 35px;
+    margin-top: 40px;
+    line-height: 35px;
+    text-align: center;
+    background-color: #F7F7F7;
+    border: 1px solid #eee;
+}
+.member-recharge .recharge-mode span {
+    position: relative;
+    z-index: 10;
+    float: left;
+    width: 120px;
+    cursor: pointer;
+}
+.member-recharge .recharge-mode span b {
+    position: relative;
+    left: 0;
+    top: -1px;
+    z-index: 20;
+    font-weight: normal;
+}
+.member-recharge .recharge-mode span.now i {
+    position: absolute;
+    left: -1px;
+    top: -10px;
+    *top: -8px;
+    z-index: 1;
+    float: left;
+    width: 121px;
+    height: 44px;
+    background-image: url(../images/member-center-sprites.png);
+    background-repeat: no-repeat;
+    background-position: 0 -577px;
+}
+.member-recharge .recharge-banks {
+    *width: 842px;
+    padding-bottom: 30px;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    border-left: 1px solid #eee;
+}
+.member-recharge .recharge-banks .bank {
+    float: left;
+    width: 100%;
+    padding-left: 30px;
+}
+.member-recharge .recharge-banks .bank p {
+    float: left;
+    width: 100%;
+    line-height: 50px;
+    color: #888;
+}
+.member-recharge .recharge-banks .bank .items li,
+.member-recharge .recharge-banks .bank .items li label {
+    float: left;
+    width: 190px;
+    height: 45px;
+}
+.member-recharge .recharge-banks .bank .items li {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    list-style-type: none;
+    background-repeat: no-repeat;
+    background-position: 50px center;
+}
+.member-recharge .recharge-banks .bank .items li label {
+    border: 1px solid #DEDEDE;
+}
+.member-recharge .recharge-banks .bank .items li label input {
+    margin-top: 15px;
+    *margin-top: 12px;
+    margin-left: 20px;
+}
+.member-recharge .recharge-banks .bank .items li.item-1 {
+    background-image: url(../images/alpiy.png);
+}
+.member-recharge .recharge-banks .bank .items li.item-2 {
+    background-image: url(../images/tanpey.png);
+}
+.member-recharge .recharge-banks .bank .items li.item-3 {
+    background-image: url(../images/zxpay.png);
+}
+.member-recharge .recharge-banks .bank .items li.item-4 {
+    background-image: url(../images/icbc.png);
+}
+.member-recharge .recharge-banks .bank .items li.item-5 {
+    background-image: url(../images/icbc.png);
+}
+.member-recharge .recharge-banks .bank .items li.item-6 {
+    background-image: url(../images/icbc.png);
+}
+.member-recharge .recharge .submit-recharge {
+    margin-top: 25px;
+    padding: 10px 30px;
+    background-color: #EF353D;
+}
+/*
+ * 会员中心--产品知识库
+ * jiao
+ * 2014-09-04
+ */
+.member-knowledge .knowledge {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.member-knowledge .knowledge .search-box {
+    width: 360px;
+}
+.member-knowledge .knowledge .search-box #question {
+    float: left;
+    width: 270px;
+    margin-left: 15px;
+    *padding: 0;
+    *height: 34px;
+    *padding-left: 10px;
+    *line-height: 34px;
+    border-right-color: #F0F0F0;
+    border-bottom-color: #F0F0F0;
+    border-radius: 0;
+}
+.member-knowledge .knowledge .search-box .search {
+    margin-left: 15px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 12px;
+    background-color: #00ACAC;
+    border: 0;
+}
+.member-knowledge .knowledge .items {
+    width: 915px;
+    margin-top: 20px;
+    padding-bottom: 40px;
+}
+.member-knowledge .knowledge .items table {
+    border: 1px solid #F0F3F4;
+}
+.member-knowledge .knowledge .items table th,
+.member-knowledge .knowledge .items table td {
+    padding-left: 20px;
+}
+.member-knowledge .knowledge .items table thead tr {
+    height: 40px;
+    font-weight: normal;
+    line-height: 40px;
+    background-color: #F0F3F4;
+}
+.member-knowledge .knowledge .items table tbody tr {
+    height: 40px;
+}
+.member-knowledge .knowledge .items table tbody td {
+    border-bottom: 1px solid #F0F3F4;
+}
+.member-knowledge .knowledge .items table .submit-quest {
+    color: #26B2B2;
+}
+.member-knowledge .knowledge .items table .operate-th,
+.member-knowledge .knowledge .items table .operate-td {
+    text-align: center;
+}
+/*
+ * 会员中心--问题列表
+ * jiao
+ * 2014-09-04
+ */
+.member-questlist .questlist {
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+}
+.member-questlist .questlist .titles {
+    position: relative;
+    z-index: 10;
+    float: left;
+    width: 280px;
+    *width: 270px;
+    font-size: 12px;
+}
+.member-questlist .questlist .titles-select {
+    height: 36px;
+    *height: 34px;
+    padding-left: 10px;
+    line-height: 36px;
+    background-image: url(../images/member-center-sprites.png);
+    background-repeat: no-repeat;
+    background-position: 260px -670px;
+    *background-position: 250px -670px;
+    border-left: 1px solid #CECECE;
+    border-top: 1px solid #CECECE;
+    border-right: 1px solid #CECECE;
+    border-bottom: 1px solid #F0F0F0;
+    cursor: pointer;
+}
+.member-questlist .questlist .titles-items {
+    position: absolute;
+    left: 0;
+    top: 36px;
+    display: none;
+    width: 280px;
+    *width: 268px;
+    padding-bottom: 15px;
+    background-color: #fff;
+    border-left: 1px solid #CECECE;
+    border-right: 1px solid #CECECE;
+    border-bottom: 1px solid #CECECE;
+}
+.member-questlist .questlist .titles-items  span {
+    padding-left: 10px;
+    display: block;
+    *width: 258px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    line-height: 15px;
+    cursor: pointer;
+}
+.member-questlist .questlist .titles-items span:hover,
+.tech-support span:hover,
+.product-name span:hover,
+.quest-status span:hover {
+    background-color: #eee;
+}
+.member-questlist .questlist .search-box #question {
+    float: left;
+    width: 280px;
+    margin-left: 20px;
+    *padding: 0;
+    *height: 34px;
+    *padding-left: 10px;
+    *line-height: 34px;
+    border-right-color: #F0F0F0;
+    border-bottom-color: #F0F0F0;
+    border-radius: 0;
+}
+.member-questlist .questlist .search-box .search {
+    float: left;
+    margin-left: 15px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 12px;
+    background-color: #00ACAC;
+    border: 0;
+}
+.member-questlist .questlist-items {
+    width: 915px;
+    margin-top: 10px;
+}
+.member-questlist .asklist-title {
+    padding: 10px 20px;
+    line-height: 35px;
+}
+.member-questlist .asklist-title a {
+    background:#00acac;float:right;
+}
+.member-questlist .questlist-items-table {
+    border: 1px solid #F0F3F4;
+}
+.member-questlist .questlist-items-table th,
+.member-questlist .questlist-items-table td {
+    padding-left: 20px;
+}
+.member-questlist .questlist-items-table thead tr {
+    height: 40px;
+    font-weight: normal;
+    line-height: 40px;
+    background-color: #F0F3F4;
+}
+.member-questlist .questlist-items-table tbody tr {
+    height: 40px;
+}
+.member-questlist .questlist-items-table tbody tr td {
+    border-bottom: 1px solid #F0F3F4;
+}
+.member-questlist .questlist-items-table .lists {
+    position: relative;
+    top: 6px;
+    float: left;
+    margin-left: 30px;
+}
+.member-questlist .questlist-items-table .lists .p-tech-support,
+.member-questlist .questlist-items-table .lists .p-product-name,
+.member-questlist .questlist-items-table .lists .p-quest-status {
+    width: 114px;
+    height: 28px;
+    *height: 26px;
+    font-weight: normal;
+    line-height: 26px;
+    text-indent: 10px;
+    background-color: #fff;
+    background-image: url(../images/member-center-sprites.png);
+    background-repeat: no-repeat;
+    background-position: 95px -674px;
+    border-left: 1px solid #CECECE;
+    border-top: 1px solid #CECECE;
+    border-right: 1px solid #CECECE;
+    border-bottom: 1px solid #F0F0F0;
+    cursor: pointer;
+}
+.member-questlist .questlist-items-table .lists .p-product-name span {
+    display: block;
+    width: 90px;
+    height: 28px;
+    overflow: hidden;
+}
+.member-questlist .questlist-items-table .lists .div-tech-product,
+.member-questlist .questlist-items-table .lists .div-product-names,
+.member-questlist .questlist-items-table .lists .div-quest-solves {
+    position: absolute;
+    left: 0;
+    top: 28px;
+    display: none;
+    width: 114px;
+    background-color: #fff;
+    border-left: 1px solid #CECECE;
+    border-right: 1px solid #CECECE;
+    border-bottom: 1px solid #CECECE;
+}
+.member-questlist .questlist-items-table .lists .div-product-names {
+    width: 360px;
+}
+.member-questlist .questlist-items-table .lists .div-tech-product span,
+.member-questlist .questlist-items-table .lists .div-product-names span,
+.member-questlist .questlist-items-table .lists .div-quest-solves span {
+    float: left;
+    width: 100%;
+    *width: 104px;
+    padding-left: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    line-height: 15px;
+    cursor: pointer;
+    font-weight: normal;
+}
+.member-questlist .questlist-items-table .lists .div-product-names span {
+    *width: 350px;
+}
+/*
+ * 会员中心--发起提问
+ * jiao
+ * 2014-09-04
+ */
+.member-ask .ask {
+    padding-left: 50px;
+    padding-bottom: 130px;
+}
+.member-ask .ask-items-title {
+    float: left;
+    width: 80px;
+    margin-right: 20px;
+    line-height: 36px;
+    text-align: right;
+}
+.member-ask .ask .products,
+.member-ask .ask .titles {
+    position: relative;
+    width: 280px;
+}
+.member-ask .ask-items input[type='text'] {
+    width: 484px;
+    height: 34px;
+    *width: 465px;
+    *height: 32px;
+    *padding: 0;
+    *line-height: 32px;
+    *padding-left: 15px;
+    border-radius: 0;
+}
+    /*.member-ask .ask-items .install_template {
+        padding-left: 20px;
+    }
+    .member-ask .install_template .ask-items-title {
+        width: 90px;
+    }*/
+    .member-ask .ask-items .install_template input[type='text'] {
+        width: 254px;
+    }
+.member-ask .ask-items #quest-infos {
+    width: 484px;
+    *width: 455px;
+    border-radius: 0;
+}
+.member-ask .ask-items .ask-message {
+    margin-left: 100px;
+    line-height: 30px;
+    color: #9B9B9B;
+}
+.member-ask .ask-items .ask-message i {
+    font-style: normal;
+    color: #EF353D;
+}
+.member-ask .ask-items .upload-file {
+    display: none;
+}
+.member-ask .ask-items .click-upload {
+    padding: 10px 30px;
+    background-color: #00ACAC;
+    border: 0;
+}
+.member-ask .ask-items .click-upload:hover {
+    background-color: #009D9D;
+}
+.member-ask .ask-items .confirm-modify {
+    margin-left: 100px;
+    padding: 10px 30px;
+    background-color: #EF353D;
+    border: 0;
+}
+.member-ask .ask-items .confirm-modify:hover {
+    background-color: #E5554D;
+}
+.member-ask .ask-items .vericode {
+    float: left;
+    width: 115px;
+    *width: 100px;
+    *padding: 0;
+    *padding-left: 15px;
+    *line-height: 32px;
+    border-radius: 0;
+}
+.member-ask .ask-items .vericode-img {
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+/*
+ * 购物车--支付
+ * jiao
+ * 2014-09-05
+ */
+.shop-cart-pay {
+    *width: 840px;
+    padding: 30px;
+    background-color: #fff;
+    border-bottom: 1px solid #EDEDF1;
+}
+.shop-cart-pay .pay-right {
+    display: block;
+    width: 100%;
+    height: 33px;
+    background-image: url(../imgs/shop-cart-right.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.shop-cart-pay .pay-h4 {
+    margin-top: 20px;
+    font-size: 16px;
+    text-align: center;
+}
+.shop-cart-pay .pay-h4 span {
+    color: #EA6865;
+}
+.shop-cart-pay .pay-p {
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 12px;
+    background-color: #FFF7D1;
+    border: 1px solid #E5DEBC;
+    text-align: center;
+}
+.shop-cart-pay .pay-p span {
+    padding-right: 5px;
+    font-size: 16px;
+    color: #EF353D;
+}
+.shop-cart-pay .pay-div {
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+    padding-bottom: 10px;
+    border: 1px solid #DFDFDF;
+}
+/*pay-other css start*/
+.shop-cart-pay .pay-other {
+    float: right;
+    margin-top: 42px;
+    margin-right: 20px;
+    padding-right: 20px;
+    background-image: url(../images/shop-cart-sjx-x.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+    cursor: pointer;
+}
+.shop-cart-pay .pay-div-1 {
+    position: relative;
+    z-index: 4;
+    float: left;
+    width: 820px;
+    *width: 810px;
+    margin-left: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid #DFDFDF;
+}
+.shop-cart-pay .pay-div-1 .items li,
+.shop-cart-pay .pay-div-1 .items li label {
+    float: left;
+    width: 190px;
+    height: 45px;
+}
+.shop-cart-pay .pay-div-1 .items li {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    list-style-type: none;
+    background-repeat: no-repeat;
+    background-position: 50px center;
+}
+.shop-cart-pay .pay-div-1 .items li label {
+    cursor: pointer;
+    border: 1px solid #DEDEDE;
+}
+.shop-cart-pay .pay-div-1 .items li label input {
+    margin-top: 15px;
+    *margin-top: 12px;
+    margin-left: 20px;
+}
+.shop-cart-pay .triangle {
+    position: absolute;
+    right: 57px;
+    top: -11px;
+    z-index: 10;
+    width: 12px;
+    height: 11px;
+    background-image: url(../imgs/shop-cart-icon.png);
+    background-repeat: no-repeat;
+    background-position: -6px 0;
+}
+/*pay-other css end*/
+.shop-cart-pay .pay-p1 {
+    float: left;
+}
+.shop-cart-pay .pay-p1 input {
+    float: left;
+    margin-top: 18px;
+    margin-left: 15px;
+}
+.shop-cart-pay .pay-p1 label {
+    width: 190px;
+    height: 47px;
+    margin-top: 30px;
+    margin-left: 10px;
+    background-image: url("../images/alipay.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    border: 1px solid #E5DEBC;
+}
+.shop-cart-pay .pay-p1 .tmp_pay_type{
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.shop-cart-pay .pay-p1 span.label {
+    border: 1px solid #e5debc;
+    display: block;
+    height: 47px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-top: 20px;
+    width: 187px;
+}
+.shop-cart-pay .pay-p1 span.label input {
+    margin-top: 15px;
+}
+.shop-cart-pay .pay-div-2 {
+    margin-top: 30px;
+    text-align: center;
+}
+.shop-cart-pay .pay-now {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px 50px;
+    font-size: 16px;
+    background-color: #EA6764;
+}
+
+/*
+ * 会员中心--订单详情
+ * jiao
+ * 2014-09-05
+ */
+.member-order-details .details {
+    padding: 20px;
+}
+.member-order-details .details-path,
+.member-order-details .details-msg,
+.member-order-details .details-goods-list {
+    position: relative;
+    width: 914px;
+}
+.member-order-details .details-path b {
+    position: absolute;
+    left: 90px;
+    top: 53px;
+    float: left;
+    width: 750px;
+    height: 8px;
+    background-image: url(../images/member-order-details.png);
+    background-repeat: repeat-x;
+    background-position: left center;
+}
+.member-order-details .details-path p {
+    position: relative;
+    z-index: 2;
+    float: left;
+    width: 110px;
+    margin-top: 21px;
+    margin-right: 88px;
+    padding-top: 80px;
+    font-size: 12px;
+    text-align: center;
+    background-image: url(../images/member-center-sprites.png);
+    background-repeat: no-repeat;
+}
+.member-order-details .details-path p.refer {
+    background-position: 20px -745px;
+}
+.member-order-details .details-path p.pay {
+    background-position: -70px -935px;
+}
+.member-order-details .details-path p.delivery {
+    background-position: -70px -1089px;
+}
+.member-order-details .details-path p.confirm {
+    background-position: -70px -1247px;
+}
+.member-order-details .details-path p.evaluate {
+    margin-right: 0;
+    background-position: -70px -1424px;
+}
+.member-order-details .details-path p span {
+    color: #adadad;
+}
+.member-order-details .details-path p.evaluate a {
+    color: #fc7878;
+}
+/*msg css*/
+.member-order-details .details-msg {
+    margin-top: 45px;
+    border: 1px solid #dedede;
+}
+.member-order-details .details-msg .left {
+    width: 370px;
+    *width: 329px;
+    padding-left: 40px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    border-right: 1px solid #dedede;
+}
+ .member-order-details .details-msg .left p {
+    line-height: 30px;
+ }
+ .member-order-details .details-msg .left p span{
+    color: #EF353D;
+}
+ .member-order-details .details-msg .left p b {
+    font-size: 14px;
+    font-weight: normal;
+    color: #BE5E1D;
+}
+.member-order-details .details-msg .left p a {
+    color: #333;
+    margin-left: 10px;
+}
+.member-order-details .details-msg .left .code {
+    margin-top: 30px;
+}
+.member-order-details .details-msg .left .code img {
+    float: left;
+    width: 77px;
+    height: 77px;
+    margin-right: 10px;
+}
+.member-order-details .details-msg .left .code span {
+    display: block;
+}
+.member-order-details .details-msg .left .code b {
+    display: block;
+    font-weight: normal;
+    color: #EF353D;
+}
+.member-order-details .details-msg .left .code a {
+    float: left;
+    width: 90px;
+    height: 28px;
+    margin-top: 10px;
+    margin-right: 6px;
+    text-indent: -9999px;
+    background-repeat: no-repeat;
+}
+.member-order-details .details-msg .left .code a.apple {
+    background-image: url(../images/apple.png);
+}
+.member-order-details .details-msg .left .code a.android {
+    background-image: url(../images/android.png);
+}
+.member-order-details .details-msg .right {
+    width: 535px;
+    *width: 475px;
+    padding-top: 35px;
+    padding-left: 58px;
+}
+.member-order-details .details-msg .right {
+    line-height: 35px;
+}
+.member-order-details .details-msg .right span {
+    float: left;
+    width: 85px;
+    margin-right: 10px;
+    color: #888;
+    text-align: right;
+}
+.member-order-details .details-msg .right a {
+    float: right;
+    margin-right: 40px;
+}
+/*goods-list css*/
+.member-order-details .details-goods-list table {
+    width: 100%;
+    font-size: 12px;
+    border: 1px solid #F0F3F4;
+}
+.member-order-details .details-goods-list table th,
+.member-order-details .details-goods-list table td {
+    padding-left: 20px;
+}
+.member-order-details .details-goods-list table td {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #F0F3F4;
+}
+.member-order-details .details-goods-list table td.nums {
+    padding-left: 30px;
+}
+.member-order-details .details-goods-list table thead tr {
+    height: 40px;
+    background-color: #F0F3F4;
+}
+.member-order-details .details-goods-list table td img {
+    margin-right: 15px;
+}
+.member-order-details .details-goods-list table a {
+    color: #333;
+}
+.member-order-details .details-goods-list table td i {
+    position: relative;
+    left: 10px;
+    padding: 2px 4px;
+    font-style: normal;
+    color: #fff;
+    background-color: #7CC300;
+}
+.member-order-details .details-goods-list .message {
+    margin-bottom: 0;
+    padding-top: 20px;
+    padding-right: 70px;
+    padding-bottom: 20px;
+    padding-left: 716px;
+    font-size: 12px;
+    background-color: #FFFCEB;
+    border-bottom: 1px solid #F9F1C5;
+}
+.member-order-details .details-goods-list .message span {
+    display: block;
+    width: 140px;
+    line-height: 25px;
+    color: #7A7972;
+    text-align: left;
+}
+.member-order-details .details-goods-list .message span i {
+    font-style: normal;
+    color: #333;
+}
+.member-order-details .details-goods-list .final-price {
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    font-size: 12px;
+    color: #7A7972;
+    text-align: right;
+    background-color: #FFFCEB;
+}
+.member-order-details .details-goods-list .final-price b {
+    font-size: 22px;
+    font-weight: normal;
+    color: #EF353D;
+}
+/*
+ * 会员中心--我的留言
+ * jiaoxiliang
+ * 2014-10-05
+ */
+.member-message .date {
+    width: 113px;
+    *width: 73px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 12px;
+    color: #888;
+}
+.member-message .content {
+    width: 818px;
+    *width: 796px;
+    padding-top: 16px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #EAEAEA;
+    border-left: 2px solid #EAEAEA;
+}
+.member-message .content .ask-user,
+.member-message .content .delete {
+    color: #FC7878;
+}
+.member-message .content .ask-msg {
+    line-height: 20px;
+}
+.member-message .content .delete {
+    margin-right: 20px;
+}
+.member-message .content .answer-admin,
+.member-message .content .answer-msg {
+    display: block;
+    line-height: 20px;
+    color: #428BCA;
+}
+.member-message .content .left {
+    width: 730px;
+}
+.message-lists {
+    width: 860px;
+    margin-top: 80px;
+    margin-left: 55px;
+    padding-bottom: 115px;
+}
+.message-lists div.list strong {
+    width: 75px;
+    margin-right: 5px;
+    text-align: right;
+}
+.message-lists div.list strong.theme {
+    line-height: 34px;
+}
+.message-lists div.list span.order-num {
+    color: #EF353D;
+}
+.message-lists div.list input.theme {
+    width: 427px;
+    height: 34px;
+    *padding: 0;
+    *padding-left: 8px;
+    *line-height: 32px;
+    border-radius: 0;
+}
+.message-lists div.list input.submit {
+    width: 130px;
+    height: 40px;
+    margin-left: 80px;
+    background-color: #FE5F56;
+    border-radius: 0;
+    border-color: #FE5F56;
+    *border: 0 none;
+}
+.message-lists div.list input.submit:hover {
+    background-color: #E0524B;
+}
+.message-lists div.list textarea.content {
+    width: 504px;
+    height: 188px;
+    *width: 460px;
+    *height: 148px;
+}
+/*
+ * 会员中心--绑定营销顾问
+ * jiaoxiliang
+ * 2014-11-19
+ */
+.market-adviser {
+    width: 380px;
+    margin: 0 auto;
+    margin-top: 150px;
+    text-align: center;
+}
+.market-adviser h2 {
+    margin-bottom: 20px;
+}
+.market-adviser a.adviser-submit:focus,
+.market-adviser a.adviser-reset:focus {
+    outline: 0 none;
+}
+.market-adviser a.adviser-submit,
+.market-adviser a.adviser-reset {
+    padding: 10px 60px;
+    font-size: 18px;
+    border: 0 none;
+}
+.market-adviser a.adviser-submit:hover {
+    background-color: #349DC4;
+}
+.market-adviser a.adviser-reset:hover {
+    background-color: #939393;
+}
+.market-adviser a.adviser-submit {
+    background-color: #37AFDA;
+    margin-right: 15px;
+}
+.market-adviser a.adviser-reset {
+    background-color: #BEBEBE;
+}
+.market-adviser .btn-block {
+    margin-top: 20px;
+}
+.market-adviser .union-name {
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+.market-adviser .union-name span {
+    color: #FC8C8F;
+    padding-right: 20px;
+}
