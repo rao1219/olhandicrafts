@@ -17,7 +17,7 @@ var process_request = "正在处理您的请求...";
 </script>
 <div class="head fl wfs">
     <div class="cover-page-wrapper">
-        <a class="fl" href="/"><img src="style/images/logo.png" alt="E租时代"></a>
+        <a class="fl" href="./"><img src="style/images/logo.png" alt="E租时代"></a>
 		<div class='listing fl' style="position: relative; width: 185px;height: 45px;text-align:center;" target="_blank" >
 			北京<br>
                 <a href="#"> [ 更换城市 ]</a></div>
@@ -44,7 +44,7 @@ var process_request = "正在处理您的请求...";
             <?php if(isset($_SESSION['username'])){
             ?>
         	<div class="j-user-img"  style="width: 54px;height: 45px;float: right;">
-                <a href="/member.php"><img class="user-img" style="margin-top: -3px;" src="style/images/noavatar_middle.gif" width="45" height="45" alt=""></a>
+                <a href="./member.php"><img class="user-img" style="margin-top: -3px;" src="style/images/noavatar_middle.gif" width="45" height="45" alt=""></a>
                 <div class="logined j-logined" style="height: 194px;">
                 	<div style="border: 1px solid #ddd;background-color: #fff;position: absolute;">
                     <em class="trangle"></em>
@@ -53,11 +53,11 @@ var process_request = "正在处理您的请求...";
                         <img class="user-img" style="margin-top: -3px; float:right;" src="style/images/noavatar_middle.gif" width="45" height="45" />
                     </p>
                     <ul class="logined-item">
-                        <li class="order"><i></i><a href="/member.php?act=order_list">订单中心</a></li>
-                        <li class="member"><i></i><a href="/member.php">会员中心</a></li>
+                        <li class="order"><i></i><a href="./member.php?act=order_list">订单中心</a></li>
+                        <li class="member"><i></i><a href="./member.php">会员中心</a></li>
                     </ul>
                     <p class="logined-operate fl wfs">
-                        <a class="quit" href="/logout.php">退出</a>
+                        <a class="quit" href="./logout.php">退出</a>
                     </p>
                     </div>
                  </div>
@@ -66,8 +66,10 @@ var process_request = "正在处理您的请求...";
             <?php
             }else{
             ?>
-             <a href="/register.php" class="register">注册</a>
-             <a href="/login.php" class="login">登录</a>
+			 
+             <a href="./register.php" class="register">注册</a>
+             <a href="./camera.php" class="login">登录</a>
+			 
              </p>
              <?php } ?>
         </div>
@@ -98,7 +100,7 @@ var process_request = "正在处理您的请求...";
     <div class="nav fl wfs j-nav">
         <div class="cover-page-wrapper cover-page-wrapper2 clearfix">
             <div class="nav-menus j-nav-menus fl">
-                <a class="handle" href="category.php"><i></i>所有出租</a>
+                <a class="handle" href="category.php"><i></i>手工艺分类</a>
                 <div class="categorys j-categorys">
                     <i class="category-trangle-bg"></i>
                     <div class="categorys-box fl wfs" style="border-left:0;">
@@ -111,52 +113,52 @@ var process_request = "正在处理您的请求...";
                             </dd>
                             <dt class="dt-categorys-item"><a>按分类</a></dt>
                             <dd class="dd-categorys-item">
-                                <a target="_blank" href="category.php">礼服</a> <br>
-                                <a target="_blank" href="category.php">户外装备</a><br>
-                                <a target="_blank" href="category.php">大型箱包</a> <br>
-                                <a target="_blank" href="category.php">摄影设备</a>&nbsp;<br>
-                                <a target="_blank" href="category.php">企业大型机</a> <br>
+                                <a target="_blank" href="category.php">陶瓷</a> <br>
+                                <a target="_blank" href="category.php">雕刻</a><br>
+                                <a target="_blank" href="category.php">壁挂</a> <br>
+                                <a target="_blank" href="category.php">彩绘</a>&nbsp;<br>
+                                <a target="_blank" href="category.php">纺织</a> <br>
                             </dd>
                         </dl>
                     </div>
                     <div class="categorys-box fl wfs">
-                        <h4 class="title fl wfs">礼服</h4>
+                        <h4 class="title fl wfs">陶瓷</h4>
                         <dl class="dl-categorys-item fl wfs">
-                            <dt class="dt-categorys-item"><a>列别一</a></dt>
+                            <dt class="dt-categorys-item"><a>按年代划分</a></dt>
                             <dd class="dd-categorys-item">
-                                <a target="_blank" href="category.php">旗袍</a><br>
-                                <a target="_blank" href="category.php">晚装</a> 
+                                <a target="_blank" href="category.php">近代陶瓷</a><br>
+                                <a target="_blank" href="category.php">古代陶瓷</a> 
                             </dd>
-                            <dt class="dt-categorys-item"><a>列别二</a></dt>
+                            <dt class="dt-categorys-item"><a>按成色划分</a></dt>
                             <dd class="dd-categorys-item">
-                                <a target="_blank" href="category.php">连衣裙</a><br>
-                                <a target="_blank" href="category.php">婚纱</a> <br>
-                                <a target="_blank" href="category.php">民族服装/舞台装</a> <br>
+                                <a target="_blank" href="category.php">青花玲珑瓷</a><br>
+                                <a target="_blank" href="category.php">粉彩瓷</a> <br>
+                                <a target="_blank" href="category.php">颜色釉瓷</a> <br>
                                 <a target="_blank" href="category.php">其他</a> 
                             </dd>
                         </dl>
                     </div>
                      <div class="categorys-box fl wfs">
-                        <h4 class="title fl wfs">户外装备</h4>
+                        <h4 class="title fl wfs">雕刻</h4>
                         <dl class="dl-categorys-item fl wfs">
-                            <dt class="dt-categorys-item"><a>户外装备</a></dt>
+                            <dt class="dt-categorys-item"><a>雕刻</a></dt>
                             <dd class="dd-categorys-item">
-                                <a target="_blank" href="category.php">帐篷/垫子</a><br>
-                                <a target="_blank" href="category.php">睡袋/吊床</a> <br>
-                                <a target="_blank" href="category.php">户外照明</a> <br>
-                                <a target="_blank" href="category.php">野餐烧烤</a> <br>
-                                <a target="_blank" href="category.php">睡袋/吊床</a> <br>
-                                <a target="_blank" href="category.php">滑雪装备</a> 
+                                <a target="_blank" href="category.php">木雕</a><br>
+                                <a target="_blank" href="category.php">石雕</a> <br>
+                                <a target="_blank" href="category.php">牙雕</a> <br>
+                                <a target="_blank" href="category.php">骨雕</a> <br>
+                                <a target="_blank" href="category.php">贝雕</a> <br>
+                                <a target="_blank" href="category.php">根雕</a> 
                             </dd>
-                            <dt class="dt-categorys-item"><a>户外鞋服</a></dt>
+                            <dt class="dt-categorys-item"><a>陶瓷塑料</a></dt>
                             <dd class="dd-categorys-item">
-                                <a target="_blank" href="category.php">滑雪服</a><br>
-                                <a target="_blank" href="category.php">沙滩/凉拖</a> <br>
+                                <a target="_blank" href="category.php">石膏像</a><br>
+                                <a target="_blank" href="category.php">动物浮雕</a> <br>
                                 <a target="_blank" href="category.php">其他</a>
                             </dd>
                         </dl>
                     </div> <div class="categorys-box fl wfs">
-                        <h4 class="title fl wfs">大型箱包 </h4>
+                        <h4 class="title fl wfs">壁挂</h4>
                         <dl class="dl-categorys-item fl wfs">
                             <dt class="dt-categorys-item"><a>大型箱包</a></dt>
                             <dd class="dd-categorys-item">
@@ -196,19 +198,19 @@ var process_request = "正在处理您的请求...";
                         </dl>
                     </div>
                     <div class="categorys-concact">
-                        <strong>欢迎来到E租时代</strong>
+                        <strong>欢迎来到handicraft手工艺平台</strong>
                     </div>
                 </div>
             </div>
-            <a class="channel" href="/">首页<span></span></a>
-                        <a class="channel <?php if(@$wherenow==1) echo 'channel-now'; ?>" href="nearby.php" >周边出租<span></span></a>
-                        <a class="channel <?php if(@$wherenow==2) echo 'channel-now'; ?>" href="category.php"  >随意浏览<span></span></a>
-                        <a class="channel <?php if(@$wherenow==3) echo 'channel-now'; ?>" href="communicate.php"  >租友交流<span></span></a>
+            <a class="channel channel-now" href="./">首页<span></span></a>
+                        <a class="channel" href="nearby.php" >周边作品<span></span></a>
+                        <a class="channel" href="category.php"  >随意看看<span></span></a>
+                        <a class="channel" href="communicate.php"  >手工艺论坛<span></span></a>
                         <div class="cart" id="ECS_CARTINFO" style="position:relative;z-index: 15;">
-             <a href="flow.php" title="查看购物车"><i></i><span>待租物</span><strong>0</strong></a>
+             <a href="./member.php" title="查看购物车"><i></i><span>购物车</span><strong>0</strong></a>
 <ul class="car_ul" style="padding:35px; background:#fff;position: absolute;top: 47px;text-align: center;width:405px;*height: 30px;*width:325px;right:-1px;border: 1px solid #ddd;display:none;">
 	<img src="style/images/cart_car.png"/>
-	<a href="#" style="color:#ccc;">您还没有加入任何待租商品哦~</a>
+	<a href="#" style="color:#ccc;">您还没有加入任何商品哦~</a>
 </ul>
 
             </div>

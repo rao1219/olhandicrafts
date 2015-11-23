@@ -6,7 +6,7 @@ $wherenow=1;
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <title>周边出租 - E租时代</title>
+    <title>周边作品 - Handicrafts</title>
 <?php
 include 'templete\header.html';
 ?>

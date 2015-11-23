@@ -5,7 +5,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <title>标题 - E租时代</title>
+    <title>标题 - Handicrafts</title>
 <?php
 include 'templete\header.html';
 ?>

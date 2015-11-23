@@ -5,7 +5,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <title>动态列表 - E租时代</title>
+    <title>动态列表 - Handicrafts</title>
 <?php
 include 'templete\header.html';
 ?>

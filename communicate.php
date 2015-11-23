@@ -6,7 +6,7 @@ $wherenow=3;
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <title>租友交流</title>
+    <title>论坛交流</title>
 <?php
 include 'templete\header.html';
 ?>
@@ -20,7 +20,7 @@ include 'templete\header.html';
 <div class="place fl wfs">
                 <div class="w900 about-article fl wfs">
                <!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="1" data-title="租友交流" data-url="http://www.olrenting.com/communicate.php"></div>
+	<div class="ds-thread" data-thread-key="1" data-title="论坛交流" data-url="http://www.olrenting.com/communicate.php"></div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">

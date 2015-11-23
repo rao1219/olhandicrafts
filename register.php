@@ -38,7 +38,7 @@ if(isset($_POST['username'])){
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <title>注册 - E租时代</title>
+    <title>注册 - Handicrafts</title>
 <?php
 include 'templete\header.html';
 ?>
@@ -75,7 +75,7 @@ include 'templete\header.html';
                             </div>
 <!--<div class="read-protocal" style="margin-left:70px;margin-top:15px;">
                                 <input id="protocal" name="agreement" type="checkbox" value="1" checked="checked" />
-                                阅读并已同意<a href="#" target="_blank">《E租时代用户协议》</a> 
+                                阅读并已同意<a href="#" target="_blank">《Handicrafts用户协议》</a> 
                             </div>-->
                             <input type="hidden" name="act" value="act_register" >
                             <input type="hidden" name="back_act" value="" />
@@ -86,7 +86,7 @@ include 'templete\header.html';
                     
                    <div class="regist-process-register-right fr" style="margin-top:100px;">
                        <h2 class="title">我已注册账号</h2>
-                       <a class="btn btn-info login-now" href="user.php">立即登录</a>
+                       <a class="btn btn-info login-now" href="login.php">立即登录</a>
                        <p class="pre-consultation">
                            咨询热线<b>400&nbsp;0000&nbsp;000</b>
                        </p>

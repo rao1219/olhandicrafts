@@ -25,7 +25,7 @@ if(isset($_POST['username'])){
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <title>登录 - E租时代</title>
+    <title>登录 - Handicrafts</title>
 <?php
 include 'templete\header.html';
 ?>
@@ -83,7 +83,7 @@ function userLogin()
                 
                 <div class="regist-process-login-right fr" style="padding-top:70px;">
                     <h2 class="title">没有账号？立即注册</h2>
-                    <a class="btn btn-info free-registe" href="user.php?act=register">免费注册</a>
+                    <a class="btn btn-info free-registe" href="register.php">免费注册</a>
                    
                 </div>
                 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <title>商品TITLE -- E租时代</title>
+    <title>商品 -- Handicrafts</title>
     <style type="text/css">
 		/* css 重置 */
 		.slideBox11{width:100%; height:545px; overflow:hidden; position:relative;}
@@ -23,12 +23,27 @@
    
 <?php
 include 'header.html';
+define('ACCESS','1');
+// session_start();
+include 'conn/connect.php';
+include 'conn/operate.php';
+?>
+
+
+<?php
+	$id = $_GET['id'];
+	//echo $id;
+	//echo $_SESSION['username'];
+	
+	$iteminfo = operate::getoneline("crafts","id=$id");
+	//echo $iteminfo['type'];
+	//echo $userinfo['qq'];
 ?>
     
     <div class="cover-page-details fl wfs bcf2">
         <div class="cover-page-wrapper">
             <div class="place fz12" style="padding-left:20px;">
-    您现在的位置：<a href=".">首页</a> <code>&gt;</code> <a href="#">工程机械</a> <code>&gt;</code> 南通专业发电机设备租赁 安全可靠 功能多 </div>
+    您现在的位置：<a href=".">首页</a> <code>&gt;</code> <a href="#"><?=$iteminfo['type']?></a> <code>&gt;</code><?=$iteminfo['title']?></div>
             
             <div class="details fl wfs" style="position:relative;">
             	<div style="right:220px;bottom:50px; position:absolute;">
@@ -45,14 +60,14 @@ include 'header.html';
         <div class="canvas">
             <ul class="canvas-container j-canvas-container" style="top:0;">
                        <li class="canvas-container-li j-canvas-container-li now">
-                        <img src="upload/item1.jpg" title="图片描述" />
+                        <img src="style/images/bear.jpg" title="图片描述" />
                       </li>
                        
                        <li class="canvas-container-li j-canvas-container-li">
-                        <img src="upload/item2.png" title="图片描述" />
+                        <img src="style/images/bear2.jpg" title="图片描述" />
                       </li>
                       <li class="canvas-container-li j-canvas-container-li">
-                        <img src="upload/item3.jpg" title="图片描述" />
+                        <img src="style/images/bear3.jpg" title="图片描述" />
                       </li>
                                                                     </ul>
         </div>
@@ -61,7 +76,7 @@ include 'header.html';
     <div class="mid fl">
         <div class="mid-container fl">
             <div class="j-details-mid-item details-mid-item" style="display:block;">
-                <img src="upload/item1.jpg" jqimg="upload/item1.jpg"  alt="">
+                <img src="style/images/bear.jpg" jqimg="style/images/bear.jpg"  alt="">
             </div>
         </div>
     </div>
@@ -70,18 +85,18 @@ include 'header.html';
                 <div class="right fr">
                     
                                             <div class="discount-msg">
-                            <h3>南通专业发电机设备租赁 安全可靠 功能多</h3>
+                            <h3><?=$iteminfo['title']?></h3>
                         </div>
                                                 <div class="discount-msg-two" style="padding-bottom: 10px;">
-                            <p class="price" id="ECS_GOODS_AMOUNT">￥200元 / 天</p>(押金:10000元)
+                            <p class="price" id="ECS_GOODS_AMOUNT">￥<?=$iteminfo['price']?>元</p>(运费:10元)
                         </div>
-                                   分类:工程机械<br>          
+                                   分类:<?=$iteminfo['type']?><br>          
                       
-                                   面向:南通  <br>
-                                   联系人:赵先生 联系电话:13813700XXX
+                                   地址:<?=$iteminfo['selleradd']?> <br>
+                                   联系人:<?=$iteminfo['seller']?> 联系电话:<?=$iteminfo['phone']?>
                     </p>
                     <p class="make fl wfs">
-                                                                                                                        <a class="make-cart fl" href="javascript:#">立即租用</a>
+                                                                                                                        <a class="make-cart fl" href="purchase.php?id=<?php echo $id?>">下订单</a>
                                                                                                                              
                                             </p>
                     <div class="offer j-offer">
@@ -99,8 +114,8 @@ include 'header.html';
             
               	    <form name="m_goods_1" method="post" action="" onSubmit="return false;" class="clearfix">
     <div class="package fl wfs">
-        <h4 class="fl wfs">店家信息  -  南通亚曼德机电设备有限公司</h4>
-       信 用 值：  <img src="http://www.zulinbao.com/icon/flag_1.gif"  alt=""> 52  &nbsp;&nbsp; 积 分： 72  &nbsp;&nbsp; 认 证：实名认证  &nbsp;&nbsp; 所 在 地： 江苏省 南通
+        <h4 class="fl wfs">店家信息  -  小熊手工艺专卖店</h4>
+       信 用 值：  <img src="http://www.zulinbao.com/icon/flag_1.gif"  alt=""> 52  &nbsp;&nbsp; 积 分： 72  &nbsp;&nbsp; 认 证：实名认证  &nbsp;&nbsp; 所 在 地： <?=$iteminfo['selleradd']?>
     </div>
     </form>
                 
@@ -110,8 +125,8 @@ include 'header.html';
                 	<div class="tips" style="left:0px;width:88px;"></div>
                 	<ul class="mainLeftNav">
                     	<li class="cur">产品描述</li>
-                        <li>店家出租历史评价</li>
-                        <li>E租时代交易流程</li>
+                        <li>店家历史评价</li>
+                        <li>Handicrafts交易流程</li>
                     </ul>
                 </div>
                 
@@ -119,7 +134,7 @@ include 'header.html';
                     <dl class="content-item-dl fl wfs">
                         <dt>产品信息</dt>
                         <dd>货号：000510</dd>
-                        <dd>名称：南通专业发电机设备租赁</dd>
+                        <dd>名称：<?=$iteminfo['name']?></dd>
                         <dd>浏览量：1144</dd>
                         <dd>新旧：8成新</dd>
                         <dd>实名认证商家</dd>
@@ -128,9 +143,9 @@ include 'header.html';
                                                 
                                                     
                         <p><br/></p><h6><span style="font-size: 14px;">
-下订单即可查看我的联系方式，联系我时请说是在E租时代上看到的，谢谢。</span></h6><p><br/></p>
-                           我公司专业从事发电机租赁业务，功率5－1500KW供客户选择，租赁部长期备有充足的开放、防雨、防音型汽油柴油发电机资源，为工厂、医院、邮电、商场、建筑工地等场所提供主供电及备用电源<br/ >
-                    <p style="text-align: center;"><img src="http://image.sonhoo.com/server7/photos/photo/meskyking/c29da671b2a1b785f6e4c8acb919cb58.jpg" title="产品描述图片" /></p>                    </div>
+下订单即可查看我的联系方式，联系我时请说是在Handicrafts上看到的，谢谢。</span></h6><p><br/></p>
+                           <?=$iteminfo['description']?><br/ >
+                    <p style="text-align: center;"><img src="style/images/bear.jpg" title="产品描述图片" /></p>                    </div>
                         
 		<script>
 			$(".list-paddingleft-2").append($(".list-paddingleft-2").html());
@@ -218,7 +233,7 @@ include 'header.html';
                         <span class="evaluation-txt"></span>
                     </p>
                     <p class="testimonials">
-                       租用不错                    </p>
+                       小熊不错                    </p>
                                                         </div>
                 <span class="date">2014-10-16 14:07:59</span>
             </li>

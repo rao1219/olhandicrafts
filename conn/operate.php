@@ -13,11 +13,28 @@ class operate{
         for($i=0;$i<mysql_num_rows($result);$i++){
              $rs[]=mysql_fetch_row($result);
         }
+		//echo $osql;
         if(!isset($rs)){
             $rs=false;
         }
         return $rs;
     }
+	
+	//获取数据数组
+    public static function getmuchlinesql($table,$condition="",$filed="*"){
+        $osql='select '.$filed.' from '.$table;
+        if($condition){$osql.=" $condition";}
+        $result=mysql_query($osql);
+        for($i=0;$i<mysql_num_rows($result);$i++){
+             $rs[]=mysql_fetch_array($result);
+        }
+		//echo $osql;
+        if(!isset($rs)){
+            $rs=false;
+        }
+        return $rs;
+    }
+	
     //更新一条数据
     public static function updateoneline($table,$datetitle,$datecontent,$condition){
         $datecontent[0]=str_replace("'","\'",$datecontent[0]);
@@ -41,6 +58,7 @@ class operate{
             $osql.=',\''.$datecontent[$i].'\'';
         }
         $osql.=')';
+		// echo $osql;
         return mysql_query($osql);
     }
     //删除一条数据
@@ -82,6 +100,7 @@ class operate{
         $_SESSION['phone']=$info['phone'];
         $_SESSION['Email']=$info['Email'];
     }
+	
     //post发送数据，高德
     function file_get_contents_post($url, $post) {
             $options = array(

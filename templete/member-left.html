@@ -7,6 +7,7 @@ if(isset($_GET['act'])&&($_GET['act']=='profile'||$_GET['act']=='order_list'||$_
 
 <div class="member-infos fr w955">
                     <h3 class="operate-title mt20">用户信息/信息修改</h3>
+					
                     <div class="infos">
                         <div class="infos-item j-infos-item" style="display:block;">
                             <form id="infosForm" name="formEdit" action="member.php?act=profile" method="post">
@@ -45,7 +46,70 @@ if(isset($_GET['act'])&&($_GET['act']=='profile'||$_GET['act']=='order_list'||$_
 
     <?php
     break;
-    case 'order_list':break;
+    case 'order_list':
+	$name = $_SESSION['username'];
+	
+	$orderinfo[] = operate::getmuchlinesql("`order`","where buyername='$name'");
+	//for($i=0;$i<3;$i++){
+	//	$temp = $orderinfo[$i];
+	//	echo $temp['id'];
+	//}
+	echo '<br>';
+	// echo var_dump($orderinfo);
+	// echo $orderinfo[0][2]['id'];
+    // echo sizeof($orderinfo[0])
+    /*
+	for($i=0;$i<sizeof($orderinfo[0]);$i++)
+    {
+        echo $orderinfo[0][$i]['id'];
+        echo '-';
+        echo $orderinfo[0][$i]['productName'];
+        echo '-';
+        echo $orderinfo[0][$i]['price'];
+        echo '-';
+        echo $orderinfo[0][$i]['number'];
+        echo '-';
+        echo $orderinfo[0][$i]['buyerphone'];
+        echo "<br>";
+    }
+	*/
+	?>
+	<div class="member-infos fr w955">
+	
+	<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><i class="fa fa-calendar"></i><strong>最近的订单</strong>------(物品 单价 数量 总价 收件地址 备注 卖家姓名 卖家住址 卖家电话) </h3>
+  </div>
+  <ul class="list-group">
+            <li class="list-group-item"><br>
+			<?php echo var_dump($orderinfo);?>
+            
+      <small class="text-muted"><i class="fa fa-clock-o"></i> 17/11/2015 14:19:11</small></li>
+        <li class="list-group-item"><br>
+      <small class="text-muted"><i class="fa fa-clock-o"></i> 17/11/2015 14:16:48</small></li>
+  </ul>
+</div>
+</div>
+	
+	
+	<div class="member-infos fr w955">
+	
+	<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><i class="fa fa-calendar"></i>账户活动</h3>
+  </div>
+  <ul class="list-group">
+            <li class="list-group-item"><a href="http://localhost/handicrafts/upload/admin/index.php?route=sale/customer/edit&amp;token=cc83002ccdda925d9edc483b05c84bb1&amp;customer_id=1">Rao Qi</a> added a <a href="http://localhost/handicrafts/upload/admin/index.php?route=sale/order/info&amp;token=cc83002ccdda925d9edc483b05c84bb1&amp;order_id=1">new order</a>.<br>
+      <small class="text-muted"><i class="fa fa-clock-o"></i> 17/11/2015 14:19:11</small></li>
+        <li class="list-group-item"><a href="http://localhost/handicrafts/upload/admin/index.php?route=sale/customer/edit&amp;token=cc83002ccdda925d9edc483b05c84bb1&amp;customer_id=1">Rao Qi</a> registered a new account.<br>
+      <small class="text-muted"><i class="fa fa-clock-o"></i> 17/11/2015 14:16:48</small></li>
+          </ul>
+	</div>
+	</div>
+	
+	<?php
+	
+	break;
     case 'rent':
                 $cat = operate::getmuchline("sort");
     ?>
@@ -109,7 +173,7 @@ var http_request=false;
                         });
                     </script>
                     <div class="member-infos fr w955">
-                    <h3 class="operate-title mt20">发布新租用</h3>
+                    <h3 class="operate-title mt20">发布个人定制需求</h3>
                     <div class="infos">
                         <div class="infos-item j-infos-item" style="display:block;">
                             <form id="infosForm" name="formEdit" action="member.php" method="post" enctype="multipart/form-data" >
@@ -124,12 +188,12 @@ var http_request=false;
                                     foreach($cat as $key=>$value){
                                         echo "<option value='$value[0]'>$value[1]</option>";
                                     }
-                                    ?>
+                                    ?>  
                                     </select>
                                 </p>
                                 
                                 <p class="p-item top-line">
-                                	<span class="tit">物品主图</span><input type="file" class="form-control" name="pic" />
+                                	<span class="tit">需求草图</span><input type="file" class="form-control" name="pic" />
 
                                 </p>
 
@@ -144,10 +208,10 @@ var http_request=false;
                                $result = mysql_query( $sql );  
                                while($res = mysql_fetch_row($result)){  
                              ?>  
-                                <option value="<? echo $res[0]; ?>"><? echo $res[1]; ?></option>  
+                                <option value="<?php echo $res[0]; ?>"><?php echo $res[1]; ?></option>  
                               <? } ?>  
                             </select>  
-                            <span id="class2"></span>
+                            <span id="class2"></span>   
                                     
                                 </p>
                                 <p class="p-item top-line">
@@ -156,8 +220,8 @@ var http_request=false;
                                 </p>
 
                                 <p class="p-item top-line">
-                                    <span class="tit">租金/天</span><input name="money" type="text" class="form-control" style="width:100px" value=""/>
-                                	<span class="tit">押金(元)</span>
+                                    <span class="tit">订金(元)</span><input name="money" type="text" class="form-control" style="width:100px" value=""/>
+                                	<span class="tit">运费(元)</span>
                                     <input name="deposit" type="text" class="form-control" style="width:100px"  value=""/>
                                 </p>
                                 <p class="p-item top-line">
@@ -169,7 +233,7 @@ var http_request=false;
                                 </p>
                                 <p class="p-item top-line" style="padding-bottom:50px;">
                                     <input name="act" type="hidden" value="rent" />
-                                    <input class="btn btn-danger confirm-modify"  name="submit" type="submit" value="发布出租"  style="border:none;" />
+                                    <input class="btn btn-danger confirm-modify"  name="submit" type="submit" value="发布定制"  style="border:none;" />
                                 </p>
                             </form>
                         </div>
@@ -185,9 +249,12 @@ var http_request=false;
 }else{
 ?>
 
+
+
 <div class="member-index fr w955">
+
 				<div class="left fl">
-					<h3>亲爱的 <?=$_SESSION['username']?>， 欢迎您回到 E租时代！</h3>
+					<h3>亲爱的 <?=$_SESSION['username']?>， 欢迎您回到 Handicrafts！</h3>
 											</p>
 					<dl class="orders-items fl wfs">
 						<dt class="fl wfs">
@@ -197,7 +264,7 @@ var http_request=false;
 							<dd class="fl wfs" style="height: 450px;">
                             <div class="orders-no fl wfs">
                                 <img src="http://member.ecmoban.com/content/themes/ecmoban2014/images/orders-no.png" alt="">
-                                <p>您最近还没有在E租时代租过东西哦，快去逛逛吧~</p>
+                                <p>您最近还没有在Handicrats订过东西哦，快去逛逛吧~</p>
                             </div>
                         </dd>
 											</dl>

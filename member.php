@@ -23,7 +23,7 @@ if(isset($_POST['act'])){
         //检测数据填写情况
         if(trim($_POST['title'])=="" || empty($_FILES) || trim($_FILES['pic']['name'])==""||!isset($_POST['select2'])){
             $errurl="javascript:window.history.go(-1)";
-            $errinfo="物品名称、商品主图、地区信息必须填写!";
+            $errinfo="物品名称、需求草图、地区信息必须填写!";
             include('templete/err.html');
         }
         //上传图片
@@ -71,7 +71,7 @@ if(isset($_POST['act'])){
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <title>用户中心 - E租时代</title>
+    <title>用户中心 - Handicrafts</title>
     	<link rel="stylesheet" href="style/css/member-center.css">
 <?php
 include 'templete\header.html';
@@ -91,8 +91,8 @@ include 'templete\header.html';
         <dl class="menu-dl fl wfs">
             <dt class="menu-dt order fl wfs"><i></i>交易中心</dt>
             <dd class="fl wfs">
-                <p><a href="member.php?act=myrenting" >我的出租</a></p>
-                <p><a href="member.php?act=rent" >我要出租</a></p>
+                <p><a href="member.php?act=myrenting" >我的发布</a></p>
+                <p><a href="member.php?act=rent" >我要定制</a></p>
                 <p><a href="member.php?act=order_list" >历史订单</a></p>
             </dd>
         </dl>
