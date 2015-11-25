@@ -12,9 +12,9 @@
 
 ### 3. 添加 conn/connect.php里的数据库信息  
 
-	echo "$link=@mysql_connect("localhost","root","自己数据库的密码");" >conn/connect.php
-	echo "mysql_query('use **');" >conn/connect.php //**这里填新建的数据库名
-//追加到文末怎么写
+	echo "$link=@mysql_connect("localhost","root","自己数据库的密码");" >>conn/connect.php
+	echo "mysql_query('use **');" >>conn/connect.php //**这里填新建的数据库名
+
 
 	
 ### 4. 构建
