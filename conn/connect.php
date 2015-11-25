@@ -1,5 +1,0 @@
-<?php
-defined("ACCESS")||exit;
-$link=@mysql_connect("localhost","root","rq670824");
-mysql_query('use olrenting');
-mysql_query('set names "utf8"');
