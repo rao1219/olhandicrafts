@@ -19,7 +19,7 @@
 	$iteminfo = operate::getoneline("crafts","id=$id");
 	if(!isset($_SESSION['username']))
 	{
-		$errurl="camera.php";
+		$errurl="login.php";
 		$errinfo="请先登录!";
 		include('templete/err.html');
 	}
