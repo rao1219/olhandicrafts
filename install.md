@@ -26,13 +26,12 @@
 ### 5. 打开浏览器: [https://localhost/olhandicrafts](https://localhost/olhandicrafts) 就可以看了
 
 ### 6. 手势识别
-该模块需要先安装intel RealSense SDK，[戳这里下载]()  
-如果不想安装，可以把程序切换到跳过手势识别而直接登陆的版本：
+该模块需要先安装intel RealSense SDK [戳这里下载](https://software.intel.com/zh-cn/intel-realsense-sdk/download)    
+安起来挺麻烦的，而且有的电脑不支持RealSense   
+如果不安装，可以把程序切换到跳过手势识别而直接登陆的版本：
 
 	git checkout dev-nocamera
 	grunt rebuild
 	grunt serve
 
 
-按这个步骤安下来就可以在自己电脑上看了，如果是windows就忽略前三行，在官网上下一个git bash
-要正常使用手势识别模块还需要装一个intel RealSense SDK，没检测到的
