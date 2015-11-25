@@ -227,8 +227,17 @@ setTimeout(function(){
 	<script>
 	function closewin()
 	{
-		var url = './login.php';
-		open(url, '_self');
+		//alert(init);
+		if(init>12){
+			alert('验证失败！');
+			var url = './camera.php';
+			open(url, '_self');
+		}
+		else{
+			alert('验证成功！');
+			var url = './login.php';
+			open(url, '_self');
+		}
 	}
 	function clock()
 	{
@@ -238,11 +247,15 @@ setTimeout(function(){
 	else closewin();
 	}
 	// srand(time(null));
+	var i,init;
 	if (window.MessageEvent && !document.getBoxObjectFor){
-		var i = Math.floor(3+Math.random()*8)
+		i = Math.floor(3+Math.random()*15);
+		init = i;
+		//i = 111111;
+		// alert(init);
 	}
 	else{
-		var i = 11111;
+		i = 11111;
 	}
 	// alert(i)
 	clock();
