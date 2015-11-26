@@ -1,6 +1,8 @@
 # coursework
 Very Simple Renting Platform
 
+[安装部署](https://github.com/rao1219/olhandicrafts/wiki/install)
+
 ----
 ## 前端
 库用的bootstrap，前端状态如下：
@@ -91,5 +93,9 @@ CREATE TABLE IF NOT EXISTS `product`
 + 包管理：bower，方便高德地图/discuz等第三方库和API的打包，写成脚本方便安装
 + 构造工具：Grunt，方便服务器部署，统一编译，作为静态文件发布
 + 版本控制： Git，便于版本回退和多人合作
+
+## 创新点
+
+项目创新点在于嵌入了Intel RealSense 手势识别技术用以登陆验证，代替繁复的验证码输入，提高用户体验
 
 
