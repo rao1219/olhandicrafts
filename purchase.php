@@ -24,9 +24,11 @@
 		include('templete/err.html');
 	}
 	if(isset($_POST['productName'])){
+		$showtime=date("Y-m-d H:i:s");
 		// echo $iteminfo['name'],$iteminfo['price'],$_POST['number'],$_POST['username'],$_POST['userPhone'],$_POST['userAddress'],$iteminfo['seller'],$iteminfo['phone'],$iteminfo['selleradd'],$_POST['userComments'];
 		// operate::insertoneline("order",array("productName","price","number","buyername","buyerphone","buyeraddress","sellername","sellerphone","selleraddress","comments"),array($iteminfo['name'],$iteminfo['price'],$_POST['number'],$_POST['username'],$_POST['userPhone'],$_POST['userAddress'],$iteminfo['seller'],$iteminfo['phone'],$iteminfo['selleradd'],$_POST['userComments']));
-		if(operate::insertoneline("`order`",array("productName","price","number","buyername","buyerphone","buyeraddress","sellername","sellerphone","selleraddress","comments"),array($iteminfo['name'],$iteminfo['price'],$_POST['number'],$_POST['username'],$_POST['userPhone'],$_POST['userAddress'],$iteminfo['seller'],$iteminfo['phone'],$iteminfo['selleradd'],$_POST['userComments']))){
+		if(operate::insertoneline("`order`",array("productName","price","number","buyername","buyerphone","buyeraddress","sellername","sellerphone","selleraddress","comments","time1"),array($iteminfo['name'],$iteminfo['price'],$_POST['number'],$_POST['username'],$_POST['userPhone'],$_POST['userAddress'],$iteminfo['seller'],$iteminfo['phone'],$iteminfo['selleradd'],$_POST['userComments'],$showtime))){
+			
 			$errurl="member.php";
 			$errinfo="预定成功!";
 			include('templete/err.html');

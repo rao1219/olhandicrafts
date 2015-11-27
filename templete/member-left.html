@@ -78,11 +78,72 @@ if(isset($_GET['act'])&&($_GET['act']=='profile'||$_GET['act']=='order_list'||$_
 	
 	<div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title"><i class="fa fa-calendar"></i><strong>最近的订单</strong>------(物品 单价 数量 总价 收件地址 备注 卖家姓名 卖家住址 卖家电话) </h3>
+    <h3 class="panel-title"><i class="fa fa-calendar"></i><strong>最近的订单 </h3>
   </div>
+  <table class="table">
+      <thead>
+          <tr>
+              <th>物品</th>
+              <th>单价</th>
+              <th>数量</th>
+              <th>总价</th>
+              <th>收件地址</th>
+              <th>备注</th>
+              <th>卖家姓名</th>
+              <th>卖家住址</th>
+              <th>卖家电话</th>
+              <th>下单时间</th>
+          </tr>
+      </thead>
+      <tbody>
+          
+          <?php 
+          
+          
+        for($i=0;$i<sizeof($orderinfo[0]);$i++)
+        {
+        echo '<tr>';
+            echo '<td>';
+            echo $orderinfo[0][$i]['productName'];
+            echo '</td>';
+            echo '<td>';
+            echo $orderinfo[0][$i]['price'];
+            echo '</td>';
+            echo '<td>';
+            echo $orderinfo[0][$i]['number'];
+            echo '</td>';
+            echo '<td>';
+            echo $orderinfo[0][$i]['number'] * $orderinfo[0][$i]['price'];
+            echo '</td>';
+            echo '<td>';
+            echo $orderinfo[0][$i]['buyeraddress'];
+            echo '</td>';
+            echo '<td>';
+            echo $orderinfo[0][$i]['comments'];
+            echo '</td>';
+            echo '<td>';
+            echo $orderinfo[0][$i]['sellername'];
+            echo '</td>';
+            echo '<td>';
+            echo $orderinfo[0][$i]['selleraddress'];
+            echo '</td>';
+            echo '<td>';
+            echo $orderinfo[0][$i]['sellerphone'];
+            echo '</td>';
+            echo '<td>';
+            echo $orderinfo[0][$i]['time1'];
+            echo '</td>';
+        echo '</tr>';   
+        }   
+        
+          
+          
+          ?>
+      </tbody>
+  </table>
   <ul class="list-group">
             <li class="list-group-item"><br>
-			<?php echo var_dump($orderinfo);?>
+			<?php //echo var_dump($orderinfo);?>
             
       <small class="text-muted"><i class="fa fa-clock-o"></i> 17/11/2015 14:19:11</small></li>
         <li class="list-group-item"><br>
