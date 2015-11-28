@@ -38,6 +38,7 @@ include 'conn/operate.php';
 	$iteminfo = operate::getoneline("crafts","id=$id");
 	//echo $iteminfo['type'];
 	//echo $userinfo['qq'];
+    //echo $iteminfo['img'];
 ?>
     
     <div class="cover-page-details fl wfs bcf2">
@@ -60,14 +61,14 @@ include 'conn/operate.php';
         <div class="canvas">
             <ul class="canvas-container j-canvas-container" style="top:0;">
                        <li class="canvas-container-li j-canvas-container-li now">
-                        <img src="style/images/bear.jpg" title="图片描述" />
+                        <img src="<?=$iteminfo['img']?>" title="图片描述" />
                       </li>
                        
                        <li class="canvas-container-li j-canvas-container-li">
-                        <img src="style/images/bear2.jpg" title="图片描述" />
+                        <img src="<?=$iteminfo['img']?>" title="图片描述" />
                       </li>
                       <li class="canvas-container-li j-canvas-container-li">
-                        <img src="style/images/bear3.jpg" title="图片描述" />
+                        <img src="<?=$iteminfo['img']?>" title="图片描述" />
                       </li>
                                                                     </ul>
         </div>
@@ -76,7 +77,7 @@ include 'conn/operate.php';
     <div class="mid fl">
         <div class="mid-container fl">
             <div class="j-details-mid-item details-mid-item" style="display:block;">
-                <img src="style/images/bear.jpg" jqimg="style/images/bear.jpg"  alt="">
+                <img src="<?=$iteminfo['img']?>" jqimg="<?=$iteminfo['img']?>"  alt="">
             </div>
         </div>
     </div>
@@ -114,7 +115,7 @@ include 'conn/operate.php';
             
               	    <form name="m_goods_1" method="post" action="" onSubmit="return false;" class="clearfix">
     <div class="package fl wfs">
-        <h4 class="fl wfs">店家信息  -  小熊手工艺专卖店</h4>
+        <h4 class="fl wfs">店家信息  -  <?=$iteminfo['store']?></h4>
        信 用 值：  <img src="http://www.zulinbao.com/icon/flag_1.gif"  alt=""> 52  &nbsp;&nbsp; 积 分： 72  &nbsp;&nbsp; 认 证：实名认证  &nbsp;&nbsp; 所 在 地： <?=$iteminfo['selleradd']?>
     </div>
     </form>
