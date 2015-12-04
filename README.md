@@ -36,7 +36,7 @@ Very Simple Renting Platform
 
 ## 数据库
 + ER 图
-!()[https://github.com/rao1219/olhandicrafts/blob/master/style/images/er-model.png]
+!(er model)[https://github.com/rao1219/olhandicrafts/blob/master/style/images/er-model.png]
 
 ## 后端
 使用php自行开发，为MVC框架
