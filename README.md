@@ -5,7 +5,7 @@ Very Simple Renting Platform
 
 ----
 ## 前端
-库用的bootstrap，前端状态如下：
+库用的bootstrap和jQuery，前端状态如下：
 
 
 ```flow
@@ -21,7 +21,7 @@ Very Simple Renting Platform
 	|       |    			  |                       |
 	| index |  			      |   +---------------+   |	   +---------------+
 	|       +--(login/regist)-+--->user management+---+----> profile	   |
-	+---+---+  	 		      |   +---------------+   |	   +---------------+
+	+-------+  	 		      |   +---------------+   |	   +---------------+
 						      |                       |	
 						      |						  |    +--------------+
 						      |                       +----> my orders    |
