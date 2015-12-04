@@ -36,7 +36,7 @@ Very Simple Renting Platform
 
 
 ## 后端
-使用php自行开发，为MVC框架
+使用php开发，为MVC框架
 提供
 
 + 用户管理  
