@@ -1,0 +1,2 @@
+# LOAD DATA LOCAL INFILE './data.txt' INTO TABLE `crafts` Fields Terminated By '?' Lines Terminated By '#';
+LOAD DATA LOCAL INFILE './data.txt' INTO TABLE `crafts` Fields Terminated By '\t' Lines Terminated By '\n';
