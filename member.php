@@ -94,6 +94,7 @@ include 'templete\header.html';
                 <p><a href="member.php?act=myrenting" >我的发布</a></p>
                 <p><a href="member.php?act=rent" >我要定制</a></p>
                 <p><a href="member.php?act=order_list" >历史订单</a></p>
+                <p><a href="member.php?act=group_chou" >我的众筹</a></p>
             </dd>
         </dl>
         <dl class="menu-dl fl wfs">

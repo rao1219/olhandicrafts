@@ -3,6 +3,7 @@ class operate{
     //获取一行数据
     public static function getoneline($table,$condition,$filed="*"){
         $osql='select '.$filed.' from '.$table.' where '.$condition;
+        echo $osql;
         return mysql_fetch_array(mysql_query($osql));
     }
     //获取数据数组
@@ -44,6 +45,15 @@ class operate{
             $osql.=','.$datetitle[$i].'=\''.$datecontent[$i].'\'';
         }
         $osql.=' where '.$condition;
+       // echo $osql;
+        return mysql_query($osql);
+    }
+    //更新一条数据
+    public static function updateonelinesql($table,$datetitle,$datecontent,$condition){
+        $osql='update '.$table.' set '.$datetitle.'=\''.$datecontent.'\'';
+        
+        $osql.=' where '.$condition;
+        echo $osql;
         return mysql_query($osql);
     }
     //插入一条数据

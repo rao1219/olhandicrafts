@@ -1,5 +1,5 @@
 <?php
-if(isset($_GET['act'])&&($_GET['act']=='profile'||$_GET['act']=='order_list'||$_GET['act']=='account_detail'||$_GET['act']=='account_recharge'||$_GET['act']=='myrenting'||$_GET['act']=='rent')){
+if(isset($_GET['act'])&&($_GET['act']=='group_chou'||$_GET['act']=='profile'||$_GET['act']=='order_list'||$_GET['act']=='account_detail'||$_GET['act']=='account_recharge'||$_GET['act']=='myrenting'||$_GET['act']=='rent'||$_GET['act']=='show_order'||$_GET['act']=='show_zhongchou'||$_GET['act']=='show_crafts'||$_GET['act']=='show_comments')){
     switch($_GET['act']){
     case 'profile':
     $info = operate::getoneline("member","username='".$_SESSION['username']."'");
@@ -266,9 +266,11 @@ var http_request=false;
                             <option selected value="">选择省</option>  
                                       
                              <?  
-                               $sql = "select id,city from city where parentid=0";  
+                               $sql = "select id,city from `city` where parentid=0";  
                                $result = mysql_query( $sql );  
                                while($res = mysql_fetch_row($result)){  
+                                     //echo 'tst';    
+                                     //echo var_dump($res);
                              ?>  
                                 <option value="<?php echo $res[0]; ?>"><?php echo $res[1]; ?></option>  
                               <? } ?>  
@@ -307,6 +309,228 @@ var http_request=false;
     break;
     case 'account_detail':break;
     case 'account_recharge':break;
+    case 'show_order':
+        if($_SESSION['username'] == 'admin')
+        {
+            echo '<br>';
+            echo '<h1 class="fl"><font color="red">管理员功能</font></h1>';
+            echo '<br>';
+            echo '<small><font color="red">查看所有订单</font></small>';
+            echo '<br>';
+            echo '<br>';
+            $orderinfo[] = operate::getmuchlinesql("`order`","");
+            var_dump($orderinfo);
+        
+        ?>
+        <br>
+        
+       
+        
+        <?php
+        
+        }
+        else{
+            echo '您无权访问！';
+        }
+    
+    break;
+    case 'group_chou':
+        $name = $_SESSION['username'];
+	
+	$orderinfo[] = operate::getmuchlinesql("`order`","where buyername='$name'");
+	//for($i=0;$i<3;$i++){
+	//	$temp = $orderinfo[$i];
+	//	echo $temp['id'];
+	//}
+	echo '<br>';
+	// echo var_dump($orderinfo);
+	// echo $orderinfo[0][2]['id'];
+    // echo sizeof($orderinfo[0])
+    /*
+	for($i=0;$i<sizeof($orderinfo[0]);$i++)
+    {
+        echo $orderinfo[0][$i]['id'];
+        echo '-';
+        echo $orderinfo[0][$i]['productName'];
+        echo '-';
+        echo $orderinfo[0][$i]['price'];
+        echo '-';
+        echo $orderinfo[0][$i]['number'];
+        echo '-';
+        echo $orderinfo[0][$i]['buyerphone'];
+        echo "<br>";
+    }
+	*/
+	?>
+	<div class="member-infos fr w955">
+	
+	<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><i class="fa fa-calendar"></i><strong>我的众筹</h3>
+  </div>
+  <table class="table">
+      <thead>
+          <tr>
+              <th>物品</th>
+              <th>单价</th>
+              <th>数量</th>
+              <th>总价</th>
+              <th>收件地址</th>
+              <th>备注</th>
+              <th>卖家姓名</th>
+              <th>卖家住址</th>
+              <th>卖家电话</th>
+              <th>下单时间</th>
+          </tr>
+      </thead>
+      <tbody>
+          
+          <?php 
+          
+          
+        for($i=0;$i<sizeof($orderinfo[0]);$i++)
+        {
+        echo '<tr>';
+            echo '<td>';
+            echo $orderinfo[0][$i]['productName'];
+            echo '</td>';
+            echo '<td>';
+            echo $orderinfo[0][$i]['price'];
+            echo '</td>';
+            echo '<td>';
+            echo $orderinfo[0][$i]['number'];
+            echo '</td>';
+            echo '<td>';
+            echo $orderinfo[0][$i]['number'] * $orderinfo[0][$i]['price'];
+            echo '</td>';
+            echo '<td>';
+            echo $orderinfo[0][$i]['buyeraddress'];
+            echo '</td>';
+            echo '<td>';
+            echo $orderinfo[0][$i]['comments'];
+            echo '</td>';
+            echo '<td>';
+            echo $orderinfo[0][$i]['sellername'];
+            echo '</td>';
+            echo '<td>';
+            echo $orderinfo[0][$i]['selleraddress'];
+            echo '</td>';
+            echo '<td>';
+            echo $orderinfo[0][$i]['sellerphone'];
+            echo '</td>';
+            echo '<td>';
+            echo $orderinfo[0][$i]['time1'];
+            echo '</td>';
+            //echo '<small></small>'
+        echo '</tr>';   
+        }   
+        
+          
+          
+          ?>
+      </tbody>
+  </table>
+  <ul class="list-group">
+            <li class="list-group-item"><br>
+			<?php //echo var_dump($orderinfo);?>
+            
+      <small class="text-muted"><i class="fa fa-clock-o"></i> 17/11/2015 14:19:11</small></li>
+        <li class="list-group-item"><br>
+      <small class="text-muted"><i class="fa fa-clock-o"></i> 17/11/2015 14:16:48</small></li>
+  </ul>
+</div>
+</div>
+	
+	
+	<div class="member-infos fr w955">
+	
+	<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><i class="fa fa-calendar"></i>账户活动</h3>
+  </div>
+  <ul class="list-group">
+            <li class="list-group-item"><a href="http://localhost/handicrafts/upload/admin/index.php?route=sale/customer/edit&amp;token=cc83002ccdda925d9edc483b05c84bb1&amp;customer_id=1">Rao Qi</a> added a <a href="http://localhost/handicrafts/upload/admin/index.php?route=sale/order/info&amp;token=cc83002ccdda925d9edc483b05c84bb1&amp;order_id=1">new order</a>.<br>
+      <small class="text-muted"><i class="fa fa-clock-o"></i> 17/11/2015 14:19:11</small></li>
+        <li class="list-group-item"><a href="http://localhost/handicrafts/upload/admin/index.php?route=sale/customer/edit&amp;token=cc83002ccdda925d9edc483b05c84bb1&amp;customer_id=1">Rao Qi</a> registered a new account.<br>
+      <small class="text-muted"><i class="fa fa-clock-o"></i> 17/11/2015 14:16:48</small></li>
+          </ul>
+	</div>
+	</div>
+	
+	<?php
+    break;
+    case 'show_zhongchou':
+       if($_SESSION['username'] == 'admin')
+        {
+            echo '<br>';
+            echo '<h1 class="fl"><font color="red">管理员功能</font></h1>';
+            echo '<br>';
+            echo '<small><font color="red">查看众筹信息</font></small>';
+            echo '<br><br>';
+            $zhongchouinfo[] = operate::getmuchlinesql("`groupChou`","");
+            var_dump($zhongchouinfo);
+        
+        ?>
+        <br>
+        
+       
+        
+        <?php
+        
+        }
+        else{
+            echo '您无权访问！';
+        }
+    
+    break;
+    case 'show_crafts':
+       if($_SESSION['username'] == 'admin')
+        {
+            echo '<br>';
+            echo '<h1 class="fl"><font color="red">管理员功能</font></h1>';
+            echo '<br>';
+            echo '<small><font color="red">查看手工艺产品详细</font></small>';
+            echo '<br><br>';
+            $orderinfo[] = operate::getmuchlinesql("`crafts`","");
+            var_dump($orderinfo);
+        
+        ?>
+        <br>
+        
+       
+        
+        <?php
+        
+        }
+        else{
+            echo '您无权访问！';
+        }
+    
+    break;
+    case 'show_comments':
+       if($_SESSION['username'] == 'admin')
+        {
+             echo '<br>';
+            echo '<h1 class="fl"><font color="red">管理员功能</font></h1>';
+            echo '<br>';
+            echo '<small><font color="red">查看产品评论</font></small>';
+            echo '<br><br>';
+            $orderinfo[] = operate::getmuchlinesql("`communicate`","");
+            var_dump($orderinfo);
+        
+        ?>
+        <br>
+        
+       
+        
+        <?php
+        
+        }
+        else{
+            echo '您无权访问！';
+        }
+    
+    break;
     }
 }else{
 ?>
@@ -318,9 +542,32 @@ var http_request=false;
 				<div class="left fl">
 					<h3>亲爱的 <?=$_SESSION['username']?>， 欢迎您回到 Handicrafts！</h3>
 											</p>
-					<dl class="orders-items fl wfs">
+					
+							  <?php
+                if($_SESSION['username'] == 'admin')
+                {
+                    echo '<br>';
+                    echo '<h4 class="fl"><font color="red">管理员功能</font></h4>';
+                    echo '<br>';
+                
+                ?>
+                <br>
+                
+               <div class = "list-group">
+                <a href ="member.php?act=show_order" class = "list-group-item">查看所有订单</a>
+                <a href ="member.php?act=show_zhongchou" class = "list-group-item">查看众筹信息</a>
+                <a href ="member.php?act=show_crafts" class = "list-group-item">查看所有产品详细</a>
+                <a href ="member.php?act=show_comments" class = "list-group-item">查看所有评价</a>
+               </div>
+
+                
+                <?php
+                
+                }
+                else{
+            ?>
+            <dl class="orders-items fl wfs">
 						<dt class="fl wfs">
-							<h4 class="fl">最新订单</h4>
 							<a class="btn btn-danger btn-xs fr" href="member.php?act=order_list">更多订单</a>
 						</dt>
 							<dd class="fl wfs" style="height: 450px;">
@@ -330,6 +577,9 @@ var http_request=false;
                             </div>
                         </dd>
 											</dl>
+                         <?php
+                         }
+                         ?>                 
 				</div>
 				
 				
@@ -344,6 +594,7 @@ var http_request=false;
 					</div>
 				</div>
 			</div>
+            
 
 <?php
 }
