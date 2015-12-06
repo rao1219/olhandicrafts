@@ -3,8 +3,14 @@ class operate{
     //获取一行数据
     public static function getoneline($table,$condition,$filed="*"){
         $osql='select '.$filed.' from '.$table.' where '.$condition;
-        echo $osql;
+      // echo $osql;
         return mysql_fetch_array(mysql_query($osql));
+    }
+     //获取一行数据
+    public static function getonelinesql($table,$condition,$filed="*"){
+        $osql='select '.$filed.' from '.$table.' where '.$condition;
+       echo $osql;
+        return mysql_fetch_row(mysql_query($osql));
     }
     //获取数据数组
     public static function getmuchline($table,$condition="",$filed="*"){
@@ -53,7 +59,7 @@ class operate{
         $osql='update '.$table.' set '.$datetitle.'=\''.$datecontent.'\'';
         
         $osql.=' where '.$condition;
-        echo $osql;
+      //  echo $osql;
         return mysql_query($osql);
     }
     //插入一条数据
@@ -68,7 +74,7 @@ class operate{
             $osql.=',\''.$datecontent[$i].'\'';
         }
         $osql.=')';
-		// echo $osql;
+		 //echo $osql;
         return mysql_query($osql);
     }
     //删除一条数据

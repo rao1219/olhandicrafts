@@ -337,7 +337,7 @@ var http_request=false;
     case 'group_chou':
         $name = $_SESSION['username'];
 	
-	$orderinfo[] = operate::getmuchlinesql("`order`","where buyername='$name'");
+	$orderinfo[] = operate::getmuchlinesql("`member_has_chou`","where membername='$name'");
 	//for($i=0;$i<3;$i++){
 	//	$temp = $orderinfo[$i];
 	//	echo $temp['id'];
@@ -371,16 +371,11 @@ var http_request=false;
   <table class="table">
       <thead>
           <tr>
-              <th>物品</th>
-              <th>单价</th>
-              <th>数量</th>
-              <th>总价</th>
-              <th>收件地址</th>
-              <th>备注</th>
-              <th>卖家姓名</th>
-              <th>卖家住址</th>
-              <th>卖家电话</th>
-              <th>下单时间</th>
+              <th>名称</th>
+              <th>参与金额</th>
+              <th>结束时间</th>
+              <th>参与人次</th>
+              
           </tr>
       </thead>
       <tbody>
@@ -390,36 +385,22 @@ var http_request=false;
           
         for($i=0;$i<sizeof($orderinfo[0]);$i++)
         {
+        $groupid = $orderinfo[0][$i]['groupid'];
+        $money = $orderinfo[0][$i]['money'];
+        $groupinfo[] = operate::getoneline("`groupchou`","id=$groupid");
+        //echo var_dump($groupinfo);
         echo '<tr>';
             echo '<td>';
-            echo $orderinfo[0][$i]['productName'];
+            echo $groupinfo[$i]['name'];
             echo '</td>';
             echo '<td>';
-            echo $orderinfo[0][$i]['price'];
+            echo $money;
             echo '</td>';
             echo '<td>';
-            echo $orderinfo[0][$i]['number'];
+            echo $groupinfo[$i]['time2'];
             echo '</td>';
             echo '<td>';
-            echo $orderinfo[0][$i]['number'] * $orderinfo[0][$i]['price'];
-            echo '</td>';
-            echo '<td>';
-            echo $orderinfo[0][$i]['buyeraddress'];
-            echo '</td>';
-            echo '<td>';
-            echo $orderinfo[0][$i]['comments'];
-            echo '</td>';
-            echo '<td>';
-            echo $orderinfo[0][$i]['sellername'];
-            echo '</td>';
-            echo '<td>';
-            echo $orderinfo[0][$i]['selleraddress'];
-            echo '</td>';
-            echo '<td>';
-            echo $orderinfo[0][$i]['sellerphone'];
-            echo '</td>';
-            echo '<td>';
-            echo $orderinfo[0][$i]['time1'];
+            echo $groupinfo[$i]['participate_num'];
             echo '</td>';
             //echo '<small></small>'
         echo '</tr>';   

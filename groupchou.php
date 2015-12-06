@@ -109,8 +109,14 @@ $iteminfo[] = operate::getmuchlinesql("`groupchou`","");
 
 
 			
-							
-			<form action="purchasegroup.php" id="subform" method="get" onSubmit="return checkForm();">
+			<?php 
+                  $N = $i+1;
+                  $formname = 'subform'.$N."";
+                 // echo $formname;
+                  $checkform = 'return '.'checkForm'.$N."();";
+                  // echo $checkform;
+            ?>				
+			<form action="purchasegroup.php" id="subform.<?=$formname?>" method="get" onSubmit="<?=$checkform?>">
 			<div class="row">
 				
 				<div class="col-lg-6">
@@ -155,10 +161,132 @@ $iteminfo[] = operate::getmuchlinesql("`groupchou`","");
         <div class="cover-page-wrapper">
 			
 			<script>
-    function checkForm()
+    function checkForm1()
     {
-    var frm      = document.forms['subform'];
+    var frm      = document.forms['subform1'];
     var number = frm.elements['money'].value;
+	var id = frm.elements['id'].value;
+    var msg='';
+    alert(number);
+    if(number.length==0)
+    {
+        msg+='金额不可以为空！';
+    }
+    if(isNaN(number))
+    {
+        msg+='金额不可以为非数字！';
+    }
+    if(number>2197||number<=0)
+    {
+        msg+='金额超出范围！';
+    }
+   
+    if(msg.length!=0)
+    {
+        alert(msg);
+        return false;
+    }
+    else
+    {
+		alert('参与成功！');
+        return true;
+    }
+   }
+   function checkForm2()
+    {
+    var frm      = document.forms['subform2'];
+    var number = frm.elements['money'].value;
+	var id = frm.elements['id'].value;
+    var msg='';
+    if(number.length==0)
+    {
+        msg+='金额不可以为空！';
+    }
+    if(isNaN(number))
+    {
+        msg+='金额不可以为非数字！';
+    }
+    if(number>2197||number<0)
+    {
+        msg+='金额超出范围！';
+    }
+   
+    if(msg.length!=0)
+    {
+        alert(msg);
+        return false;
+    }
+    else
+    {
+		alert('参与成功！');
+        return true;
+    }
+   }
+   function checkForm3()
+    {
+    var frm      = document.forms['subform3'];
+    var number = frm.elements['money'].value;
+	var id = frm.elements['id'].value;
+    var msg='';
+    if(number.length==0)
+    {
+        msg+='金额不可以为空！';
+    }
+    if(isNaN(number))
+    {
+        msg+='金额不可以为非数字！';
+    }
+    if(number>2197||number<0)
+    {
+        msg+='金额超出范围！';
+    }
+   
+    if(msg.length!=0)
+    {
+        alert(msg);
+        return false;
+    }
+    else
+    {
+		alert('参与成功！');
+        return true;
+    }
+   }
+   function checkForm4()
+    {
+    var frm      = document.forms['subform4'];
+    var number = frm.elements['money'].value;
+	var id = frm.elements['id'].value;
+    var msg='';
+    if(number.length==0)
+    {
+        msg+='金额不可以为空！';
+    }
+    if(isNaN(number))
+    {
+        msg+='金额不可以为非数字！';
+    }
+    if(number>2197||number<0)
+    {
+        msg+='金额超出范围！';
+    }
+   
+    if(msg.length!=0)
+    {
+        alert(msg);
+        return false;
+    }
+    else
+    {
+		alert('参与成功！');
+        return true;
+    }
+   }
+   function checkForm5()
+    {
+    var frm      = document.forms['subform5'];
+    var number = frm.elements['money'].value;
+	var id = frm.elements['id'].value;
     var msg='';
     if(number.length==0)
     {

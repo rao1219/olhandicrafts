@@ -16,6 +16,7 @@ $id = $_GET['id'];
 $iteminfo[] = operate::getmuchlinesql("`groupchou`","where id=$id");
 if(isset($_GET['id'])&&isset($_GET['money']))
 {
+    
 	$id = $_GET['id'];
 	$item = operate::getoneline("`groupchou`","id=$id");
 	// echo var_dump($item);
@@ -24,10 +25,40 @@ if(isset($_GET['id'])&&isset($_GET['money']))
     
     $money = $_GET['money'];
     $user = $_SESSION['username'];
-	
- 	operate::updateonelinesql("`groupchou`","hasChou",$item['hasChou'],"id=$id");
+    echo $money;
+    $judge = 1;
+    if(floor($judge)!=$judge||$money<=0)
+    {
+        $judge = 0;
+    }
+    
+    echo 'judge = '.$judge ;
+    if($judge == 0)
+    {
+     
+     ?>
+     <script>
+         alert('请输入合理的金额！');
+         window.location.href="groupchou.php";
+     </script>
+     
+     <?php   
+    }
+    else{
+        ?>
+     <script>
+         alert('参与成功！');
+     </script>
+     
+     <?php   
+     operate::updateonelinesql("`groupchou`","hasChou",$item['hasChou'],"id=$id");
 	operate::updateonelinesql("`groupchou`","participate_num",$item['participate_num'],"id=$id");
+    echo $id;
     operate::insertoneline("`member_has_chou`",array("membername","groupid","money"),array($user,$id,$money));
+        
+    }
+	
+ 	
 }
 //echo var_dump($iteminfo);
 //echo var_dump($iteminfo);
