@@ -1,5 +1,5 @@
 # coursework
-Very Simple Renting Platform
+Very Simple Ecommerce Platform
 
 [安装部署](https://github.com/rao1219/olhandicrafts/wiki/install)
 
