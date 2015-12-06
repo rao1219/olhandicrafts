@@ -61,7 +61,7 @@ function addmarker(i, d) {
     marker.push(new AMap.LngLat(lngX, latY));
 
     var infoWindow = new AMap.InfoWindow({
-        content:"<h3><font face=\"微软雅黑\"color=\"#3366FF\">"+(i+1) + "."+ d._name +"</font></h3><img src='upload/"+ d.img +"' width='280' /><hr />地址："+ d._address + "<br />" + "价格：" + d.money+ "元/天",
+        content:"<h3><font face=\"微软雅黑\"color=\"#3366FF\">"+(i+1) + "."+ d._name +"</font></h3><img src='upload/"+ d.img +"' width='280' /><hr />地址："+ d._address + "<br />" + "价格：" + d.money+ "元",
         size:new AMap.Size(300, 0),
         autoMove:true,
         offset:new AMap.Pixel(0,-30)
@@ -101,7 +101,7 @@ function cloudSearch_CallBack(data) {
     var resultNum = resultArr.length;  
     for (var i = 0; i < resultNum; i++) {  
         resultStr += "<div id='divid" + (i+1) + "' onmouseover='openMarkerTipById1(" + i + ",this)' onmouseout='onmouseout_MarkerStyle(" + (i+1) + ",this)' style=\"font-size: 12px;cursor:pointer;padding:2px 0 4px 2px; border-bottom:1px solid #C1FFC1;\"><table><tr><td><h3><font face=\"微软雅黑\"color=\"#3366FF\">" + (i+1) + "." + resultArr[i]._name + "</font></h3>";
-        resultStr += '地址：' + resultArr[i]._address + '<br/>价格：' + resultArr[i].money + '元/天</td></tr></table></div>';
+        resultStr += '地址：' + resultArr[i]._address + '<br/>价格：' + resultArr[i].money + '元</td></tr></table></div>';
         addmarker(i, resultArr[i]);
     }
     mapObj.setFitView();

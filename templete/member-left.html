@@ -154,20 +154,7 @@ if(isset($_GET['act'])&&($_GET['act']=='group_chou'||$_GET['act']=='profile'||$_
 </div>
 	
 	
-	<div class="member-infos fr w955">
 	
-	<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title"><i class="fa fa-calendar"></i>账户活动</h3>
-  </div>
-  <ul class="list-group">
-            <li class="list-group-item"><a href="http://localhost/handicrafts/upload/admin/index.php?route=sale/customer/edit&amp;token=cc83002ccdda925d9edc483b05c84bb1&amp;customer_id=1">Rao Qi</a> added a <a href="http://localhost/handicrafts/upload/admin/index.php?route=sale/order/info&amp;token=cc83002ccdda925d9edc483b05c84bb1&amp;order_id=1">new order</a>.<br>
-      <small class="text-muted"><i class="fa fa-clock-o"></i> 17/11/2015 14:19:11</small></li>
-        <li class="list-group-item"><a href="http://localhost/handicrafts/upload/admin/index.php?route=sale/customer/edit&amp;token=cc83002ccdda925d9edc483b05c84bb1&amp;customer_id=1">Rao Qi</a> registered a new account.<br>
-      <small class="text-muted"><i class="fa fa-clock-o"></i> 17/11/2015 14:16:48</small></li>
-          </ul>
-	</div>
-	</div>
 	
 	<?php
 	
@@ -423,20 +410,7 @@ var http_request=false;
 </div>
 	
 	
-	<div class="member-infos fr w955">
 	
-	<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title"><i class="fa fa-calendar"></i>账户活动</h3>
-  </div>
-  <ul class="list-group">
-            <li class="list-group-item"><a href="http://localhost/handicrafts/upload/admin/index.php?route=sale/customer/edit&amp;token=cc83002ccdda925d9edc483b05c84bb1&amp;customer_id=1">Rao Qi</a> added a <a href="http://localhost/handicrafts/upload/admin/index.php?route=sale/order/info&amp;token=cc83002ccdda925d9edc483b05c84bb1&amp;order_id=1">new order</a>.<br>
-      <small class="text-muted"><i class="fa fa-clock-o"></i> 17/11/2015 14:19:11</small></li>
-        <li class="list-group-item"><a href="http://localhost/handicrafts/upload/admin/index.php?route=sale/customer/edit&amp;token=cc83002ccdda925d9edc483b05c84bb1&amp;customer_id=1">Rao Qi</a> registered a new account.<br>
-      <small class="text-muted"><i class="fa fa-clock-o"></i> 17/11/2015 14:16:48</small></li>
-          </ul>
-	</div>
-	</div>
 	
 	<?php
     break;
@@ -511,6 +485,46 @@ var http_request=false;
             echo '您无权访问！';
         }
     
+    break;
+    case 'myrenting':
+    ?>
+    <form   name="compareForm" action="compare.php" method="post" onSubmit="return compareGoods(this);">
+             <div class="boutique">
+        <ul class="items wfs">
+    <?php
+    $search = '发布'.$_SESSION['username'];
+    //echo $search;
+    $iteminfo[] = operate::getmuchlinesql("`crafts`","where name like '%$search%'");
+     for($i=0;$i<sizeof($iteminfo[0]);$i++)
+         {
+         $label = $iteminfo[0][$i]['id'];
+         ?>
+         <li class="items-li j-items-li">
+                                                    <a target="_blank" href="items.php?id=<?=$label?>" style="position:relative;">
+                                                                  <img src="<?=$iteminfo[0][$i]['img']?>" title="<?=$iteminfo[0][$i]['name']?>">
+                            </a>
+                            <div class="wrap_div">
+                                <div>
+                                    <b class="title"><a target="_blank" href="items.php?id=<?=$label?>""><?=$iteminfo[0][$i]['name']?></a></b>
+                                    <span class="description">
+                                      <a href="category.html" target="_blank" title=""><?=$iteminfo[0][$i]['type']?></a>
+                                    </span>
+                                    <p class="price-attente"><?=$iteminfo[0][$i]['selleradd']?></p>
+                                </div>
+                            </div>
+                            <p class="price-attente">
+                              <span class="price">
+                                                            ￥<?=$iteminfo[0][$i]['price']?>元                                                           </span>
+                              <span class="attente" title="浏览量">768</span>
+                            </p>
+                        </li>
+         
+         
+         <?php
+         }
+    ?>
+    
+    <?php
     break;
     }
 }else{

@@ -115,6 +115,7 @@ class operate{
         $_SESSION['qq']=$info['qq'];
         $_SESSION['phone']=$info['phone'];
         $_SESSION['Email']=$info['Email'];
+        $_SESSION['level']=$info['level'];
     }
 	
     //post发送数据，高德
