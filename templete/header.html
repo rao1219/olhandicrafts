@@ -46,13 +46,13 @@ var process_request = "正在处理您的请求...";
             <?php if(isset($_SESSION['username'])){
             ?>
         	<div class="j-user-img"  style="width: 54px;height: 45px;float: right;">
-                <a href="./member.php"><img class="user-img" style="margin-top: -3px;" src="style/images/noavatar_middle.gif" width="45" height="45" alt=""></a>
+                <a href="./member.php"><img class="user-img" style="margin-top: -3px;" src="<?=$_SESSION['touxiang']?>" width="45" height="45" alt=""></a>
                 <div class="logined j-logined" style="height: 194px;">
                 	<div style="border: 1px solid #ddd;background-color: #fff;position: absolute;">
                     <em class="trangle"></em>
                     <p class="logined-user">
                         <b class="fl"><?=$_SESSION['username']?></b>
-                        <img class="user-img" style="margin-top: -3px; float:right;" src="style/images/noavatar_middle.gif" width="45" height="45" />
+                        <img class="user-img" style="margin-top: -3px; float:right;" src="<?=$_SESSION['touxiang']?>" width="45" height="45" />
                     </p>
                     <ul class="logined-item">
                         <li class="order"><i></i><a href="./member.php?act=order_list">订单中心</a></li>
@@ -71,7 +71,7 @@ var process_request = "正在处理您的请求...";
 			 
              <a href="./register.php" class="register">注册</a>
              <a href="./login.php" class="login">登录</a>
-			 
+            
              </p>
              <?php } ?>
         </div>

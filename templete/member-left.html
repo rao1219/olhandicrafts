@@ -34,6 +34,10 @@ if(isset($_GET['act'])&&($_GET['act']=='group_chou'||$_GET['act']=='profile'||$_
                                 	<span class="tit">QQ</span>
                                     <input name="qq" type="text" class="form-control" value="<?=$info['qq']?>"/>
                                 </p>
+                                 <p class="p-item top-line">
+                                	<span class="tit">头像</span><input type="file" class="form-control" name="pic" />
+
+                                </p>
                                 <p class="p-item top-line" style="padding-bottom:50px;">
                                     <input name="act" type="hidden" value="edit_profile" />
                                     <input class="btn btn-danger confirm-modify"  name="submit" type="submit" value="确认修改"  style="border:none;" />
@@ -585,6 +589,10 @@ var http_request=false;
 							<span class="qq">Q Q：<?php if($_SESSION['qq']==NULL){ echo '未填写'; }else{ echo $_SESSION['qq']; } ?></span>
 							<span class="phone">手机：<?php if($_SESSION['phone']==NULL){ echo '未填写'; }else{ echo $_SESSION['phone']; } ?></span>
 							<span class="email">邮箱：<?php if($_SESSION['Email']==NULL){ echo '未填写'; }else{ echo $_SESSION['Email']; } ?></span>
+                            
+                                	
+
+                             
 						</div>
 					</div>
 				</div>

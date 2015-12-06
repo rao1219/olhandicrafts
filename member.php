@@ -84,7 +84,7 @@ include 'templete\header.html';
 			<div class="menu fl">
     <div class="menu-body fl">
         <div class="infos fl wfs">
-            <a href="#"><img class="fl" src="style/images/noavatar_middle.gif"></a>
+            <a href="#"><img class="fl" src="<?=$_SESSION['touxiang']?>"></a>
                             <span class="fl"><?=$_SESSION['username']?></span>
         </div>
         <p class="index fl wfs"><a href="member.php" style="color:#ffffff">用户中心&nbsp;-&nbsp;首页</a></p>
