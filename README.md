@@ -281,6 +281,27 @@ SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 ```
+## 引用说明及代码统计
+
+第三方类库引用说明如下表：
+
+| 引用内容        | 引用来源   |  作用  |
+| --------   | -----:  | :----:  |
+| Bootstrap3.0     | http://getbootstrap.com/ |   UI框架和基本CSS组件     |
+| Jquery1.8.0        |   http://jquery.com   |   用于前端ajax、交互效果、功能选择器   |
+| Intel RealSense SDK     |  https://software.intel.com/zh-cn/intel-realsense-sdk  |   用于手势验证   |
+| Jsoup     |  http://jsoup.org/  |   用于爬取数据信息   |
+| Gaode map API        |   http://ditu.amap.com/    |  用于位置服务  |
+| Discuz!X3.5        |   http://www.discuz.net/    |  用于论坛服务  |
+
+项目代码统计如下：
+
+| 语言        | JavaScript   |  HTML/CSS  | C++/Java| PHP |
+| --------   | -----:  |-----:  |-----:  | :----:  |
+| 原创代码行数(不含注释)| 2488 | 1179 | 745 | 3872 | 
+|第三方代码库| 1000左右 （Jquery1.8.js 按1行计算 /Jquery-ui.js按 100行计算)| 700 | # | 0 |
+	
+
 
 
 ## 创新点
