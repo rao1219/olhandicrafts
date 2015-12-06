@@ -293,6 +293,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 | Jsoup     |  http://jsoup.org/  |   用于爬取数据信息   |
 | Gaode map API        |   http://ditu.amap.com/    |  用于位置服务  |
 | Discuz!X3.5        |   http://www.discuz.net/    |  用于论坛服务  |
+| baidu share       |   http://share.baidu.com/    |  提供微信等多社交网络接口的产品分享功能  |
 
 项目代码统计如下：
 
