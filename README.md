@@ -299,7 +299,9 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 | 语言        | JavaScript   |  HTML/CSS  | C++/Java| PHP |
 | --------   | -----:  |-----:  |-----:  | :----:  |
 | 原创代码行数(不含注释)| 2488 | 1179 | 745 | 3872 | 
-|第三方代码库| 1000左右 （Jquery1.8.js 按1行计算 /Jquery-ui.js按 100行计算)| 700 | # | 0 |
+|第三方代码库| 1033 | 700 | # | 0 |
+
+（Jquery1.8.js 按1行计算 /Jquery-ui.js按 100行计算)
 	
 
 
