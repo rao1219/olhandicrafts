@@ -1,5 +1,5 @@
 # coursework
-Very Simple Renting Platform
+Very Simple Ecommerce Platform
 
 [安装部署](https://github.com/rao1219/olhandicrafts/wiki/install)
 
@@ -281,11 +281,38 @@ SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 ```
+## 引用说明及代码统计
+
+第三方类库引用说明如下表：
+
+| 引用内容        | 引用来源   |  作用  |
+| --------   | -----:  | :----:  |
+| Bootstrap3.0     | http://getbootstrap.com/ |   UI框架和基本CSS组件     |
+| Jquery1.8.0        |   http://jquery.com   |   用于前端ajax、交互效果、功能选择器   |
+| Intel RealSense SDK     |  https://software.intel.com/zh-cn/intel-realsense-sdk  |   用于手势验证   |
+| Jsoup     |  http://jsoup.org/  |   用于爬取数据信息   |
+| Gaode map API        |   http://ditu.amap.com/    |  用于位置服务  |
+| Discuz!X3.5        |   http://www.discuz.net/    |  用于论坛服务  |
+| baidu share       |   http://share.baidu.com/    |  提供微信等多社交网络接口的产品分享功能  |
+
+项目代码统计如下：
+
+| 语言        | JavaScript   |  HTML/CSS  | C++/Java| PHP |
+| --------   | -----:  |-----:  |-----:  | :----:  |
+| 原创代码行数(不含注释)| 2488 | 1179 | 745 | 3872 | 
+|第三方代码库| 1033 | 700 | 无 | 无 |
+
+（Jquery1.8.js 按1行计算 /Jquery-ui.js按 100行计算)
+	
+
 
 
 ## 创新点
 
 + 项目创新点在于嵌入了Intel RealSense 手势识别技术用以登陆验证，代替繁复的验证码输入，提高用户体验
-+ md5加密技术
++ 具有爬虫友好的站内搜索功能
++ 前端有挺多ajax的交互效果，增强用户体验
++ 对用户上传有缓存管理，避免文件重复提交，增强服务器性能
++ md5加密技术，使重要信息的存储更安全
 
 
