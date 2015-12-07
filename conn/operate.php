@@ -74,7 +74,7 @@ class operate{
             $osql.=',\''.$datecontent[$i].'\'';
         }
         $osql.=')';
-		 //echo $osql;
+		 echo $osql;
         return mysql_query($osql);
     }
     //删除一条数据

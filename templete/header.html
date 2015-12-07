@@ -211,10 +211,19 @@ var process_request = "正在处理您的请求...";
                         <a class="channel" href="groupchou.php"  >手工艺众筹<span></span></a>
                         <a class="channel" href="communicate.php"  >手工艺论坛<span></span></a>
                         <div class="cart" id="ECS_CARTINFO" style="position:relative;z-index: 15;">
-             <a href="./member.php" title="查看购物车"><i></i><span>购物车</span><strong>0</strong></a>
+                            <?php 
+                            if(isset($_SESSION['orderlist'])){
+                            $cartN = sizeof($_SESSION['orderlist']);
+                            }
+                            else{
+                            $cartN = 0;
+                            }
+                                 
+                            ?>
+             <a href="./confirm.php" title="查看购物车"><i></i><span>购物车</span><strong><?=$cartN?></strong></a>
 <ul class="car_ul" style="padding:35px; background:#fff;position: absolute;top: 47px;text-align: center;width:405px;*height: 30px;*width:325px;right:-1px;border: 1px solid #ddd;display:none;">
 	<img src="style/images/cart_car.png"/>
-	<a href="#" style="color:#ccc;">您还没有加入任何商品哦~</a>
+	<a href="#" style="color:#ccc;">查看您的购物车~</a>
 </ul>
 
             </div>

@@ -27,10 +27,21 @@
 		$showtime=date("Y-m-d H:i:s");
 		// echo $iteminfo['name'],$iteminfo['price'],$_POST['number'],$_POST['username'],$_POST['userPhone'],$_POST['userAddress'],$iteminfo['seller'],$iteminfo['phone'],$iteminfo['selleradd'],$_POST['userComments'];
 		// operate::insertoneline("order",array("productName","price","number","buyername","buyerphone","buyeraddress","sellername","sellerphone","selleraddress","comments"),array($iteminfo['name'],$iteminfo['price'],$_POST['number'],$_POST['username'],$_POST['userPhone'],$_POST['userAddress'],$iteminfo['seller'],$iteminfo['phone'],$iteminfo['selleradd'],$_POST['userComments']));
-		if(operate::insertoneline("`order`",array("productName","price","number","buyername","buyerphone","buyeraddress","sellername","sellerphone","selleraddress","comments","time1"),array($iteminfo['name'],$iteminfo['price'],$_POST['number'],$_POST['username'],$_POST['userPhone'],$_POST['userAddress'],$iteminfo['seller'],$iteminfo['phone'],$iteminfo['selleradd'],$_POST['userComments'],$showtime))){
+		$order = array($iteminfo['name'],$iteminfo['price'],$_POST['number'],$_POST['username'],$_POST['userPhone'],$_POST['userAddress'],$iteminfo['seller'],$iteminfo['phone'],$iteminfo['selleradd'],$_POST['userComments'],$showtime,$iteminfo['img']);
+		if(isset($_SESSION['orderlist'])){
+			$orderlist = $_SESSION['orderlist'];
+			$orderlist[] =$order;
+		}else{
+			$orderlist[] =$order;
+		}
+		//echo var_dump($orderlist);
+		
+		// if(operate::insertoneline("`order`",array("productName","price","number","buyername","buyerphone","buyeraddress","sellername","sellerphone","selleraddress","comments","time1"),array($iteminfo['name'],$iteminfo['price'],$_POST['number'],$_POST['username'],$_POST['userPhone'],$_POST['userAddress'],$iteminfo['seller'],$iteminfo['phone'],$iteminfo['selleradd'],$_POST['userComments'],$showtime))){
+		if(isset($orderlist)){	
+			$errurl="confirm.php";
+			$errinfo="已加入购物车!";
+			$_SESSION['orderlist'] = $orderlist; 
 			
-			$errurl="member.php";
-			$errinfo="预定成功!";
 			include('templete/err.html');
 		}else{
 			$errurl="javascript:window.history.go(-1)";
