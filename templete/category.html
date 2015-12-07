@@ -19,7 +19,8 @@ else{
     $search =  $_GET['keywords'];
 }
 echo $search;
- $iteminfo[] = operate::getmuchlinesql("`crafts`","where name like '%$search%'");
+ $iteminfo[] = operate::getmuchlinesql("`crafts`","where name like '%$search%' or selleradd like '%$search%' or description like '%$search%' or store like '%$search%'");
+ //$iteminfo[] = operate::getmuchlinesql("`crafts`","where selleradd like '%$search%'");
  $num = sizeof($iteminfo[0]);
  $judge = sizeof($iteminfo[0][0]);
  $id=0;
@@ -94,8 +95,8 @@ echo $search;
                     <div class="left j-left wfs fz12">
                                                 <h3 class="template">商品<span class="hide-left j-hide-left" style=""><i></i></span></h3>
                         <div class="icons j-icons wfs">
-                            <a class="now" href="category.php?id=9">本地</a>
-                            <a  href="category.php?id=6">全国</a>
+                            <a class="now" href="http://localhost/olhandicrafts/category.php?k_template=0&keywords=工艺"">国内</a>
+                            <a  href="http://localhost/olhandicrafts/category.php?k_template=0&keywords=海外">海外</a>
                         </div>
                                                 
                                                 <div class="templates-items j-template-items wfs" style="display:block;">
@@ -109,6 +110,34 @@ echo $search;
                                             <a href="category.php?k_template=0&keywords=陶瓷">陶瓷工艺</a>
                                             <a href="category.php?k_template=0&keywords=纸">折纸</a>                                        
                                             <a href="category.php?k_template=0&keywords=布偶">布娃娃</a>
+                                                                                                            </dd>
+                            </dl>
+                             <dl class="conditions wfs">
+                                <dt class="j-demo-l-dt wfs now"><b>国内</b></dt>
+                                <dd class="j-demo-l-dd wfs" style="display:block;">
+                                            
+                                            <a href="category.php?k_template=0&keywords=河北">河北</a>
+                                            <a href="category.php?k_template=0&keywords=河南">河南</a>
+                                            <a href="category.php?k_template=0&keywords=湖北">湖北</a>
+                                            <a href="category.php?k_template=0&keywords=湖南">湖南</a>                                        
+                                            <a href="category.php?k_template=0&keywords=北京">北京</a>
+                                            <a href="category.php?k_template=0&keywords=上海">上海</a>
+                                            <a href="category.php?k_template=0&keywords=美国">浙江</a>
+                                            
+                                                                                                            </dd>
+                            </dl>
+                            <dl class="conditions wfs">
+                                <dt class="j-demo-l-dt wfs now"><b>海外</b></dt>
+                                <dd class="j-demo-l-dd wfs" style="display:block;">
+                                            
+                                            <a href="category.php?k_template=0&keywords=美国">美国</a>
+                                            <a href="category.php?k_template=0&keywords=英国">英国</a>
+                                            <a href="category.php?k_template=0&keywords=西班牙">西班牙</a>
+                                            <a href="category.php?k_template=0&keywords=土耳其">土耳其</a>                                        
+                                            <a href="category.php?k_template=0&keywords=缅甸">缅甸</a>
+                                            <a href="category.php?k_template=0&keywords=越南">越南</a>
+                                            <a href="category.php?k_template=0&keywords=澳大利亚">澳大利亚</a>
+                                            
                                                                                                             </dd>
                             </dl>
                                                

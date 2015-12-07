@@ -1,2 +1,2 @@
 # LOAD DATA LOCAL INFILE './data.txt' INTO TABLE `crafts` Fields Terminated By '?' Lines Terminated By '#';
-LOAD DATA LOCAL INFILE './data.txt' INTO TABLE `crafts` Fields Terminated By '\t' Lines Terminated By '\n';
+LOAD DATA LOCAL INFILE 'D://data4-o.txt' INTO TABLE `crafts` character set  utf8 Fields Terminated By '\t' Lines Terminated By '\n';
