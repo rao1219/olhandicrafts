@@ -564,6 +564,16 @@ var http_request=false;
                 
                 }
                 else{
+                
+                 if(!isset($_SESSION['orderlist'])){
+                    $comments = '您最近还没有在Handicrats订过东西哦，快去逛逛吧~';
+                    $urL = 'http://localhost/olhandicrafts/category.php?k_template=0&keywords=%E6%89%8B%E5%B7%A5';
+                 }
+                 else{
+                    $cartN = sizeof($_SESSION['orderlist']);
+                    $comments = '您的购物车里有'.$cartN.'件商品, 点击查看详情~';
+                    $urL = 'http://localhost/olhandicrafts/confirm.php';
+                 }
             ?>
             <dl class="orders-items fl wfs">
 						<dt class="fl wfs">
@@ -572,7 +582,7 @@ var http_request=false;
 							<dd class="fl wfs" style="height: 450px;">
                             <div class="orders-no fl wfs">
                                 <img src="http://member.ecmoban.com/content/themes/ecmoban2014/images/orders-no.png" alt="">
-                                <p>您最近还没有在Handicrats订过东西哦，快去逛逛吧~</p>
+                                <a href="<?=$urL?>"><p><?=$comments?></p></a>
                             </div>
                         </dd>
 											</dl>

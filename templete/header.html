@@ -15,6 +15,7 @@
     <script type="text/javascript">
 var process_request = "正在处理您的请求...";
 </script>
+<?php $camera = 0;?>
 <div class="head fl wfs">
     <div class="cover-page-wrapper">
         <a class="fl" href="./"><img src="style/images/logo.png" alt="E租时代"></a>
@@ -67,10 +68,16 @@ var process_request = "正在处理您的请求...";
              </div>
             <?php
             }else{
+                        
+            switch($camera){
+                case 0 : $loginUrl= 'login.php';break;
+                case 1 :  $loginUrl= 'camera.php';break;
+            }
+            
             ?>
 			 
              <a href="./register.php" class="register">注册</a>
-             <a href="./login.php" class="login">登录</a>
+             <a href="./<?=$loginUrl?>" class="login">登录</a>
             
              </p>
              <?php } ?>
@@ -207,7 +214,7 @@ var process_request = "正在处理您的请求...";
             </div>
             <a class="channel channel-now" href="./">首页<span></span></a>
                         <a class="channel" href="nearby.php" >周边作品<span></span></a>
-                        <a class="channel" href="category.php?k_template=0&keywords=发布"  >手工艺分类<span></span></a>
+                        <a class="channel" href="category.php?k_template=0&keywords=手工"  >手工艺分类<span></span></a>
                         <a class="channel" href="groupchou.php"  >手工艺众筹<span></span></a>
                         <a class="channel" href="communicate.php"  >手工艺论坛<span></span></a>
                         <div class="cart" id="ECS_CARTINFO" style="position:relative;z-index: 15;">
