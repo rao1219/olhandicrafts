@@ -288,7 +288,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 | 引用内容        | 引用来源   |  作用  |
 | --------   | -----:  | :----:  |
 | Bootstrap3.0     | http://getbootstrap.com/ |   UI框架和基本CSS组件     |
-| Jquery1.8.0        |   http://jquery.com   |   用于前端ajax、交互效果、功能选择器   |
+| Jquery1.9.2       |   http://jquery.com   |   用于前端ajax、交互效果、功能选择器   |
 | Intel RealSense SDK     |  https://software.intel.com/zh-cn/intel-realsense-sdk  |   用于手势验证   |
 | Jsoup     |  http://jsoup.org/  |   用于爬取数据信息   |
 | Gaode map API        |   http://ditu.amap.com/    |  用于位置服务  |
