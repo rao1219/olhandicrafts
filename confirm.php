@@ -98,17 +98,26 @@ else
   </table>
                
                <p><div align="center"><img width=400 height=400 src="<?=$orderlist[$i][11]?>"/></div></p></div>
-               
-              <?php }?>
-            </div>
+                </div>
                 
-                </div></div><div align="center"> <p><button class="btn btn-large btn-block btn-primary" onclick="location.href='sendorder.php'" type="button">确认订单</button></p></div></div></div>
+                </div></div>
                
+              <?php }
+              if(sizeof($orderlist)!=0){
+              ?>
+           <div align="center"> <p><button class="btn btn-large btn-block btn-primary" onclick="location.href='sendorder.php'" type="button">确认订单</button></p></div></div></div>
+            <?php
+            }else{
+              
+             echo '<a href = "http://localhost/olhandicrafts/category.php?k_template=0&keywords=%E6%89%8B%E5%B7%A5">您的购物车为空，快去逛逛吧~</a>';
+            echo '</p></div></div></div>';
+            }?>   
             <div class="blank"></div>
 
      <div class="cover-page-index fl wfs bcf2" style="padding-top:20px;">
         <div class="cover-page-wrapper">
-<?php
+
+<?php 
 include 'templete/footer.html';
 ?>
 
