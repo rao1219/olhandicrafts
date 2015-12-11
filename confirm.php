@@ -101,7 +101,7 @@ else
                <p><div align="center"><img width=400 height=400 src="<?=$orderlist[$i][11]?>"/></div></p></div>
                 </div>
                 
-                </div></div>
+                
                
               <?php }
               if(sizeof($orderlist)!=0){
