@@ -7,6 +7,10 @@
 		
 	
 <?php
+session_start();
+if(isset($_SESSION['username'])){
+     header("Location: member.php"); 
+}
 include 'templete\header.html';
 ?>	
 	

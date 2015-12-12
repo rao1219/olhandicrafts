@@ -111,7 +111,7 @@ else
             }else{
               
              echo '<a href = "http://localhost/olhandicrafts/category.php?k_template=0&keywords=%E6%89%8B%E5%B7%A5">您的购物车为空，快去逛逛吧~</a>';
-            echo '</p></div></div></div>';
+            echo '</p></div></div></div></div>';
             }?>   
             <div class="blank"></div>
 
