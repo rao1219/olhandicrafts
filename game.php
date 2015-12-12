@@ -9,7 +9,7 @@
 session_start();
 include 'templete/header.html';
 ?> 
-<link href="./2048_files/main.css" rel="stylesheet" type="text/css">
+<link href="./2048_js/main.css" rel="stylesheet" type="text/css">
 
 <link rel="shortcut icon" href="style/images/favicon.ico" />
     
@@ -24,23 +24,28 @@ include 'templete/header.html';
    
 <div class="container">
 <div class="heading">
-<h1 class="title">2048</h1>
+<h1 class="title">2048        </h1>
+
 <div class="scores-container">
+
 <div class="score-container">2148<div class="score-addition">+2148</div></div>
 <div class="best-container">2324</div>
 </div>
 </div>
+
 <div class="above-game">
 <p class="game-intro">移动数字使得到 <strong>2048!</strong></p>
+
 <a class="restart-button">重新开始</a>   
 
 </div>
+
 <div class="game-container">
 <div class="game-message">
 <p></p>
 <div class="lower">
 <a class="keep-playing-button">Keep going</a>
-<a class="retry-button">Try again</a>
+<a class="retry-button">再来一次</a>
 </div>
 </div>
 <div class="grid-container">
@@ -76,16 +81,16 @@ include 'templete/header.html';
 </p>
 <hr>
 </div>
-<script src="./2048_files/bind_polyfill.js"></script>
-<script src="./2048_files/classlist_polyfill.js"></script>
-<script src="./2048_files/animframe_polyfill.js"></script>
-<script src="./2048_files/keyboard_input_manager.js"></script>
-<script src="./2048_files/html_actuator.js"></script>
-<script src="./2048_files/grid.js"></script>
-<script src="./2048_files/tile.js"></script>
-<script src="./2048_files/local_storage_manager.js"></script>
-<script src="./2048_files/game_manager.js"></script>
-<script src="./2048_files/application.js"></script>
+<script src="./2048_js/bind_polyfill.js"></script>
+<script src="./2048_js/classlist_polyfill.js"></script>
+<script src="./2048_js/animframe_polyfill.js"></script>
+<script src="./2048_js/keyboard_input_manager.js"></script>
+<script src="./2048_js/html_actuator.js"></script>
+<script src="./2048_js/grid.js"></script>
+<script src="./2048_js/tile.js"></script>
+<script src="./2048_js/local_storage_manager.js"></script>
+<script src="./2048_js/game_manager.js"></script>
+<script src="./2048_js/application.js"></script>
 
  
 </body>
