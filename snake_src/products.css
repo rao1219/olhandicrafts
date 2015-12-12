@@ -1,0 +1,59 @@
+@CHARSET "UTF-8";
+.js-holder{
+	font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+	color: #000;
+	overflow: hidden;
+	border: solid 1px red;
+	padding: 5px;
+	background: url(http://www.bulgaria-web-developers.com/projects/javascript/web/img/white_carbon.png) 0 0 repeat;
+	width: 525px;
+	border: 1px solid #999999;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+}
+.js-project{
+    float: left;
+    height: 70px;
+    margin: 0 10px 10px 0;
+    overflow: hidden;
+    width: 155px;
+}
+.js-box{
+	background-color: #FFFFFF;
+    border: 1px solid #999999;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    padding: 5px;
+}
+.js-project a{
+	float: left;
+	margin: 0 5px 0 0;
+	text-decoration: none;
+	outline: none;
+}
+.js-project a:hover{border: none; text-decoration: none}
+.js-project img {
+    height: 65px;
+    width: 65px;
+    border: solid 1px #ccc;
+    background-color: #fff;
+    padding: 1px;
+}
+.js-project h2 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 5px 0 0;
+}
+.js-project p {
+    margin: 3px 0 0;
+}
+.js-first{
+	clear: left;
+}
+.js-last {
+    margin: 0 0 10px;
+}

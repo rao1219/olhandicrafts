@@ -60,49 +60,7 @@ include 'templete/header.html';
 				
 				
 				<font size=16> 贪吃蛇</font>
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
-				&nbsp;&nbsp;
+				
 				&nbsp;&nbsp;	
 				&nbsp;&nbsp;
 				&nbsp;&nbsp;<img width=300 height=150 src="style/images/snake.jpg">
@@ -211,7 +169,7 @@ include 'templete/header.html';
 </div>
 <p class="game-explanation">
 使用 <strong>方向键</strong> 来移动小格
-<div align="right"><button type="button" class="btn btn-primary"onclick="location.href='index.php'"><h1>返回首页</h1></button></div>
+
 
 </p>
 
@@ -229,7 +187,7 @@ include 'templete/header.html';
 
 
 
-	
+	<div align="right"><button type="button" class="btn btn-primary">Primary</button></div>
 
  
 </body>

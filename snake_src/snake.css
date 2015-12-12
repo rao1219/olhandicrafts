@@ -1,0 +1,283 @@
+@CHARSET "UTF-8";
+body{
+	color: #111;
+	font-family: Arial, Tahoma, Vedana, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+	padding: 0;
+}
+a, img{outline: none}
+a:link, a:visited{
+	color: #000;
+	text-decoration: underline;
+}
+a:hover{
+	border-bottom: dotted 1px #663300;
+	color: #663300;	
+	text-decoration: none;
+}
+ul {margin: 0; padding: 0; list-style-position: inside}
+li {margin: 0; padding: 0}
+h1 {margin: 0}
+h3 {margin: 10px 0 5px; padding: 0}
+#container{
+	height: auto !important;
+	position: relative;
+	width: 100%;
+}
+#header_wrap{
+	border-bottom: solid 10px #333;
+}
+#header{
+	height: 91px;
+	margin: 0 auto;
+	position: relative;
+	width: 1000px;
+}
+a#twitter:link, a#twitter:visited{
+	background: url(../img/twitter.gif) 0 0 no-repeat;
+	display: block;
+	height: 35px;
+	position: absolute;
+	right: 30px;
+	text-indent: -9999px;
+	top: 43px;
+	width: 240px;
+}
+a#twitter:hover{
+	border: none;
+}
+a#twitter img{
+	border: none;
+	height: 31px;
+	width: 43px;
+	z-index: 10;
+}
+#landing_wrap{
+	background: url(../img/landing_wrap.png) 0 0 repeat-x;
+	border-top: solid 1px #fff;
+	height: 220px;
+}
+#landing{
+	background: url(../img/landing_zmei.jpg) top right no-repeat;
+	height: 220px;
+	margin: 0 auto;
+	position: relative;
+	width: 1000px;
+}
+#landing p{
+	color: #fff;
+	font-family: Georgia, Times, sans-serif;
+	font-size: 24px;
+	left: 30px;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	text-shadow: #803806 2px 2px 2px;
+	top: 55px;
+}
+a#landing_play:link, a#landing_play:visited{
+	background: url(../img/landing_play.png) 0 0 no-repeat;
+	display: block;
+	height: 51px;
+	left: 26px;
+	position: absolute;
+	top: 133px;
+	width: 173px;
+}
+a#landing_play:hover{
+	border: none;
+}
+
+#middle_wrap{
+	background-color: #dcc5b5;
+}
+#middle{
+	margin: 0 auto;
+	padding: 30px 0 120px 0;
+	width: 1000px;
+	overflow: hidden;
+}
+#footer_wrap{
+	background: #dcc5b5 url(../img/footer_wrap.png) 0 0 repeat-x;
+	position: absolute;
+	bottom: 0 !important;
+	width: 100%;
+}
+#footer{
+	height: 100px;
+	margin: 0 auto;
+	position: relative;
+	width: 1000px;
+}
+#footer_left, 
+#footer_center,
+#footer_right{
+	font-size: 0.9em;
+	position: absolute;
+	top: 20px;	
+}
+#footer_left{
+	left: 0;
+	width: 300px;	
+}
+#footer_center{
+	left: 350px;
+	text-align: center;
+	width: 300px;
+}
+#footer_right{
+	right: 0;
+	text-align: right;
+	width: 300px;
+}
+#footer_right a{
+	font-style: italic;
+}
+a#logo{
+	background: url(../img/logo.gif) 0 0 no-repeat;
+	display: block;
+	height: 60px;
+	left: 30px;
+	position: absolute;	
+	top: 18px;
+	width: 128px;
+}
+a#logo:hover{
+	border: none;
+}
+#stat{
+	height: 480px;
+	float: right;
+	position: relative;
+	width: 326px;
+}
+#stat p{
+	margin: 0;
+	padding: 5px 8px;	
+}
+#navigator{
+	height: 160px;
+	margin: 10px 0;
+	position: relative;
+}
+#legend{
+	border-bottom: solid 1px #333;
+	overflow: hidden;
+	padding: 30px 0 10px 0;
+}
+#box{
+	background-color: #fff;
+	border: solid 1px #803806;
+	float: left;
+	height: 480px;
+	position: relative;
+	width: 640px;
+}
+.grid{
+	background: #ccc url(../img/grid.gif) 0 0 repeat;
+	border-right: solid 1px #dcc5b5 !important;
+	border-bottom: solid 1px #dcc5b5 !important;
+}
+#snake,
+.snakeBody{
+	height: 20px;
+	position: absolute;
+	width: 20px;
+}
+#snake{
+	background-color: #000;
+	z-index: 22;
+}
+.snakeBody{
+	background-color: #777;
+	z-index: 11;
+}
+#mice{
+	height: 20px;
+	position: absolute;
+	width: 20px;
+}
+.red{background-color: red}
+.blue{background-color: blue}
+.green{background-color: green}
+.brown{background-color: brown}
+.cyan{background-color: cyan}
+.teal{background-color: teal}
+.yellow{background-color: yellow}
+.orange{background-color: orange}
+.magenta{background-color: magenta}
+.olive{background-color: olive}
+.lime{background-color: lime}
+.maroon{background-color: maroon}
+#control{
+	bottom: 0;
+	left: 0;
+	list-style: none;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;	
+	width: 180px;
+}
+#control li{
+	float: left;
+}
+#control a:link, #control a:visited{
+	float: left;
+	padding: 0 10px 0 0;
+}
+#control a:link, #control a:visited,
+#joystick a:link, #joystick a:visited{
+	height: 48px;
+	display: block;	
+	width: 48px;
+}
+#control a:hover{border: none;}
+#control a#play{background:url(../img/play.png) 0 0 no-repeat;}
+#control a#pause{background:url(../img/pause.png) 0 0 no-repeat;}
+#control a#stop{background:url(../img/stop.png) 0 0 no-repeat;}
+
+#joystick{
+	height: 144px;
+	margin: 0 0 0 260px;
+	position: absolute;
+	top: 10px;
+	width: 144px;
+}
+#joystick a:link, #joystick a:visited{
+	clear: left;
+	position: absolute;
+}
+#joystick a:hover{border: none;}
+#joystick a#left{background:url(../img/key_left.png) 0 0 no-repeat; left: 0; top: 48px;}
+#joystick a#up{background:url(../img/key_up.png) 0 0 no-repeat; left: 48px; top: 0;}
+#joystick a#right{background:url(../img/key_right.png) 0 0 no-repeat; left: 96px; top: 48px;}
+#joystick a#down{background:url(../img/key_down.png) 0 0 no-repeat; left: 48px; top: 96px;}
+
+#overlay{
+	background-color: #333;
+	display: none;
+	left: 0;
+	opacity: .6;
+	position: absolute;
+	top: 0;
+	z-index: 9998;
+}
+#overlayBox{
+	background: #fff url(../img/zmei.jpg) 250px 90px no-repeat;
+	border: solid 1px #333;
+	display: none;
+	height: 480px;
+	position: absolute;
+	width: 640px;
+	z-index: 9999;
+}
+#overlayNote{
+	padding: 220px 10px 5px 10px;
+}
+#overlayBox p{
+	margin: 0;
+	text-align: center;
+}
