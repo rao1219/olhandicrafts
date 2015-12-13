@@ -217,10 +217,6 @@ include 'templete/header.html';
 <hr>
 <hr>
 <hr>
-<hr>
-<hr>
-<hr>
-<hr>
 <h1>Floppy Bird
 <hr>
 
@@ -239,8 +235,9 @@ include 'templete/header.html';
 <script src="./2048_js/application.js"></script>
 
 
-<div align="center"><iframe  width=1000 height=500 src="floppybird/index.html"></iframe><div>
+<div align="center"><iframe  width=1200 height=600 src="floppybird/index.html"></iframe><div>
 <div align="right"><button type="button" class="btn btn-primary"onclick="location.href='index.php'"><h1>返回首页</h1></button></div> 
+<hr><hr><hr>
 </body>
 
 </html>		
