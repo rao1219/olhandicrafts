@@ -21,7 +21,7 @@ if(isset($_POST['act'])){
         include('templete/err.html');
     }else if($_POST['act']=='rent'){
         //检测数据填写情况
-        if(trim($_POST['title'])=="" || empty($_FILES) || trim($_FILES['pic']['name'])==""||!isset($_POST['select2'])){
+        if(trim($_POST['title'])=="" || empty($_FILES) || trim($_FILES['pic']['name'])==""||!isset($_POST['select1'])){
             $errurl="javascript:window.history.go(-1)";
             $errinfo="物品名称、需求草图、地区信息必须填写!";
             include('templete/err.html');
@@ -49,19 +49,13 @@ if(isset($_POST['act'])){
             }
         }
         //API存储信息
-        $city=$_POST['select2'];
-        $cityone=operate::getoneline('city','id='.$city,'parentid,city');
-        $adress;
-        if($cityone[0]==0){
-            $adress=$cityone[1].$_POST['address'];
-        }else{
-            $citytwo=operate::getoneline('city','id='.$cityone[0],'city');
-            $adress=$citytwo[0].$cityone[1].$_POST['address'];
-        }
-        operate::insertoneline('item',array('title','pic','class','money','deposit','seller','content','city','address'),array($_POST['title'],$pic,$_POST['class'],$_POST['money'],$_POST['deposit'],$_SESSION['id'],$_POST['content'],$city,$_POST['address']));
-        $temp=mysql_fetch_row(mysql_query('select id from item order by id desc limit 1'));
-        @$post_string="key=ba8a19891a7cb1bc3e2f3411d01d9035&tableid=548fbe84e4b0d0b861454b2c&loctype=2&data={'_name'='".$_POST['title']."','_address'='".$adress."','img'='".$pic."','id'='".$temp[0]."','money'='".$_POST['money']."'}";
-        operate::file_get_contents_post('http://yuntuapi.amap.com/datamanage/data/create',$post_string);
+        $cityone=$_POST['address'];
+        
+        $title='发布'.$_SESSION['username'].' '.$_POST['title'];
+        $con=mysql_query('select count(id) from `crafts`');
+        $con=mysql_fetch_row($con);
+        //echo $con[0];
+        operate::insertoneline('crafts',array('id','name','title','type','img','price','seller','description','selleradd','store','phone'),array($con[0]+1000,$title,$title,'需求发布',$path.$pic,$_POST['money'],$_SESSION['username'],$_POST['content'],$cityone,$cityone,$_SESSION['phone']));
         $errurl="member.php?act=myrenting";
         $errinfo="恭喜您，发布成功!";
         include('templete/err.html');

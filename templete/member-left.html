@@ -256,17 +256,22 @@ var http_request=false;
                                     <select name="select1" id="class1" style="width:150;" onChange="getclass('class2');">  
                             <option selected value="">选择省</option>  
                                       
-                             <?  
-                               $sql = "select id,city from `city` where parentid=0";  
-                               $result = mysql_query( $sql );  
-                               while($res = mysql_fetch_row($result)){  
-                                     //echo 'tst';    
-                                     //echo var_dump($res);
-                             ?>  
-                                <option value="<?php echo $res[0]; ?>"><?php echo $res[1]; ?></option>  
-                              <? } ?>  
+                             
+                                <option value="北京">北京</option>
+                                <option value="上海">上海</option>
+                                <option value="河北">河北</option>
+                                <option value="河南">河南</option>
+                                <option value="湖北">湖北</option>
+                                <option value="湖南">湖南</option>
+                                <option value="广东">广东</option>
+                                <option value="广西">广西</option>
+                                <option value="美国">美国</option>
+                                <option value="英国">英国</option>
+                                
+                                  
+                             
                             </select>  
-                            <span id="class2"></span>   
+                            
                                     
                                 </p>
                                 <p class="p-item top-line">
