@@ -9,7 +9,7 @@ session_start();
 <?php
 if(!isset($_SESSION['username']))
 {
-	$errurl="login.php";
+	$errurl="camera.php";
 	$errinfo="请先登录!";
 	include('templete/err.html');
 }

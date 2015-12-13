@@ -8,11 +8,14 @@
 	
 <?php
 session_start();
+$camera=true;
+
+
 if(isset($_SESSION['username'])){
      header("Location: member.php"); 
 }
-include 'templete\header.html';
-?>	
+?>
+
 	
 		<style type="text/css">
 img.wp-smiley,
@@ -28,6 +31,13 @@ img.emoji {
 	padding: 0 !important;
 }
 </style>
+
+<?php
+if(!$camera){
+	header("Location: login.php");
+}
+include 'templete\header.html';
+?>	
 
 
 <style>video { border: 1px solid #ccc; display: block; margin: 0 0 20px 0; }

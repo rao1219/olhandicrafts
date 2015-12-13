@@ -86,7 +86,7 @@ include 'templete\header.html';
                     
                    <div class="regist-process-register-right fr" style="margin-top:100px;">
                        <h2 class="title">我已注册账号</h2>
-                       <a class="btn btn-info login-now" href="login.php">立即登录</a>
+                       <a class="btn btn-info login-now" href="camera.php">立即登录</a>
                        <p class="pre-consultation">
                            咨询热线<b>400&nbsp;0000&nbsp;000</b>
                        </p>
