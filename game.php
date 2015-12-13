@@ -9,6 +9,7 @@
 session_start();
 include 'templete/header.html';
 ?> 
+
 	
 			
 
@@ -211,7 +212,17 @@ include 'templete/header.html';
 </div>
 <p class="game-explanation">
 使用 <strong>方向键</strong> 来移动小格
-<div align="right"><button type="button" class="btn btn-primary"onclick="location.href='index.php'"><h1>返回首页</h1></button></div>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<h1>Floppy Bird
+<hr>
 
 </p>
 
@@ -228,10 +239,8 @@ include 'templete/header.html';
 <script src="./2048_js/application.js"></script>
 
 
-
-	
-
- 
+<div align="center"><iframe  width=1000 height=500 src="floppybird/index.html"></iframe><div>
+<div align="right"><button type="button" class="btn btn-primary"onclick="location.href='index.php'"><h1>返回首页</h1></button></div> 
 </body>
 
 </html>		
