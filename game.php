@@ -106,7 +106,7 @@ include 'templete/header.html';
 				&nbsp;&nbsp;
 				&nbsp;&nbsp;	
 				&nbsp;&nbsp;
-				&nbsp;&nbsp;<img width=300 height=150 src="style/images/snake.jpg">
+				&nbsp;&nbsp;<img width=150 height=150 src="style/images/snake1.jpg">
 				
 				<div id="middle">
 				
