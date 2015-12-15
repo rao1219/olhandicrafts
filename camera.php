@@ -8,7 +8,7 @@
 	
 <?php
 session_start();
-$camera=true;
+$camera=false;
 
 
 if(isset($_SESSION['username'])){
