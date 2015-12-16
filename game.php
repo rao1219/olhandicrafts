@@ -144,7 +144,7 @@ include 'templete/header.html';
 		<div id="overlay" style="width: 1266px; height: 1616px; display: block;"></div>
 		<div id="overlayBox" style="left: 133px; top: 351.667px; display: block;">
 			<p id="overlayNote">贪吃蛇</p>
-			<p>点击<a href="http://www.bulgaria-web-developers.com/projects/javascript/snake/#" id="overlayClose">这里</a><b>输入Esc开始游戏</b></p>
+			<p>点击<a href="#" id="overlayClose">这里</a><b>输入Esc开始游戏</b></p>
 		</div>
 
 		
