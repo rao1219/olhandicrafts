@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>welcome to Handicrafts</title>
+<style type="text/css">
+* {
+        padding: 0;
+        margin: 0;
+}
+ul li {
+        list-style: none;
+}
+a {
+        text-decoration: none;
+}
+img {
+        border: none;
+        float: left;
+}
+.clear {
+        clear: both;
+}
+html, body {
+        color: #737373;
+        background: url(images/bg.jpg) #E4E7E8 no-repeat center center;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: absolute
+}
+#container {
+        width: 100%;
+        position: absolute
+}
+#indexgs {
+        width: 1128px;
+        height: 508px;
+        position: relative;
+}
+#indexgs img {
+        position: absolute;
+}
+#indexg2 {
+        left: 1000px;
+        top: 1000px;
+}
+#indexg1 {
+        left: -1000px;
+        top: 1000px;
+        position: absolute
+}
+#indexg1 a {
+        width: 244px;
+        height: 51px;
+        display: block;
+        background: url(images/indexlogo.png);
+        position: relative;
+        top: 107px;
+        left: 109px;
+}
+#indexg1 a:hover {
+        width: 244px;
+        height: 51px;
+        display: block;
+        background: url(images/indexlogo2.png);
+}
+#indexg0 {
+        left: 0;
+        top: 1000px;
+        position: absolute;
+}
+#indexg0 a {
+        width: 54px;
+        height: 54px;
+        display: block;
+        background: url(images/blog2.png);
+        position: relative;
+        top: 263px;
+        left: 800px;
+}
+#indexg0 a:hover {
+        background: url(images/blog1.png)
+}
+#indexmask {
+        background: #fff;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        display: none
+}
+</style>
+<script type="text/javascript" src="js/packed_jquery.min6301986802.js"></script>
+<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+<script type="text/javascript">
+$(function () {
+         var index_div_pro = [{
+                        sx: 0,
+                        sy: 0,
+                        mw: 3,
+                        mh: 1,
+                        bx: 8.4,
+                        by: 10.4,
+                        rx: -0.6
+                },
+                {
+                        sx: 35,
+                        sy: 0,
+                        mw: 3,
+                        mh: 0.5,
+                        bx: 6.4,
+                        by: 8.4,
+                        rx: -0.1
+                },
+                {
+                        sx: 785,
+                        sy: 90,
+                        mw: 0.3,
+                        mh: 0.1,
+                        bx: 6.5,
+                        by: 7.4,
+                        rx: -0.1
+                }];
+                
+                var ePageX = null;
+                var ePageY = null;
+                
+                function getMousePos(expression) {
+                        if (ePageX == null || ePageY == null) return null;
+                        var _x = $(expression).position().left;
+                        _x += ePageX - $(expression).parent().position().left;
+                        var _y = $(expression).position().top;
+                        _y += ePageY - $(expression).parent().position().top;
+                        return {
+                                x: _x,
+                                y: _y
+                        }
+                };
+                
+                var index_xh = setInterval(function () {
+                        for (var i = 0; i < 3; i++) {
+                                var mousepos = getMousePos("#indexg" + i);
+                                if (mousepos != null) {
+                                        var left = parseInt($("#indexg" + i).css("left"));
+                                        var l = left + (index_div_pro[i].sx + index_div_pro[i].mw - (mousepos.x - 100) / index_div_pro[i].bx * index_div_pro[i].rx - left) * 0.2;
+                                        var top = parseInt($("#indexg" + i).css("top"));
+                                        var t = top + (index_div_pro[i].sy + index_div_pro[i].mh - (mousepos.y - 100) / index_div_pro[i].by - top) * 0.2;
+                                        $("#indexg" + i).css({
+                                                left: l,
+                                                top: t
+                                        })
+                                }
+                        }
+                },
+                15);
+                
+                $("body").mousemove(function (event) {
+                        event = event || window.event;
+                        ePageX = event.pageX;
+                        ePageY = event.pageY;
+                });
+        
+        
+});
+</script>
+</head>
+<body>
+        <div id="indexgs"> <img id="indexg2" src="images/g3.png" width="364" height="308"/>
+        <div id="indexg0"> <img src="images/g1.png" width="918" height="508"/> <a href="#" target="_blank"></a> </div>
+        <div id="indexg1"> <img src="images/g2.png" width="353" height="538"/> <a href="#" target="_blank"></a> </div>
+      </div>
+</body>
+</html>

@@ -236,6 +236,8 @@ include 'templete/header.html';
 
 
 <div align="center"><iframe  width=1200 height=600 src="floppybird/index.html"></iframe><div>
+	
+	
 <div align="right"><button type="button" class="btn btn-primary"onclick="location.href='index.php'"><h2>返回首页</h2></button></div> 
 <hr>
 </body>

@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<META http-equiv=Content-Type content="text/html; charset=GBK">
+</HEAD>
+<SCRIPT language=JavaScript>
+//定义参数 start
+var dCol="#000000",fCol="#000000",sCol="blue",mCol="green",hCol="red";
+var ClockHeight=100,ClockWidth=100,ClockFromMouseY=0,ClockFromMouseX=0;
+var d=new Array("星期天","星期一","星期二","星期三","星期四","星期五","星期六");
+var m=new Array("一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月");
+var date=new Date();
+var day=date.getDate();
+var year=date.getYear();
+if (year < 2000) {
+ year=year+1900;
+}
+var TodaysDate=" "+year+"年 "+m[date.getMonth()]+" "+day+"日 "+d[date.getDay()]+" ";
+var D=TodaysDate.split("");
+var H="●●●",M="●●●●",S="●●●●●";
+H=H.split("");
+M=M.split("");
+S=S.split("");
+var Face="1 2 3 4 5 6 7 8 9 10 11 12",font="Arial",size=1,speed=0.6;
+Face=Face.split(" ");
+var n=Face.length
+var a=size*10;
+var ymouse=0;
+var xmouse=0;
+var scrll=0;
+var props="<font face="+font+" size="+size+" color="+fCol+"><B>";
+var props2="<font face="+font+" size="+size+" color="+dCol+"><B>";
+var Split=360/n;
+var Dsplit=360/D.length;
+var HandHeight=ClockHeight/4.5
+var HandWidth=ClockWidth/4.5
+var HandY=-7;
+var HandX=-2.5;
+var step=0.06;
+var currStep=0;
+var y=new Array(),x=new Array(),Y=new Array(),X=new Array();
+for (i=0; i < n; i++){
+ y[i]=0;
+ x[i]=0;
+ Y[i]=0;
+ X[i]=0;
+}
+var Dy=new Array(),Dx=new Array(),DY=new Array(),DX=new Array();
+for (i=0; i < D.length; i++){
+ Dy[i]=0;
+ Dx[i]=0;
+ DY[i]=0;
+ DX[i]=0
+}
+//定义参数 end
+function Start(){
+var tempstr="";
+for (i=0; i < D.length; i++){
+ tempstr+="<div id=\"ieDate"+i+"\" style=\"position:absolute;top:0px;left:0;height:"+a+";width:"+a+";text-align:center\">"+props2+D[i]+"</B></font></div>";
+}
+document.getElementById("Od").childNodes[0].innerHTML=tempstr;
+tempstr="";
+for (i=0; i < n; i++){
+ tempstr+="<div id=\"ieFace"+i+"\" style=\"position:absolute;top:0px;left:0;height:"+a+";width:"+a+";text-align:center\">"+props+Face[i]+"</B></font></div>";
+}
+document.getElementById("Of").childNodes[0].innerHTML=tempstr;
+tempstr="";
+for (i=0; i < H.length; i++){
+ tempstr+="<div id=\"ieHours"+i+"\" style=\"position:absolute;width:16px;height:16px;font-family:Arial;font-size:16px;color:"+hCol+";text-align:center;font-weight:bold\">"+H[i]+"</div>";
+}
+document.getElementById("Oh").childNodes[0].innerHTML=tempstr;
+tempstr="";
+for (i=0; i < M.length; i++){
+ tempstr+="<div id=\"ieMinutes"+i+"\" style=\"position:absolute;width:16px;height:16px;font-family:Arial;font-size:16px;color:"+mCol+";text-align:center;font-weight:bold\">"+M[i]+"</div>";
+}
+document.getElementById("Om").childNodes[0].innerHTML=tempstr;
+tempstr="";
+for (i=0; i < S.length; i++){
+ tempstr+="<div id=\"ieSeconds"+i+"\" style=\"position:absolute;width:16px;height:16px;font-family:Arial;font-size:16px;color:"+sCol+";text-align:center;font-weight:bold\">"+S[i]+"</div>";
+}
+document.getElementById("Os").childNodes[0].innerHTML=tempstr;
+tempstr="";
+Delay();
+}
+function Mouse(eventTag){
+ var event = eventTag||window.event;
+ if (eventTag) {
+  //火狐
+  ymouse = event.pageY+ClockFromMouseY;
+  xmouse = event.pageX+ClockFromMouseX;
+ }else{
+  //IE
+  ymouse = event.y+ClockFromMouseY;
+  xmouse = event.x+ClockFromMouseX;
+ }
+}
+document.onmousemove=Mouse;
+function ClockAndAssign(){
+time = new Date ();
+secs = time.getSeconds();
+sec = -1.57 + Math.PI * secs/30;
+mins = time.getMinutes();
+min = -1.57 + Math.PI * mins/30;
+hr = time.getHours();
+hrs = -1.575 + Math.PI * hr/6+Math.PI*parseInt(time.getMinutes())/360;
+document.getElementById("Od").style.top=window.document.body.scrollTop;
+document.getElementById("Of").style.top=window.document.body.scrollTop;
+document.getElementById("Oh").style.top=window.document.body.scrollTop;
+document.getElementById("Om").style.top=window.document.body.scrollTop;
+document.getElementById("Os").style.top=window.document.body.scrollTop;
+for (i=0; i < n; i++){
+ var F=document.getElementById("ieFace"+i).style;
+ F.top=y[i] + ClockHeight*Math.sin(-1.0471 + i*Split*Math.PI/180)+scrll;
+ F.left=x[i] + ClockWidth*Math.cos(-1.0471 + i*Split*Math.PI/180);
+ }
+for (i=0; i < H.length; i++){
+ var HL=document.getElementById("ieHours"+i).style;
+ HL.top=y[i]+HandY+(i*HandHeight)*Math.sin(hrs)+scrll;
+ HL.left=x[i]+HandX+(i*HandWidth)*Math.cos(hrs);
+ }
+for (i=0; i < M.length; i++){
+ var ML=document.getElementById("ieMinutes"+i).style;
+ ML.top=y[i]+HandY+(i*HandHeight)*Math.sin(min)+scrll;
+ ML.left=x[i]+HandX+(i*HandWidth)*Math.cos(min);
+ }
+for (i=0; i < S.length; i++){
+ var SL=document.getElementById("ieSeconds"+i).style;
+ SL.top=y[i]+HandY+(i*HandHeight)*Math.sin(sec)+scrll;
+ SL.left=x[i]+HandX+(i*HandWidth)*Math.cos(sec);
+ }
+for (i=0; i < D.length; i++){
+ var DL=document.getElementById("ieDate"+i).style;
+ DL.top=Dy[i] + ClockHeight*1.5*Math.sin(currStep+i*Dsplit*Math.PI/180)+scrll;
+ DL.left=Dx[i] + ClockWidth*1.5*Math.cos(currStep+i*Dsplit*Math.PI/180);
+ }
+currStep-=step;
+}
+function Delay(){
+scrll=0;
+Dy[0]=Math.round(DY[0]+=((ymouse)-DY[0])*speed);
+Dx[0]=Math.round(DX[0]+=((xmouse)-DX[0])*speed);
+for (i=1; i < D.length; i++){
+Dy[i]=Math.round(DY[i]+=(Dy[i-1]-DY[i])*speed);
+Dx[i]=Math.round(DX[i]+=(Dx[i-1]-DX[i])*speed);
+}
+y[0]=Math.round(Y[0]+=((ymouse)-Y[0])*speed);
+x[0]=Math.round(X[0]+=((xmouse)-X[0])*speed);
+for (i=1; i < n; i++){
+y[i]=Math.round(Y[i]+=(y[i-1]-Y[i])*speed);
+x[i]=Math.round(X[i]+=(x[i-1]-X[i])*speed);
+}
+ClockAndAssign();
+setTimeout(Delay,30);
+}
+window.onload=Start;
+</SCRIPT>
+<BODY background="351576.jpg">
+<div id="Od" style="position:absolute;top:0px;left:0px"><div style="position:relative"></div></div>
+<div id="Of" style="position:absolute;top:0px;left:0px"><div style="position:relative"></div></div>
+<div id="Oh" style="position:absolute;top:0px;left:0px"><div style="position:relative"></div></div>
+<div id="Om" style="position:absolute;top:0px;left:0px"><div style="position:relative"></div></div>
+<div id="Os" style="position:absolute;top:0px;left:0px"><div style="position:relative"></div></div>
+<BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><FONT color="#CCCC00">
+
+</BODY>
+</HTML>

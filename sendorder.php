@@ -33,7 +33,7 @@ else{
 	
 	<script>
 		alert("订单提交成功！");
-		window.location="member.php";
+		window.location="award.php";
 	</script>
 	
 <?php 

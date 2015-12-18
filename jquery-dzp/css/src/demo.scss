@@ -1,0 +1,35 @@
+@charset "utf-8";
+@import "compass/reset";
+.turntable-bg {
+    width:650px;
+    height:600px;
+    margin:0 auto;
+    position:relative;
+    border:1px solid #f00;
+    background:url("../images/turntable-bg.jpg");
+    .mask {
+        width:454px;
+        height:451px;
+        position:absolute;
+        left:116px;
+        top:60px;
+        /*z-index:9;*/
+    }
+    .pointer {
+        width:174px;
+        height:228px;
+        position:absolute;
+        left:50%;
+        top:50%;
+        margin-left:-67px;
+        margin-top:-144px;
+        z-index: 8;
+    }
+    .rotate {
+        width:450px;
+        height:450px;
+        position:absolute;
+        left:116px;
+        top:60px;
+    }
+}
