@@ -1,5 +1,5 @@
 # coursework
-Very Simple Ecommerce Platform
+这是我在大三上独立完成的一门课程（互联网数据库）的大作业。网站从底层数据库，后端框架，前端页面都采用自主设计和开发，具有需求发布，购物车，订单处理等基础功能，创新性地嵌入了Intel RealSense 手势识别技术用以登陆验证，编写爬虫程序获取了淘宝近四万条手工艺产品的数据，数据库信息庞大，并且做了检索，分类处理等工作。
 
 [安装部署](https://github.com/rao1219/olhandicrafts/wiki/install)
 
